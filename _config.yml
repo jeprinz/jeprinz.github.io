@@ -1,0 +1,13 @@
+title: "Jacob Prinz"
+baseurl: ""
+
+date_format: "%Y-%m-%d"
+
+# google_analytics: "UA-42948095-1"
+# disqus_shortname: "sankhs"
+
+# Build settings
+permalink:    pretty
+
+plugins:
+  - jekyll-feed
