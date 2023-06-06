@@ -6,7 +6,7 @@ permalink: /
 
 <img src="images/pp.jpg" class="pp">
 
-Hello! I am a PhD student in Computer Science at the University of Maryland,
+I am a PhD student in Computer Science at the University of Maryland,
 advised by [Leonidas Lampropoulos](https://lemonidas.github.io/).
 I am a member of the <a href="https://plum-umd.github.io/">PLUM lab</a>.
 
@@ -29,11 +29,6 @@ correct software development.
 
 [[More ...](/news/)] -->
 
----
-### Ongoing Projects
-
-I am working on structure editors with fellow PLUM PhD student [Henry Blanchette](https://plum-umd.github.io/people/#_people/henry_blanchette.md). We presented our structure editor [zypr](https://riib11.github.io/zypr/) at [NJPLS@UMD](https://njpls.org/oct22.html#blanchette).
-<!-- Zypr allows users to select the area inside one node of the AST but outside another, which allows fluid editing of an AST directly. -->
 
 ---
 ### Publications
@@ -52,6 +47,12 @@ _Jacob Prinz_ and Alex Kavvos and Leonidas Lampropoulos. ITP 2022
 <!-- [**Mathematical Muffin Morsels**](https://doi.org/10.1142/11689)
 Gasarch, W., Metz, E., _Prinz, J._, Smolyak, D. 
 World Scientific, 2020. -->
+
+---
+### Ongoing Projects
+
+I am working on structure editors with fellow PLUM PhD student [Henry Blanchette](https://plum-umd.github.io/people/#_people/henry_blanchette.md). We presented our structure editor [zypr](https://riib11.github.io/zypr/) at [NJPLS@UMD](https://njpls.org/oct22.html#blanchette).
+<!-- Zypr allows users to select the area inside one node of the AST but outside another, which allows fluid editing of an AST directly. -->
 
 ---
 
