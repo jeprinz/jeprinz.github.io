@@ -1170,12 +1170,12 @@
   };
   var ap = function(dictMonad) {
     var bind32 = bind(dictMonad.Bind1());
-    var pure33 = pure(dictMonad.Applicative0());
+    var pure34 = pure(dictMonad.Applicative0());
     return function(f) {
       return function(a2) {
         return bind32(f)(function(f$prime) {
           return bind32(a2)(function(a$prime) {
-            return pure33(f$prime(a$prime));
+            return pure34(f$prime(a$prime));
           });
         });
       };
@@ -1236,11 +1236,11 @@
 
   // output/Data.Ord/foreign.js
   var unsafeCompareImpl = function(lt) {
-    return function(eq8) {
+    return function(eq9) {
       return function(gt) {
         return function(x) {
           return function(y) {
-            return x < y ? lt : x === y ? eq8 : gt;
+            return x < y ? lt : x === y ? eq9 : gt;
           };
         };
       };
@@ -1979,7 +1979,7 @@
     };
   };
   var eqMaybe = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return {
       eq: function(x) {
         return function(y) {
@@ -1988,7 +1988,7 @@
           }
           ;
           if (x instanceof Just && y instanceof Just) {
-            return eq8(x.value0)(y.value0);
+            return eq9(x.value0)(y.value0);
           }
           ;
           return false;
@@ -2150,18 +2150,18 @@
   };
   var map3 = /* @__PURE__ */ map(functorEither);
   var eqEither = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return function(dictEq1) {
-      var eq16 = eq(dictEq1);
+      var eq15 = eq(dictEq1);
       return {
         eq: function(x) {
           return function(y) {
             if (x instanceof Left && y instanceof Left) {
-              return eq8(x.value0)(y.value0);
+              return eq9(x.value0)(y.value0);
             }
             ;
             if (x instanceof Right && y instanceof Right) {
-              return eq16(x.value0)(y.value0);
+              return eq15(x.value0)(y.value0);
             }
             ;
             return false;
@@ -2305,13 +2305,13 @@
     return dict.mod;
   };
   var gcd = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return function(dictEuclideanRing) {
       var zero2 = zero(dictEuclideanRing.CommutativeRing0().Ring0().Semiring0());
       var mod1 = mod(dictEuclideanRing);
       return function(a2) {
         return function(b2) {
-          var $24 = eq8(b2)(zero2);
+          var $24 = eq9(b2)(zero2);
           if ($24) {
             return a2;
           }
@@ -2434,10 +2434,10 @@
     var catchError1 = catchError(dictMonadError);
     var Monad0 = dictMonadError.MonadThrow0().Monad0();
     var map65 = map(Monad0.Bind1().Apply0().Functor0());
-    var pure33 = pure(Monad0.Applicative0());
+    var pure34 = pure(Monad0.Applicative0());
     return function(a2) {
       return catchError1(map65(Right.create)(a2))(function($52) {
-        return pure33(Left.create($52));
+        return pure34(Left.create($52));
       });
     };
   };
@@ -2879,13 +2879,13 @@
     return v.value0;
   };
   var eqTuple = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return function(dictEq1) {
-      var eq16 = eq(dictEq1);
+      var eq15 = eq(dictEq1);
       return {
         eq: function(x) {
           return function(y) {
-            return eq8(x.value0)(y.value0) && eq16(x.value1)(y.value1);
+            return eq9(x.value0)(y.value0) && eq15(x.value1)(y.value1);
           };
         }
       };
@@ -3094,13 +3094,13 @@
   };
   var traverse_ = function(dictApplicative) {
     var applySecond3 = applySecond(dictApplicative.Apply0());
-    var pure33 = pure(dictApplicative);
+    var pure34 = pure(dictApplicative);
     return function(dictFoldable) {
       var foldr22 = foldr(dictFoldable);
       return function(f) {
         return foldr22(function($454) {
           return applySecond3(f($454));
-        })(pure33(unit));
+        })(pure34(unit));
       };
     };
   };
@@ -3285,13 +3285,13 @@
     }
     return function(apply5) {
       return function(map65) {
-        return function(pure33) {
+        return function(pure34) {
           return function(f) {
             return function(array) {
               function go2(bot, top3) {
                 switch (top3 - bot) {
                   case 0:
-                    return pure33([]);
+                    return pure34([]);
                   case 1:
                     return map65(array1)(f(array[bot]));
                   case 2:
@@ -3874,11 +3874,11 @@
 
   // output/Control.Alternative/index.js
   var guard = function(dictAlternative) {
-    var pure33 = pure(dictAlternative.Applicative0());
+    var pure34 = pure(dictAlternative.Applicative0());
     var empty13 = empty(dictAlternative.Plus1());
     return function(v) {
       if (v) {
-        return pure33(unit);
+        return pure34(unit);
       }
       ;
       if (!v) {
@@ -4026,7 +4026,7 @@
   };
   var enumFromTo = function(dictEnum) {
     var Ord0 = dictEnum.Ord0();
-    var eq16 = eq(Ord0.Eq0());
+    var eq15 = eq(Ord0.Eq0());
     var lessThan1 = lessThan(Ord0);
     var succ1 = succ(dictEnum);
     var lessThanOrEq1 = lessThanOrEq(Ord0);
@@ -4048,7 +4048,7 @@
       };
       return function(v) {
         return function(v1) {
-          if (eq16(v)(v1)) {
+          if (eq15(v)(v1)) {
             return singleton11(v);
           }
           ;
@@ -4627,7 +4627,7 @@
   };
   var eq1List = {
     eq1: function(dictEq) {
-      var eq8 = eq(dictEq);
+      var eq9 = eq(dictEq);
       return function(xs) {
         return function(ys) {
           var go2 = function($copy_v) {
@@ -4651,7 +4651,7 @@
                   if (v instanceof Cons && v1 instanceof Cons) {
                     $tco_var_v = v.value1;
                     $tco_var_v1 = v1.value1;
-                    $copy_v2 = v2 && eq8(v1.value0)(v.value0);
+                    $copy_v2 = v2 && eq9(v1.value0)(v.value0);
                     return;
                   }
                   ;
@@ -5606,10 +5606,10 @@
     };
   };
   var member = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     return function(k) {
       return function(m) {
-        return isJust(lookup15(k)(m));
+        return isJust(lookup16(k)(m));
       };
     };
   };
@@ -6299,11 +6299,11 @@
   var eqMap = function(dictEq) {
     var eqTuple2 = eqTuple(dictEq);
     return function(dictEq1) {
-      var eq16 = eq(eqArray(eqTuple2(dictEq1)));
+      var eq15 = eq(eqArray(eqTuple2(dictEq1)));
       return {
         eq: function(m1) {
           return function(m2) {
-            return eq16(toAscArray(m1))(toAscArray(m2));
+            return eq15(toAscArray(m1))(toAscArray(m2));
           };
         }
       };
@@ -6372,13 +6372,13 @@
     };
   };
   var alter = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     var delete1 = $$delete(dictOrd);
     var insert16 = insert(dictOrd);
     return function(f) {
       return function(k) {
         return function(m) {
-          var v = f(lookup15(k)(m));
+          var v = f(lookup16(k)(m));
           if (v instanceof Nothing) {
             return delete1(k)(m);
           }
@@ -8800,7 +8800,7 @@
     return Lift.create;
   }();
   var goLeft = function(dictApplicative) {
-    var pure33 = pure(dictApplicative);
+    var pure34 = pure(dictApplicative);
     return function(fStack) {
       return function(valStack) {
         return function(nat) {
@@ -8808,7 +8808,7 @@
             return function(count) {
               if (func instanceof Pure) {
                 return new Tuple(new Cons({
-                  func: pure33(func.value0),
+                  func: pure34(func.value0),
                   count
                 }, fStack), valStack);
               }
@@ -8879,7 +8879,7 @@
   };
   var foldFreeAp = function(dictApplicative) {
     var goApply1 = goApply(dictApplicative);
-    var pure33 = pure(dictApplicative);
+    var pure34 = pure(dictApplicative);
     var goLeft1 = goLeft(dictApplicative);
     return function(nat) {
       return function(z) {
@@ -8888,7 +8888,7 @@
           var $tco_result;
           function $tco_loop(v) {
             if (v.value1.value0 instanceof Pure) {
-              var v1 = goApply1(v.value0)(v.value1.value1)(pure33(v.value1.value0.value0));
+              var v1 = goApply1(v.value0)(v.value1.value1)(pure34(v.value1.value0.value0));
               if (v1 instanceof Left) {
                 $tco_done = true;
                 return v1.value0;
@@ -9573,9 +9573,9 @@
   };
   var query = function() {
     return function(dictIsSymbol) {
-      var lookup15 = lookup4(dictIsSymbol);
+      var lookup16 = lookup4(dictIsSymbol);
       return function(dictOrd) {
-        var lookup23 = lookup15(dictOrd);
+        var lookup23 = lookup16(dictOrd);
         return function(label5) {
           return function(p2) {
             return function(q2) {
@@ -9797,11 +9797,11 @@
   }();
   var componentSlot = function() {
     return function(dictIsSymbol) {
-      var lookup15 = lookup5(dictIsSymbol);
+      var lookup16 = lookup5(dictIsSymbol);
       var pop12 = pop3(dictIsSymbol);
       var insert16 = insert4(dictIsSymbol);
       return function(dictOrd) {
-        var lookup23 = lookup15(dictOrd);
+        var lookup23 = lookup16(dictOrd);
         var pop22 = pop12(dictOrd);
         var insert22 = insert16(dictOrd);
         return function(label5) {
@@ -9830,6 +9830,8 @@
   var element2 = /* @__PURE__ */ function() {
     return element(Nothing.value);
   }();
+  var h1 = /* @__PURE__ */ element2("h1");
+  var h1_ = /* @__PURE__ */ h1([]);
   var input2 = function(props) {
     return element2("input")(props)([]);
   };
@@ -9839,6 +9841,7 @@
   var ol = /* @__PURE__ */ element2("ol");
   var ol_ = /* @__PURE__ */ ol([]);
   var span3 = /* @__PURE__ */ element2("span");
+  var span_ = /* @__PURE__ */ span3([]);
   var ul = /* @__PURE__ */ element2("ul");
   var ul_ = /* @__PURE__ */ ul([]);
   var div2 = /* @__PURE__ */ element2("div");
@@ -9849,6 +9852,7 @@
   };
   var br_ = /* @__PURE__ */ br([]);
   var b = /* @__PURE__ */ element2("b");
+  var b_ = /* @__PURE__ */ b([]);
   var aside = /* @__PURE__ */ element2("aside");
 
   // output/Halogen.HTML.Properties/index.js
@@ -10938,7 +10942,7 @@
     };
   };
   var equal = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return function(source3) {
       return function(msg) {
         return function(a1) {
@@ -10947,7 +10951,7 @@
               name: "equal",
               source: source3,
               result: function() {
-                var $48 = eq8(a1)(a2);
+                var $48 = eq9(a1)(a2);
                 if ($48) {
                   return new Right(unit);
                 }
@@ -10961,10 +10965,10 @@
     };
   };
   var assertM = function(dictApplicative) {
-    var pure33 = pure(dictApplicative);
+    var pure34 = pure(dictApplicative);
     return function(v) {
       if (v.result instanceof Right) {
-        return pure33(v.result.value0);
+        return pure34(v.result.value0);
       }
       ;
       if (v.result instanceof Left) {
@@ -11426,12 +11430,24 @@
     }
   };
   var foldl12 = /* @__PURE__ */ foldl(foldableSet);
+  var filter4 = function(dictOrd) {
+    var filterWithKey2 = filterWithKey(dictOrd);
+    return function(f) {
+      return function(v) {
+        return filterWithKey2(function(k) {
+          return function(v1) {
+            return f(k);
+          };
+        })(v);
+      };
+    };
+  };
   var eqSet = function(dictEq) {
-    var eq8 = eq(eqMap(dictEq)(eqUnit));
+    var eq9 = eq(eqMap(dictEq)(eqUnit));
     return {
       eq: function(v) {
         return function(v1) {
-          return eq8(v)(v1);
+          return eq9(v)(v1);
         };
       }
     };
@@ -12155,11 +12171,11 @@
     }
   };
   var genericEqArgument = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return {
       "genericEq'": function(v) {
         return function(v1) {
-          return eq8(v)(v1);
+          return eq9(v)(v1);
         };
       }
     };
@@ -12630,12 +12646,12 @@
     }
   };
   var eqPath = function(dictEq) {
-    var eq8 = eq(eqRevList(dictEq));
-    var eq16 = eq(eqList(dictEq));
+    var eq9 = eq(eqRevList(dictEq));
+    var eq15 = eq(eqList(dictEq));
     return {
       eq: function(x) {
         return function(y) {
-          return eq8(x.left)(y.left) && eq16(x.right)(y.right);
+          return eq9(x.left)(y.left) && eq15(x.right)(y.right);
         };
       }
     };
@@ -12716,9 +12732,6 @@
   };
   var unpath = function(v) {
     return append12(unreverse(v.left))(v.right);
-  };
-  var rightLength = function(v) {
-    return length4(v.right);
   };
   var leftLength = function(v) {
     return length8(v.left);
@@ -12847,10 +12860,10 @@
     };
   };
   var lookup7 = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     return function(k) {
       return over3(function() {
-        var $107 = lookup15(k);
+        var $107 = lookup16(k);
         return function($108) {
           return fromJust5($107($108));
         };
@@ -12858,7 +12871,7 @@
     };
   };
   var hasKey = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     return function(dictShow) {
       var show18 = show(dictShow);
       return function(source3) {
@@ -12868,7 +12881,7 @@
               name: "hasKey",
               source: source3,
               result: function() {
-                var v = lookup15(k)(m);
+                var v = lookup16(k)(m);
                 if (v instanceof Nothing) {
                   return throwError3("Could not find key " + quotes(show18(k)));
                 }
@@ -13040,10 +13053,10 @@
   var eqVariantCons = function(dictVariantEqs) {
     var variantEqs1 = variantEqs(dictVariantEqs);
     return function(dictEq) {
-      var eq16 = eq(dictEq);
+      var eq15 = eq(dictEq);
       return {
         variantEqs: function(v) {
-          return new Cons(eq16, variantEqs1($$Proxy.value));
+          return new Cons(eq15, variantEqs1($$Proxy.value));
         }
       };
     };
@@ -13352,11 +13365,11 @@
   var traceM = function() {
     return function(dictMonad) {
       var discard19 = discard6(dictMonad.Bind1());
-      var pure33 = pure(dictMonad.Applicative0());
+      var pure34 = pure(dictMonad.Applicative0());
       return function(s) {
-        return discard19(pure33(unit))(function() {
+        return discard19(pure34(unit))(function() {
           return trace1(s)(function(v) {
-            return pure33(unit);
+            return pure34(unit);
           });
         });
       };
@@ -13399,7 +13412,7 @@
     var member2 = member(dictOrd);
     var union$prime1 = union$prime(dictOrd);
     var mapMaybeWithKey2 = mapMaybeWithKey(dictOrd);
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     return function(onlyLeft) {
       return function(onlyRight) {
         return function(both) {
@@ -13419,7 +13432,7 @@
                 return function(v) {
                   return maybe(Nothing.value)(function(v2) {
                     return new Just(both(v)(v2));
-                  })(lookup15(k)(m2));
+                  })(lookup16(k)(m2));
                 };
               })(m1));
             };
@@ -13442,10 +13455,10 @@
     });
   };
   var lookup$prime = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     return function(x) {
       return function(m) {
-        var v = lookup15(x)(m);
+        var v = lookup16(x)(m);
         if (v instanceof Just) {
           return v.value0;
         }
@@ -13563,7 +13576,7 @@
 
   // output/Utility/index.js
   var stripSuffix2 = function(dictEq) {
-    var eq8 = eq(eqList(dictEq));
+    var eq9 = eq(eqList(dictEq));
     return function(v) {
       return function(v1) {
         if (v instanceof Nil) {
@@ -13582,7 +13595,7 @@
               }
               ;
               if (v3 instanceof Cons) {
-                if (eq8(v)(v3.value1)) {
+                if (eq9(v)(v3.value1)) {
                   $tco_done = true;
                   return new Just(reverse(new Cons(v3.value0, v2)));
                 }
@@ -14149,8 +14162,8 @@
     }
   };
   var genericOrdSum2 = /* @__PURE__ */ genericOrdSum(/* @__PURE__ */ genericOrdConstructor(/* @__PURE__ */ genericOrdArgument(ordMetaVar)));
-  var hasKey2 = /* @__PURE__ */ hasKey(ordMetaVar)(showMetaVar);
   var lookup9 = /* @__PURE__ */ lookup(ordMetaVar);
+  var hasKey2 = /* @__PURE__ */ hasKey(ordMetaVar)(showMetaVar);
   var eqMeta = function(dictEq) {
     var genericEq42 = genericEq1(genericEqSum2(genericEqConstructor(genericEqArgument(dictEq))));
     return {
@@ -14227,18 +14240,18 @@
     };
   };
   var eqChangeLabel = function(dictEq) {
-    var eq16 = eq(eqTooth(dictEq));
+    var eq15 = eq(eqTooth(dictEq));
     var eq24 = eq(dictEq);
     var eq34 = eq(eqExpr(dictEq));
     return {
       eq: function(x) {
         return function(y) {
           if (x instanceof Plus && y instanceof Plus) {
-            return eq16(x.value0)(y.value0);
+            return eq15(x.value0)(y.value0);
           }
           ;
           if (x instanceof Minus && y instanceof Minus) {
-            return eq16(x.value0)(y.value0);
+            return eq15(x.value0)(y.value0);
           }
           ;
           if (x instanceof CInj && y instanceof CInj) {
@@ -14379,7 +14392,7 @@
     };
   };
   var zipperpFromTo = function(dictIsExprLabel) {
-    var eq16 = eq(eqPath2(dictIsExprLabel.Ord1().Eq0()));
+    var eq15 = eq(eqPath2(dictIsExprLabel.Ord1().Eq0()));
     var zipperFromDownTo1 = zipperFromDownTo(dictIsExprLabel);
     var zipperFromUpTo1 = zipperFromUpTo(dictIsExprLabel);
     return function(begin) {
@@ -14388,8 +14401,8 @@
         var endPathLength = length4(unwrap7(zipperPath(end)));
         var v = compare5(beginPathLength)(endPathLength);
         if (v instanceof EQ) {
-          var $1343 = eq16(zipperPath(begin))(zipperPath(end));
-          if ($1343) {
+          var $1340 = eq15(zipperPath(begin))(zipperPath(end));
+          if ($1340) {
             return new Just(zipperToZipperp(begin));
           }
           ;
@@ -14478,6 +14491,30 @@
   };
   var toothPath = function(v) {
     return v.value1;
+  };
+  var subMetaExprPartially = function(dictIsExprLabel) {
+    return function(sigma) {
+      return function(v) {
+        if (v.value0 instanceof MV) {
+          var v1 = lookup9(v.value0.value0)(sigma);
+          if (v1 instanceof Nothing) {
+            return new Expr(new MV(v.value0.value0), []);
+          }
+          ;
+          if (v1 instanceof Just) {
+            return v1.value0;
+          }
+          ;
+          throw new Error("Failed pattern match at Data.Expr (line 669, column 18 - line 671, column 26): " + [v1.constructor.name]);
+        }
+        ;
+        if (v.value0 instanceof MInj) {
+          return new Expr(new MInj(v.value0.value0), map36(subMetaExprPartially(dictIsExprLabel)(sigma))(v.value1));
+        }
+        ;
+        throw new Error("Failed pattern match at Data.Expr (line 668, column 30 - line 672, column 70): " + [v.constructor.name]);
+      };
+    };
   };
   var stepPath = function(th2) {
     return function(v) {
@@ -14795,7 +14832,7 @@
                 });
               }
               ;
-              throw new Error("Failed pattern match at Data.Expr (line 813, column 7 - line 815, column 42): " + [v.constructor.name]);
+              throw new Error("Failed pattern match at Data.Expr (line 820, column 7 - line 822, column 42): " + [v.constructor.name]);
             };
           };
         };
@@ -14803,13 +14840,13 @@
     };
   };
   var matchTeeth = function(dictIsExprLabel) {
-    var eq16 = eq(dictIsExprLabel.Ord1().Eq0());
+    var eq15 = eq(dictIsExprLabel.Ord1().Eq0());
     var matchExprImpl1 = matchExprImpl(dictIsExprLabel);
     return function(v) {
       return function(v1) {
         if (v1.value0 instanceof InjectMatchLabel) {
-          var $1539 = !(eq16(v.value0)(v1.value0.value0) && length4(v.value1.right) === length4(v1.value1.right));
-          if ($1539) {
+          var $1545 = !(eq15(v.value0)(v1.value0.value0) && length4(v.value1.right) === length4(v1.value1.right));
+          if ($1545) {
             return Nothing.value;
           }
           ;
@@ -14825,12 +14862,12 @@
           return bug("what even is this case? I guess it shouldn't happen since Match has zero children, and therefore can't be a tooth?");
         }
         ;
-        throw new Error("Failed pattern match at Data.Expr (line 727, column 1 - line 729, column 30): " + [v.constructor.name, v1.constructor.name]);
+        throw new Error("Failed pattern match at Data.Expr (line 734, column 1 - line 736, column 30): " + [v.constructor.name, v1.constructor.name]);
       };
     };
   };
   var matchChange = function(dictIsExprLabel) {
-    var eq16 = eq(dictIsExprLabel.Ord1().Eq0());
+    var eq15 = eq(dictIsExprLabel.Ord1().Eq0());
     var matchTeeth1 = matchTeeth(dictIsExprLabel);
     var matchExprImpl1 = matchExprImpl(dictIsExprLabel);
     return function(v) {
@@ -14839,7 +14876,7 @@
           return new Just(new Tuple([], [v]));
         }
         ;
-        if (v.value0 instanceof CInj && (v1.value0 instanceof CInj && (v1.value0.value0 instanceof InjectMatchLabel && eq16(v.value0.value0)(v1.value0.value0.value0)))) {
+        if (v.value0 instanceof CInj && (v1.value0 instanceof CInj && (v1.value0.value0 instanceof InjectMatchLabel && eq15(v.value0.value0)(v1.value0.value0.value0)))) {
           return map37(foldl7(function(v2) {
             return function(v3) {
               return new Tuple(append22(v2.value0)(v3.value0), append22(v2.value1)(v3.value1));
@@ -14960,13 +14997,13 @@
     var foldMapMPath1 = foldMapMPath(dictReflectPathDir);
     return function(nil2) {
       return function(cons4) {
-        var $1745 = foldMapMPath1(nil2)(function(th2) {
+        var $1742 = foldMapMPath1(nil2)(function(th2) {
           return function(v) {
             return cons4(th2)(v);
           };
         });
-        return function($1746) {
-          return unwrap7($1745($1746));
+        return function($1743) {
+          return unwrap7($1742($1743));
         };
       };
     };
@@ -14988,8 +15025,8 @@
             name: "wellformedExprF",
             source: source3,
             result: function() {
-              var $1654 = expectedKidsCount1(v.value0) === length5(v.value1);
-              if ($1654) {
+              var $1660 = expectedKidsCount1(v.value0) === length5(v.value1);
+              if ($1660) {
                 return new Right(unit);
               }
               ;
@@ -15050,8 +15087,8 @@
       var prettyPath6 = prettyPath42(dictIsExprLabel);
       return {
         pretty: function(path) {
-          var $1667 = inSaneEnglishIsItDown1(path);
-          if ($1667) {
+          var $1673 = inSaneEnglishIsItDown1(path);
+          if ($1673) {
             return prettyPath5(toUpPath1(path))("\u2336");
           }
           ;
@@ -15246,37 +15283,6 @@
       };
       var go1 = go2();
       return assertInput_(wellformedExpr1("subMetaExpr"))(function() {
-        return go1;
-      });
-    };
-  };
-  var subMetaExprPartially = function(dictIsExprLabel) {
-    var wellformedExpr1 = wellformedExpr(isExprLabelMeta(dictIsExprLabel));
-    return function(sigma) {
-      var go2 = function() {
-        return function(v) {
-          if (v.value0 instanceof MV && v.value1.length === 0) {
-            var v1 = lookup9(v.value0.value0)(sigma);
-            if (v1 instanceof Nothing) {
-              return new Expr(new MV(v.value0.value0), []);
-            }
-            ;
-            if (v1 instanceof Just) {
-              return v1.value0;
-            }
-            ;
-            throw new Error("Failed pattern match at Data.Expr (line 662, column 19 - line 664, column 26): " + [v1.constructor.name]);
-          }
-          ;
-          if (v.value0 instanceof MInj) {
-            return new Expr(new MInj(v.value0.value0), map36(go2())(v.value1));
-          }
-          ;
-          throw new Error("Failed pattern match at Data.Expr (line 661, column 8 - line 665, column 46): " + [v.constructor.name]);
-        };
-      };
-      var go1 = go2();
-      return assertInput_(wellformedExpr1("subMetaExprPartially"))(function() {
         return go1;
       });
     };
@@ -15557,9 +15563,9 @@
   };
   var query3 = function() {
     return function(dictIsSymbol) {
-      var lookup15 = lookup10(dictIsSymbol);
+      var lookup16 = lookup10(dictIsSymbol);
       return function(dictOrd) {
-        var lookup23 = lookup15(dictOrd);
+        var lookup23 = lookup16(dictOrd);
         return function(v) {
           return function(label5) {
             return function(p2) {
@@ -16639,14 +16645,14 @@
     };
   };
   var insert9 = function(dictOrd) {
-    var lookup15 = lookup(dictOrd);
+    var lookup16 = lookup(dictOrd);
     var insert16 = insert(dictOrd);
     return function(dictOrd1) {
       var insert22 = insert7(dictOrd1);
       return function(k) {
         return function(v) {
           return function(m) {
-            var v1 = lookup15(k)(m);
+            var v1 = lookup16(k)(m);
             if (v1 instanceof Nothing) {
               return insert16(k)(insert22(v)(empty7))(m);
             }
@@ -16691,7 +16697,7 @@
     var Ord1 = dictIsExprLabel.Ord1();
     var ordExpr2 = ordExpr(Ord1);
     var insert22 = insert10(ordExpr2);
-    var eq16 = eq(Ord1.Eq0());
+    var eq15 = eq(Ord1.Eq0());
     var union1 = union5(ordExpr2);
     return function(v) {
       return function(v1) {
@@ -16699,7 +16705,7 @@
           return new Just(insert22(v.value0.value0)(v1)(empty9));
         }
         ;
-        if (v.value0 instanceof MInj && eq16(v.value0.value0)(v1.value0)) {
+        if (v.value0 instanceof MInj && eq15(v.value0.value0)(v1.value0)) {
           return foldl9(lift22(union1))(new Just(empty9))(zipWith2(getMatches(dictIsExprLabel))(v.value1)(v1.value1));
         }
         ;
@@ -16740,7 +16746,7 @@
   };
   var unify = function(dictIsExprLabel) {
     var occurs1 = occurs(dictIsExprLabel);
-    var eq16 = eq(dictIsExprLabel.Ord1().Eq0());
+    var eq15 = eq(dictIsExprLabel.Ord1().Eq0());
     return function(v) {
       return function(v1) {
         var v2 = new Tuple(v.value0, v1.value0);
@@ -16756,7 +16762,7 @@
           return unify(dictIsExprLabel)(v1)(v);
         }
         ;
-        if (v2.value0 instanceof MInj && (v2.value1 instanceof MInj && eq16(v2.value0.value0)(v2.value1.value0))) {
+        if (v2.value0 instanceof MInj && (v2.value1 instanceof MInj && eq15(v2.value0.value0)(v2.value1.value0))) {
           return bind21(unifyLists(dictIsExprLabel)(fromFoldable8(v.value1))(fromFoldable8(v1.value1)))(function(v3) {
             return pure17(new Tuple(new Expr(new MInj(v2.value0.value0), fromFoldable12(v3.value0)), v3.value1));
           });
@@ -16780,7 +16786,7 @@
   var pure18 = /* @__PURE__ */ pure(applicativeMaybe);
   var trace2 = /* @__PURE__ */ trace();
   var lookup11 = /* @__PURE__ */ lookup(ordMetaVar);
-  var append9 = /* @__PURE__ */ append(semigroupArray);
+  var append13 = /* @__PURE__ */ append(semigroupArray);
   var fromFoldable13 = /* @__PURE__ */ fromFoldable3(foldableList);
   var and2 = /* @__PURE__ */ and(foldableList)(heytingAlgebraBoolean);
   var map53 = /* @__PURE__ */ map(functorMap);
@@ -16813,15 +16819,15 @@
           return new Replace(subExpr(v.value0), subExpr(v.value1));
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 256, column 3 - line 260, column 57): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 266, column 3 - line 270, column 57): " + [v.constructor.name]);
       };
     };
   };
   var isPostfix = function(dictEq) {
-    var eq16 = eq(eqExpr(dictEq));
+    var eq9 = eq(eqExpr(dictEq));
     return function(v) {
       return function(v1) {
-        if (eq16(v)(v1)) {
+        if (eq9(v)(v1)) {
           return new Just(map212(CInj.create)(v));
         }
         ;
@@ -16842,7 +16848,7 @@
     };
   };
   var isMerelyASubstitution = function(dictIsExprLabel) {
-    var eq16 = eq(eqExpr(eqMeta(dictIsExprLabel.Ord1().Eq0())));
+    var eq9 = eq(eqExpr(eqMeta(dictIsExprLabel.Ord1().Eq0())));
     return function(v) {
       if (v.value0 instanceof CInj) {
         return all2(isMerelyASubstitution(dictIsExprLabel))(v.value1);
@@ -16852,7 +16858,7 @@
         return true;
       }
       ;
-      if (v.value0 instanceof Replace && (v.value1.length === 0 && eq16(v.value0.value0)(v.value0.value1))) {
+      if (v.value0 instanceof Replace && (v.value1.length === 0 && eq9(v.value0.value0)(v.value0.value1))) {
         return true;
       }
       ;
@@ -16860,141 +16866,41 @@
     };
   };
   var isId = function(dictIsExprLabel) {
-    var eq16 = eq(eqExpr(dictIsExprLabel.Ord1().Eq0()));
+    var eq9 = eq(eqExpr(dictIsExprLabel.Ord1().Eq0()));
     return function(v) {
       if (v.value0 instanceof CInj) {
         return all2(isId(dictIsExprLabel))(v.value1);
       }
       ;
       if (v.value0 instanceof Replace && v.value1.length === 0) {
-        return eq16(v.value0.value0)(v.value0.value1);
+        return eq9(v.value0.value0)(v.value0.value1);
       }
       ;
       return false;
     };
   };
-  var minusLub = function(dictIsExprLabel) {
-    var Eq0 = dictIsExprLabel.Ord1().Eq0();
-    var eq16 = eq(eqExpr(eqChangeLabel(Eq0)));
-    var isId1 = isId(dictIsExprLabel);
-    var eq24 = eq(Eq0);
-    return function(v) {
-      return function(v1) {
-        if (eq16(v)(v1)) {
-          return new Just(v);
-        }
-        ;
-        var v2 = function(v3) {
-          if (v.value0 instanceof Replace && (v.value1.length === 0 && isId1(v1))) {
-            return new Just(v);
-          }
-          ;
-          return Nothing.value;
-        };
-        if (v.value0 instanceof Minus && (v.value1.length === 1 && v1.value0 instanceof CInj)) {
-          var $223 = eq24(v.value0.value0.value0)(v1.value0.value0);
-          if ($223) {
-            var $224 = length5(v1.value1) === ((1 + leftLength(v.value0.value0.value1) | 0) + rightLength(v.value0.value0.value1) | 0);
-            if ($224) {
-              return map311(function() {
-                var $432 = Expr.create(new Minus(v.value0.value0));
-                return function($433) {
-                  return $432(singleton5($433));
-                };
-              }())(minusLub(dictIsExprLabel)(v["value1"][0])(fromJust$prime("minusLub")(index3(v1.value1)(leftLength(v.value0.value0.value1)))));
-            }
-            ;
-            return v2(true);
-          }
-          ;
-          return v2(true);
-        }
-        ;
-        return v2(true);
-      };
-    };
-  };
-  var plusLub = function(dictIsExprLabel) {
-    var eq16 = eq(eqExpr(eqChangeLabel(dictIsExprLabel.Ord1().Eq0())));
-    var isId1 = isId(dictIsExprLabel);
-    return function(v) {
-      return function(v1) {
-        if (eq16(v)(v1)) {
-          return new Just(v);
-        }
-        ;
-        if (v.value0 instanceof Plus && v.value1.length === 1) {
-          return map311(function() {
-            var $434 = Expr.create(new Plus(v.value0.value0));
-            return function($435) {
-              return $434(singleton5($435));
-            };
-          }())(plusLub(dictIsExprLabel)(v["value1"][0])(v1));
-        }
-        ;
-        if (v.value0 instanceof Replace && (v.value1.length === 0 && isId1(v1))) {
-          return new Just(v);
-        }
-        ;
-        return Nothing.value;
-      };
-    };
-  };
   var lub = function(dictIsExprLabel) {
-    var eq16 = eq(dictIsExprLabel.Ord1().Eq0());
+    var eq9 = eq(dictIsExprLabel.Ord1().Eq0());
     var isId1 = isId(dictIsExprLabel);
-    var minusLub1 = minusLub(dictIsExprLabel);
-    var plusLub1 = plusLub(dictIsExprLabel);
+    var pretty7 = pretty(prettyExpr(isExprLabelChangeLabel(dictIsExprLabel)));
     return function(c1) {
       return function(c2) {
         var v = new Tuple(c1, c2);
-        if (v.value0.value0 instanceof CInj && (v.value1.value0 instanceof CInj && eq16(v.value0.value0.value0)(v.value1.value0.value0))) {
+        if (v.value0.value0 instanceof CInj && (v.value1.value0 instanceof CInj && eq9(v.value0.value0.value0)(v.value1.value0.value0))) {
           return map311(Expr.create(new CInj(v.value0.value0.value0)))(sequence4(zipWith2(lub(dictIsExprLabel))(v.value0.value1)(v.value1.value1)));
         }
         ;
-        var v1 = function(v2) {
-          var v3 = function(v4) {
-            var v5 = function(v6) {
-              var v7 = function(v8) {
-                if (isId1(c1)) {
-                  return pure18(c2);
-                }
-                ;
-                if (isId1(c2)) {
-                  return pure18(c1);
-                }
-                ;
-                return trace2("WARNING: I think that this case probably shouldn't happen if I figured out the right way to code lub")(function(v9) {
-                  return Nothing.value;
-                });
-              };
-              var $255 = minusLub1(c2)(c1);
-              if ($255 instanceof Just) {
-                return pure18($255.value0);
-              }
-              ;
-              return v7(true);
-            };
-            var $258 = minusLub1(c1)(c2);
-            if ($258 instanceof Just) {
-              return pure18($258.value0);
-            }
-            ;
-            return v5(true);
-          };
-          var $261 = plusLub1(c2)(c1);
-          if ($261 instanceof Just) {
-            return pure18($261.value0);
-          }
-          ;
-          return v3(true);
-        };
-        var $264 = plusLub1(c1)(c2);
-        if ($264 instanceof Just) {
-          return pure18($264.value0);
+        if (isId1(c1)) {
+          return pure18(c2);
         }
         ;
-        return v1(true);
+        if (isId1(c2)) {
+          return pure18(c1);
+        }
+        ;
+        return trace2("WARNING: I think that this case probably shouldn't happen if I figured out the right way to code lub. It was: " + (pretty7(c1) + (" " + pretty7(c2))))(function(v1) {
+          return Nothing.value;
+        });
       };
     };
   };
@@ -17028,9 +16934,9 @@
           return new Expr(subSomeChangeLabel1(sub3)(v.value0), map43(subSomeMetaChange(dictIsExprLabel)(sub3))(v.value1));
         };
         if (v.value0 instanceof CInj && v.value0.value0 instanceof MV) {
-          var $275 = lookup11(v.value0.value0.value0)(sub3);
-          if ($275 instanceof Just) {
-            return inject($275.value0);
+          var $203 = lookup11(v.value0.value0.value0)(sub3);
+          if ($203 instanceof Just) {
+            return inject($203.value0);
           }
           ;
           return v1(true);
@@ -17066,21 +16972,21 @@
     };
   };
   var lEndpoint = function(dictIsExprLabel) {
-    var $436 = endpoints(dictIsExprLabel);
-    return function($437) {
-      return fst($436($437));
+    var $360 = endpoints(dictIsExprLabel);
+    return function($361) {
+      return fst($360($361));
     };
   };
   var rEndpoint = function(dictIsExprLabel) {
-    var $438 = endpoints(dictIsExprLabel);
-    return function($439) {
-      return snd($438($439));
+    var $362 = endpoints(dictIsExprLabel);
+    return function($363) {
+      return snd($362($363));
     };
   };
   var eliminateReplaces = function(dictIsExprLabel) {
-    var eq16 = eq(dictIsExprLabel.Ord1().Eq0());
+    var eq9 = eq(dictIsExprLabel.Ord1().Eq0());
     return function(c) {
-      if (c.value0 instanceof Replace && (c.value1.length === 0 && eq16(c.value0.value0.value0)(c.value0.value1.value0))) {
+      if (c.value0 instanceof Replace && (c.value1.length === 0 && eq9(c.value0.value0.value0)(c.value0.value1.value0))) {
         return new Expr(new CInj(c.value0.value0.value0), zipWith2(function(s1) {
           return function(s2) {
             return eliminateReplaces(dictIsExprLabel)(new Expr(new Replace(s1, s2), []));
@@ -17092,12 +16998,12 @@
     };
   };
   var diff = function(dictEq) {
-    var eq16 = eq(eqExpr(dictEq));
+    var eq9 = eq(eqExpr(dictEq));
     var isPostfix1 = isPostfix(dictEq);
-    var eq24 = eq(dictEq);
+    var eq15 = eq(dictEq);
     return function(v) {
       return function(v1) {
-        if (eq16(v)(v1)) {
+        if (eq9(v)(v1)) {
           return map212(CInj.create)(v);
         }
         ;
@@ -17113,36 +17019,36 @@
           }
           ;
           if (v3 instanceof Nothing) {
-            var $329 = eq24(v.value0)(v1.value0);
-            if ($329) {
+            var $257 = eq15(v.value0)(v1.value0);
+            if ($257) {
               return new Expr(new CInj(v.value0), zipWith2(diff(dictEq))(v.value1)(v1.value1));
             }
             ;
             return new Expr(new Replace(v, v1), []);
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 238, column 20 - line 240, column 129): " + [v3.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 248, column 20 - line 250, column 129): " + [v3.constructor.name]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 236, column 5 - line 240, column 129): " + [v2.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.ChangeAlgebra (line 246, column 5 - line 250, column 129): " + [v2.constructor.name]);
       };
     };
   };
   var compose2 = function(dictIsExprLabel) {
     var Eq0 = dictIsExprLabel.Ord1().Eq0();
-    var eq16 = eq(eqTooth(Eq0));
-    var eq24 = eq(Eq0);
+    var eq9 = eq(eqTooth(Eq0));
+    var eq15 = eq(Eq0);
     var endpoints1 = endpoints(dictIsExprLabel);
-    var eq34 = eq(eqExpr(eqChangeLabel(Eq0)));
+    var eq24 = eq(eqExpr(eqChangeLabel(Eq0)));
     return function(c1) {
       return function(c2) {
         var v = new Tuple(c1, c2);
-        if (v.value0.value0 instanceof Plus && (v.value0.value1.length === 1 && (v.value1.value0 instanceof Minus && (v.value1.value1.length === 1 && eq16(v.value0.value0.value0)(v.value1.value0.value0))))) {
+        if (v.value0.value0 instanceof Plus && (v.value0.value1.length === 1 && (v.value1.value0 instanceof Minus && (v.value1.value1.length === 1 && eq9(v.value0.value0.value0)(v.value1.value0.value0))))) {
           return compose2(dictIsExprLabel)(v["value0"]["value1"][0])(v["value1"]["value1"][0]);
         }
         ;
-        if (v.value0.value0 instanceof Minus && (v.value0.value1.length === 1 && (v.value1.value0 instanceof Plus && (v.value1.value1.length === 1 && eq16(v.value0.value0.value0)(v.value1.value0.value0))))) {
-          return new Expr(new CInj(v.value0.value0.value0.value0), append9(fromFoldable13(map113(map212(CInj.create))(unreverse(v.value0.value0.value0.value1.left))))(append9([compose2(dictIsExprLabel)(v["value0"]["value1"][0])(v["value1"]["value1"][0])])(fromFoldable13(map113(map212(CInj.create))(v.value0.value0.value0.value1.right)))));
+        if (v.value0.value0 instanceof Minus && (v.value0.value1.length === 1 && (v.value1.value0 instanceof Plus && (v.value1.value1.length === 1 && eq9(v.value0.value0.value0)(v.value1.value0.value0))))) {
+          return new Expr(new CInj(v.value0.value0.value0.value0), append13(fromFoldable13(map113(map212(CInj.create))(unreverse(v.value0.value0.value0.value1.left))))(append13([compose2(dictIsExprLabel)(v["value0"]["value1"][0])(v["value1"]["value1"][0])])(fromFoldable13(map113(map212(CInj.create))(v.value0.value0.value0.value1.right)))));
         }
         ;
         if (v.value1.value0 instanceof Plus && v.value1.value1.length === 1) {
@@ -17155,7 +17061,7 @@
         ;
         var v1 = function(v2) {
           var v3 = function(v4) {
-            if (v.value0.value0 instanceof CInj && (v.value1.value0 instanceof CInj && eq24(v.value0.value0.value0)(v.value1.value0.value0))) {
+            if (v.value0.value0 instanceof CInj && (v.value1.value0 instanceof CInj && eq15(v.value0.value0.value0)(v.value1.value0.value0))) {
               return new Expr(new CInj(v.value0.value0.value0), zipWith2(compose2(dictIsExprLabel))(v.value0.value1)(v.value1.value1));
             }
             ;
@@ -17164,16 +17070,16 @@
             return new Expr(new Replace(v5.value0, v6.value1), []);
           };
           if (v.value0.value0 instanceof CInj && (v.value1.value0 instanceof Minus && v.value1.value1.length === 1)) {
-            var $388 = eq24(v.value1.value0.value0.value0)(v.value0.value0.value0);
-            if ($388) {
-              var $389 = fromJust$prime("compose")(zipAt(leftLength(v.value1.value0.value0.value1))(fromFoldable9(v.value0.value1)));
-              var $390 = and2(zipWith(function(e) {
+            var $316 = eq15(v.value1.value0.value0.value0)(v.value0.value0.value0);
+            if ($316) {
+              var $317 = fromJust$prime("compose")(zipAt(leftLength(v.value1.value0.value0.value1))(fromFoldable9(v.value0.value1)));
+              var $318 = and2(zipWith(function(e) {
                 return function(c) {
-                  return eq34(inject(e))(c);
+                  return eq24(inject(e))(c);
                 };
-              })(unpath(v.value1.value0.value0.value1))(unpath($389.value0)));
-              if ($390) {
-                return new Expr(new Minus(v.value1.value0.value0), [compose2(dictIsExprLabel)($389.value1)(v["value1"]["value1"][0])]);
+              })(unpath(v.value1.value0.value0.value1))(unpath($317.value0)));
+              if ($318) {
+                return new Expr(new Minus(v.value1.value0.value0), [compose2(dictIsExprLabel)($317.value1)(v["value1"]["value1"][0])]);
               }
               ;
               return v3(true);
@@ -17185,16 +17091,16 @@
           return v3(true);
         };
         if (v.value0.value0 instanceof Plus && (v.value0.value1.length === 1 && v.value1.value0 instanceof CInj)) {
-          var $405 = eq24(v.value0.value0.value0.value0)(v.value1.value0.value0);
-          if ($405) {
-            var $406 = fromJust$prime("compose")(zipAt(leftLength(v.value0.value0.value0.value1))(fromFoldable9(v.value1.value1)));
-            var $407 = and2(zipWith(function(e) {
+          var $333 = eq15(v.value0.value0.value0.value0)(v.value1.value0.value0);
+          if ($333) {
+            var $334 = fromJust$prime("compose")(zipAt(leftLength(v.value0.value0.value0.value1))(fromFoldable9(v.value1.value1)));
+            var $335 = and2(zipWith(function(e) {
               return function(c) {
-                return eq34(inject(e))(c);
+                return eq24(inject(e))(c);
               };
-            })(unpath(v.value0.value0.value0.value1))(unpath($406.value0)));
-            if ($407) {
-              return new Expr(new Plus(v.value0.value0.value0), [compose2(dictIsExprLabel)(v["value0"]["value1"][0])($406.value1)]);
+            })(unpath(v.value0.value0.value0.value1))(unpath($334.value0)));
+            if ($335) {
+              return new Expr(new Plus(v.value0.value0.value0), [compose2(dictIsExprLabel)(v["value0"]["value1"][0])($334.value1)]);
             }
             ;
             return v1(true);
@@ -17351,7 +17257,7 @@
   var map115 = /* @__PURE__ */ map(functorZipper);
   var bind23 = /* @__PURE__ */ bind(bindMaybe);
   var fromFoldable62 = /* @__PURE__ */ fromFoldable(foldableList);
-  var append13 = /* @__PURE__ */ append(semigroupList);
+  var append14 = /* @__PURE__ */ append(semigroupList);
   var fromFoldable72 = /* @__PURE__ */ fromFoldable(foldableRevList);
   var SortString = /* @__PURE__ */ function() {
     function SortString2() {
@@ -18046,11 +17952,11 @@
     return dict.language;
   };
   var makeFreshLabel = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     var map132 = map26(ordTuple3(ordExpr(ordMeta(ordSortLabel(dictIsRuleLabel.IsExprLabel0().Ord1())))));
     return function(ruleLabel) {
-      var v = lookup15(ruleLabel)(language1);
+      var v = lookup16(ruleLabel)(language1);
       var sigma = fromFoldable32(map132(function(mv) {
         return new Tuple(mv, fromMetaVar(freshMetaVar(metaVarName(mv))));
       })(v.value0));
@@ -18058,13 +17964,13 @@
     };
   };
   var makeLabel = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     var pretty13 = pretty(dictIsRuleLabel.Pretty5());
     var pretty23 = pretty(prettyArray(prettyTuple2(prettyExpr(isExprLabelMeta(isExprLabelSortLabel(dictIsRuleLabel.IsExprLabel0()))))));
     return function(ruleLabel) {
       return function(values3) {
-        var v = lookup15(ruleLabel)(language1);
+        var v = lookup16(ruleLabel)(language1);
         var sigma = fromFoldable42(map41(lmap4(RuleMetaVar.create))(values3));
         return assert(equal2("makeLabel")(function(v1) {
           return "Given substitution must have same vars as quantified in rule:" + bullets(["ruleLabel = " + pretty13(ruleLabel), "value keys = " + pretty23(values3)]);
@@ -18077,12 +17983,12 @@
     };
   };
   var nonemptyPathInnerSort = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     var subMetaExprPartially3 = subMetaExprPartially(isExprLabelSortLabel(dictIsRuleLabel.IsExprLabel0()));
     return function(v) {
       if (v instanceof Cons && v.value0.value0 instanceof DerivLabel) {
-        var v1 = lookup15(v.value0.value0.value0)(language1);
+        var v1 = lookup16(v.value0.value0.value0)(language1);
         return subMetaExprPartially3(v.value0.value0.value1)(fromJust$prime("nepis")(index3(v1.value1)(leftLength(v.value0.value1))));
       }
       ;
@@ -18092,11 +17998,11 @@
   var kidSorts = function(dictIsExprLabel) {
     var subMetaExprPartially3 = subMetaExprPartially(isExprLabelSortLabel(dictIsExprLabel));
     return function(dictIsRuleLabel) {
-      var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+      var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
       var language1 = language2(dictIsRuleLabel);
       return function(v) {
         if (v instanceof DerivLabel) {
-          var v1 = lookup15(v.value0)(language1);
+          var v1 = lookup16(v.value0)(language1);
           return map41(subMetaExprPartially3(v.value1))(v1.value1);
         }
         ;
@@ -18112,15 +18018,15 @@
     return dict.isHoleRuleTotalMap;
   };
   var isHole = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var isHoleRuleTotalMap1 = isHoleRuleTotalMap(dictIsRuleLabel);
     return function(v) {
       var v1 = function(v2) {
         return false;
       };
       if (v instanceof DerivLabel) {
-        var $1035 = lookup15(v.value0)(isHoleRuleTotalMap1);
-        if ($1035 instanceof Yes) {
+        var $1019 = lookup16(v.value0)(isHoleRuleTotalMap1);
+        if ($1019 instanceof Yes) {
           return true;
         }
         ;
@@ -18136,10 +18042,10 @@
     };
   };
   var hasInnerHole = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var isHoleRuleTotalMap1 = isHoleRuleTotalMap(dictIsRuleLabel);
     return function(r) {
-      var v = lookup15(r)(isHoleRuleTotalMap1);
+      var v = lookup16(r)(isHoleRuleTotalMap1);
       if (v instanceof Yes && v.value0) {
         return true;
       }
@@ -18148,18 +18054,18 @@
     };
   };
   var getSortFromSub = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     var subMetaExprPartially3 = subMetaExprPartially(isExprLabelSortLabel(dictIsRuleLabel.IsExprLabel0()));
     return function(r) {
       return function(sub3) {
-        var v = lookup15(r)(language1);
+        var v = lookup16(r)(language1);
         return subMetaExprPartially3(sub3)(v.value2);
       };
     };
   };
   var isInnerHoleDerivLabel = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var isHoleRuleTotalMap1 = isHoleRuleTotalMap(dictIsRuleLabel);
     var getSortFromSub1 = getSortFromSub(dictIsRuleLabel);
     return function(v) {
@@ -18167,8 +18073,8 @@
         return empty10;
       };
       if (v instanceof DerivLabel) {
-        var $1046 = lookup15(v.value0)(isHoleRuleTotalMap1);
-        if ($1046 instanceof Yes && $1046.value0) {
+        var $1030 = lookup16(v.value0)(isHoleRuleTotalMap1);
+        if ($1030 instanceof Yes && $1030.value0) {
           return pure19(getSortFromSub1(v.value0)(v.value1));
         }
         ;
@@ -18197,14 +18103,14 @@
     return new Expr(new MV(freshMetaVar(name15)), []);
   };
   var forgetCollectDerivLabel = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     var map132 = map26(ordTuple3(ordExpr(ordMeta(ordSortLabel(dictIsRuleLabel.IsExprLabel0().Ord1())))));
     return function(forgetSorts2) {
       return function(label5) {
         var v = new Tuple(forgetSorts2(label5), label5);
         if (v.value0 instanceof Nothing && v.value1 instanceof DerivLabel) {
-          var v1 = lookup15(v.value1.value0)(language1);
+          var v1 = lookup16(v.value1.value0)(language1);
           var freshVars = fromFoldable32(map63(function(mv) {
             return new Tuple(mv, freshMetaVar(metaVarName(mv)));
           })(v1.value0));
@@ -18256,10 +18162,10 @@
     };
   };
   var expectedHypsCount = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language1 = language2(dictIsRuleLabel);
     return function(r) {
-      var v = lookup15(r)(language1);
+      var v = lookup16(r)(language1);
       return length5(v.value1);
     };
   };
@@ -18361,7 +18267,7 @@
           return new Right(v.value0);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 643, column 31 - line 645, column 40): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 624, column 31 - line 626, column 40): " + [v.constructor.name]);
       };
       var justLabels = map114(simplifyDerivLabel)(unzipper2(dzipper));
       return stringify(encodeJson1(justLabels));
@@ -18393,16 +18299,16 @@
                   return Nil.value;
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 700, column 25 - line 700, column 88): " + [v1.constructor.name, v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 681, column 25 - line 681, column 88): " + [v1.constructor.name, v2.constructor.name]);
               };
             };
             return reverse(toTeeth(fromFoldable52(possiblyArray.value0))(new Zipper(Nil.value, dterm)));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 697, column 13 - line 706, column 117): " + [possiblyArray.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 678, column 13 - line 687, column 117): " + [possiblyArray.constructor.name]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 693, column 5 - line 706, column 117): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 674, column 5 - line 687, column 117): " + [v.constructor.name]);
       };
     };
   };
@@ -18502,7 +18408,7 @@
   };
   var isHoleDerivLabel = function(dictIsRuleLabel) {
     var derivLabelSort1 = derivLabelSort(dictIsRuleLabel);
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var isHoleRuleTotalMap1 = isHoleRuleTotalMap(dictIsRuleLabel);
     return function(l) {
       var v = function(v1) {
@@ -18513,8 +18419,8 @@
         return Nothing.value;
       };
       if (l instanceof DerivLabel) {
-        var $1177 = lookup15(l.value0)(isHoleRuleTotalMap1);
-        if ($1177 instanceof Yes) {
+        var $1161 = lookup16(l.value0)(isHoleRuleTotalMap1);
+        if ($1161 instanceof Yes) {
           return pure19(derivLabelSort1(l));
         }
         ;
@@ -18555,10 +18461,10 @@
               return label5;
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 576, column 24 - line 578, column 33): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 557, column 24 - line 559, column 33): " + [v1.constructor.name]);
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 574, column 9 - line 578, column 33): " + [v.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 555, column 9 - line 559, column 33): " + [v.constructor.name]);
         };
       };
     };
@@ -18624,9 +18530,9 @@
     var subDerivLabel1 = subDerivLabel(dictIsRuleLabel);
     var fillDefaultsDerivPath1 = fillDefaultsDerivPath(dictIsRuleLabel);
     return function(sub3) {
-      var $1264 = map92(subDerivLabel1(sub3));
-      return function($1265) {
-        return fillDefaultsDerivPath1($1264($1265));
+      var $1237 = map92(subDerivLabel1(sub3));
+      return function($1238) {
+        return fillDefaultsDerivPath1($1237($1238));
       };
     };
   };
@@ -18634,9 +18540,9 @@
     var subDerivLabel1 = subDerivLabel(dictIsRuleLabel);
     var fillDefaultsDerivTooth1 = fillDefaultsDerivTooth(dictIsRuleLabel);
     return function(sub3) {
-      var $1266 = map102(subDerivLabel1(sub3));
-      return function($1267) {
-        return fillDefaultsDerivTooth1($1266($1267));
+      var $1239 = map102(subDerivLabel1(sub3));
+      return function($1240) {
+        return fillDefaultsDerivTooth1($1239($1240));
       };
     };
   };
@@ -18651,9 +18557,9 @@
     var subDerivLabel1 = subDerivLabel(dictIsRuleLabel);
     var fillDefaultsDerivZipper1 = fillDefaultsDerivZipper(dictIsRuleLabel);
     return function(sub3) {
-      var $1268 = map115(subDerivLabel1(sub3));
-      return function($1269) {
-        return fillDefaultsDerivZipper1($1268($1269));
+      var $1241 = map115(subDerivLabel1(sub3));
+      return function($1242) {
+        return fillDefaultsDerivZipper1($1241($1242));
       };
     };
   };
@@ -18661,9 +18567,9 @@
     var subDerivLabel1 = subDerivLabel(dictIsRuleLabel);
     var fillDefaultsDerivTerm1 = fillDefaultsDerivTerm(dictIsRuleLabel);
     return function(sub3) {
-      var $1270 = map114(subDerivLabel1(sub3));
-      return function($1271) {
-        return fillDefaultsDerivTerm1($1270($1271));
+      var $1243 = map114(subDerivLabel1(sub3));
+      return function($1244) {
+        return fillDefaultsDerivTerm1($1243($1244));
       };
     };
   };
@@ -18684,7 +18590,7 @@
           });
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 531, column 1 - line 532, column 46): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 512, column 1 - line 513, column 46): " + [v.constructor.name]);
       };
     };
   };
@@ -18700,9 +18606,9 @@
       return function(v) {
         return bind23(inferTerms(dictIsExprLabel)(dictIsRuleLabel)(fromFoldable52(v.value1)))(function(sub12) {
           var inferredKidSorts = map41(function() {
-            var $1272 = subMetaExprPartially3(sub12);
-            return function($1273) {
-              return $1272(derivTermSort1($1273));
+            var $1245 = subMetaExprPartially3(sub12);
+            return function($1246) {
+              return $1245(derivTermSort1($1246));
             };
           }())(v.value1);
           var expectedKidSorts = map41(subMetaExprPartially3(sub12))(kidSorts2(v.value0));
@@ -18734,8 +18640,8 @@
           }
           ;
           if (v1 instanceof Cons) {
-            return bind23(inferTerms2(fromFoldable62(append13(fromFoldable72(v1.value0.value1.left))(v1.value0.value1.right))))(function(sub12) {
-              var inferredKidSorts = map44(subMetaExprPartially3(sub12))(append13(map44(derivTermSort1)(unreverse(v1.value0.value1.left)))(new Cons(v, map44(derivTermSort1)(v1.value0.value1.right))));
+            return bind23(inferTerms2(fromFoldable62(append14(fromFoldable72(v1.value0.value1.left))(v1.value0.value1.right))))(function(sub12) {
+              var inferredKidSorts = map44(subMetaExprPartially3(sub12))(append14(map44(derivTermSort1)(unreverse(v1.value0.value1.left)))(new Cons(v, map44(derivTermSort1)(v1.value0.value1.right))));
               var expectedKidSorts = map41(subMetaExprPartially3(sub12))(kidSorts2(v1.value0.value0));
               return bind23(unifyLists2(fromFoldable62(inferredKidSorts))(fromFoldable52(expectedKidSorts)))(function(v2) {
                 var sub122 = composeSub3(sub12)(v2.value1);
@@ -18746,7 +18652,7 @@
             });
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 550, column 1 - line 551, column 56): " + [v.constructor.name, v1.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 531, column 1 - line 532, column 56): " + [v.constructor.name, v1.constructor.name]);
         };
       };
     };
@@ -18791,7 +18697,7 @@
             return new DerivLiteral(v2.value0);
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 652, column 33 - line 654, column 40): " + [v2.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 633, column 33 - line 635, column 40): " + [v2.constructor.name]);
         };
         var v = jsonParser(string);
         if (v instanceof Left) {
@@ -18815,10 +18721,10 @@
             return $$final;
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 660, column 13 - line 671, column 26): " + [simplifiedTree.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 641, column 13 - line 652, column 26): " + [simplifiedTree.constructor.name]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 656, column 5 - line 671, column 26): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Grammar (line 637, column 5 - line 652, column 26): " + [v.constructor.name]);
       };
     };
   };
@@ -18862,7 +18768,7 @@
     return WrapAction2;
   }();
   var newToothFromRule = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language4 = language2(dictIsRuleLabel);
     var IsExprLabel0 = dictIsRuleLabel.IsExprLabel0();
     var subMetaExprPartially3 = subMetaExprPartially(isExprLabelSortLabel(IsExprLabel0));
@@ -18871,7 +18777,7 @@
     var subDerivTooth2 = subDerivTooth(dictIsRuleLabel);
     return function(r) {
       return function(kidIx) {
-        var v = lookup15(r)(language4);
+        var v = lookup16(r)(language4);
         var sigma = freshenRuleMetaVars(v.value0);
         var hyps = map45(subMetaExprPartially3(sigma))(v.value1);
         var v1 = assertI(just("newPathFromRule.hpySortPath")(zipAt(kidIx)(fromFoldable11(hyps))));
@@ -18885,7 +18791,7 @@
     };
   };
   var newTermFromRule = function(dictIsRuleLabel) {
-    var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+    var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
     var language4 = language2(dictIsRuleLabel);
     var IsExprLabel0 = dictIsRuleLabel.IsExprLabel0();
     var subMetaExprPartially3 = subMetaExprPartially(isExprLabelSortLabel(IsExprLabel0));
@@ -18893,7 +18799,7 @@
     var infer2 = infer(IsExprLabel0)(dictIsRuleLabel);
     var subDerivTerm3 = subDerivTerm(dictIsRuleLabel);
     return function(r) {
-      var v = lookup15(r)(language4);
+      var v = lookup16(r)(language4);
       var sigma = freshenRuleMetaVars(v.value0);
       var hyps = map45(subMetaExprPartially3(sigma))(v.value1);
       var term1 = new Expr(new DerivLabel(r, sigma), map45(function() {
@@ -34958,7 +34864,7 @@
   var fromFoldable15 = /* @__PURE__ */ fromFoldable(foldableArray);
   var map64 = /* @__PURE__ */ map(functorMap);
   var union7 = /* @__PURE__ */ union(ordMetaVar);
-  var append14 = /* @__PURE__ */ append(semigroupArray);
+  var append15 = /* @__PURE__ */ append(semigroupArray);
   var fromFoldable16 = /* @__PURE__ */ fromFoldable3(foldableList);
   var prettyMap2 = /* @__PURE__ */ prettyMap(prettyMetaVar);
   var append23 = /* @__PURE__ */ append(semigroupList);
@@ -35571,12 +35477,12 @@
     var subMetaExpr2 = subMetaExpr(isExprLabelChangeLabel(isExprLabelMeta3));
     var endpoints3 = endpoints(isExprLabelMeta3);
     return function(dictIsRuleLabel) {
-      var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+      var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
       return function(v) {
         return function(v1) {
           return function(v2) {
             if (v2.value0 instanceof SSInj && v2.value0.value0 instanceof DerivLabel) {
-              var v3 = lookup15(v2.value0.value0.value0)(v);
+              var v3 = lookup16(v2.value0.value0.value0)(v);
               var findUpBoundary = function(v4) {
                 if (v4.value0.value0 instanceof Boundary && (v4.value0.value0.value0 instanceof Up && v4.value0.value1.length === 1)) {
                   return new Just(new Tuple(v4.value0.value0.value1, new Tuple(v4["value0"]["value1"][0], v4.value1)));
@@ -35598,7 +35504,7 @@
                   };
                   return pure20(parentBoundary(new Expr(new SSInj(new DerivLabel(v2.value0.value0.value0, map64(function($852) {
                     return snd(endpoints3($852));
-                  })(sub$prime))), append14(fromFoldable16(leftKids))(append14([wrapBoundary1(Down.value)(v5.value1)(v4.value1.value0.value1.value0)])(fromFoldable16(rightKids))))));
+                  })(sub$prime))), append15(fromFoldable16(leftKids))(append15([wrapBoundary1(Down.value)(v5.value1)(v4.value1.value0.value1.value0)])(fromFoldable16(rightKids))))));
                 });
               });
             }
@@ -35610,7 +35516,7 @@
     };
   };
   var defaultDown = function(dictIsExprLabel) {
-    var eq16 = eq(eqExpr(eqMeta(eqSortLabel(dictIsExprLabel.Ord1().Eq0()))));
+    var eq15 = eq(eqExpr(eqMeta(eqSortLabel(dictIsExprLabel.Ord1().Eq0()))));
     var isExprLabelMeta3 = isExprLabelMeta(isExprLabelSortLabel(dictIsExprLabel));
     var endpoints3 = endpoints(isExprLabelMeta3);
     var prettyExpr2 = prettyExpr(isExprLabelMeta3);
@@ -35622,15 +35528,15 @@
     var subMetaExpr2 = subMetaExpr(isExprLabelChangeLabel2);
     var wrapBoundary1 = wrapBoundary(dictIsExprLabel);
     return function(dictIsRuleLabel) {
-      var lookup15 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
+      var lookup16 = lookup7(dictIsRuleLabel.Bounded3().Ord0());
       var getSortFromSub2 = getSortFromSub(dictIsRuleLabel);
       return function(v) {
         return function(v1) {
           return function(v2) {
             if (v2.value0 instanceof Boundary && (v2.value0.value0 instanceof Down && (v2.value1.length === 1 && (v2["value1"][0].value0 instanceof SSInj && v2["value1"][0].value0.value0 instanceof DerivLabel)))) {
-              var v3 = lookup15(v2["value1"][0].value0.value0.value0)(v);
+              var v3 = lookup16(v2["value1"][0].value0.value0.value0)(v);
               var sort2 = getSortFromSub2(v2["value1"][0].value0.value0.value0)(v2["value1"][0].value0.value0.value1);
-              var $661 = !eq16(fst(endpoints3(v2.value0.value1)))(sort2);
+              var $661 = !eq15(fst(endpoints3(v2.value0.value1)))(sort2);
               if ($661) {
                 return bug("assertion failed: ch boundary didn't match sort in defaultDown. sort was: " + (pretty13(sort2) + (" and ch was " + (pretty23(v2.value0.value1) + (" also sub is " + pretty33(v2["value1"][0].value0.value0.value1))))));
               }
@@ -35691,11 +35597,11 @@
     };
   };
   var compareMatchLabel = function(dictIsRuleLabel) {
-    var eq16 = eq(dictIsRuleLabel.Bounded3().Ord0().Eq0());
+    var eq15 = eq(dictIsRuleLabel.Bounded3().Ord0().Eq0());
     return function(v) {
       return function(v1) {
         if (v instanceof SSInj && v.value0 instanceof DerivLabel) {
-          return eq16(v.value0.value0)(v1);
+          return eq15(v.value0.value0)(v1);
         }
         ;
         return false;
@@ -36031,7 +35937,7 @@
   };
   var addToothToTerm = function(v) {
     return function(t) {
-      return new Expr(new SSInj(v.value0), append14(fromFoldable16(map55(map46(SSInj.create))(unreverse(v.value1.left))))(append14([t])(fromFoldable16(map55(map46(SSInj.create))(v.value1.right)))));
+      return new Expr(new SSInj(v.value0), append15(fromFoldable16(map55(map46(SSInj.create))(unreverse(v.value1.left))))(append15([t])(fromFoldable16(map55(map46(SSInj.create))(v.value1.right)))));
     };
   };
   var wrapPath = function($copy_v) {
@@ -36097,9 +36003,10 @@
   var prettyPath32 = /* @__PURE__ */ prettyPath3(reflectPathDirUp);
   var genericShowConstructor4 = /* @__PURE__ */ genericShowConstructor(genericShowArgsNoArguments);
   var intercalate10 = /* @__PURE__ */ intercalate3(monoidString);
+  var pure21 = /* @__PURE__ */ pure(applicativeHookM);
   var reversePath4 = /* @__PURE__ */ reversePath();
   var elem3 = /* @__PURE__ */ elem2(eqString);
-  var append15 = /* @__PURE__ */ append(semigroupArray);
+  var append16 = /* @__PURE__ */ append(semigroupArray);
   var map48 = /* @__PURE__ */ map(functorArray);
   var zipDowns3 = /* @__PURE__ */ zipDowns(zippableZipper);
   var bind25 = /* @__PURE__ */ bind(bindMaybe);
@@ -36342,7 +36249,7 @@
           return prettyPath12(v.value0.value0)("(\u2336 : " + (pretty13(v.value0.value1) + ")"));
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 317, column 1 - line 319, column 116): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 318, column 1 - line 320, column 116): " + [v.constructor.name]);
       }
     };
   };
@@ -36360,7 +36267,7 @@
           return prettyPath12(v.value0)("(\u2336{?} : _)");
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 354, column 1 - line 356, column 76): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 355, column 1 - line 357, column 76): " + [v.constructor.name]);
       }
     };
   };
@@ -36374,7 +36281,7 @@
         return BufferCursorMode.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 273, column 1 - line 273, column 37): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 274, column 1 - line 274, column 37): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof NavigationCursorMode) {
@@ -36385,7 +36292,7 @@
         return new Inr(NoArguments.value);
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 273, column 1 - line 273, column 37): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 274, column 1 - line 274, column 37): " + [x.constructor.name]);
     }
   };
   var genericShow33 = /* @__PURE__ */ genericShow(genericCursorMode_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor4({
@@ -36426,7 +36333,7 @@
             return intercalate10("\n")(["small stepping:", indent(newlines(["- ssterm = " + pretty23(v.value0.ssterm)]))]);
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 232, column 12 - line 253, column 8): " + [v.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 233, column 12 - line 254, column 8): " + [v.constructor.name]);
         }
       };
     };
@@ -36434,14 +36341,32 @@
   var eqHoleyDerivPath = function(dictEq) {
     var eqDerivLabel2 = eqDerivLabel(dictEq);
     return function(dictEq1) {
-      var eq16 = eq(eqPath2(eqDerivLabel2(dictEq1)));
+      var eq15 = eq(eqPath2(eqDerivLabel2(dictEq1)));
       return {
         eq: function(x) {
           return function(y) {
-            return eq16(x.value0)(y.value0) && x.value1 === y.value1;
+            return eq15(x.value0)(y.value0) && x.value1 === y.value1;
           };
         }
       };
+    };
+  };
+  var trivialEditorLocals = function(spec) {
+    return {
+      spec,
+      handleBufferOutput: function(v) {
+        return pure21(unit);
+      },
+      onMouseDown: function(v) {
+        return function(v1) {
+          return pure21(unit);
+        };
+      },
+      onMouseOver: function(v) {
+        return function(v1) {
+          return pure21(unit);
+        };
+      }
     };
   };
   var selectTopClassName = "select-top";
@@ -36475,7 +36400,7 @@
             return v.value1.value0;
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 305, column 23 - line 307, column 25): " + [v.value1.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 306, column 23 - line 308, column 25): " + [v.value1.constructor.name]);
         }();
         return spec.isValidSelectionSorts({
           bottom: bottom3,
@@ -36513,16 +36438,16 @@
               return [];
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 325, column 22 - line 327, column 26): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 326, column 22 - line 328, column 26): " + [v1.constructor.name]);
           }();
-          return append15(extraInner)(map48(injectHoleyDerivZipper)(zipDowns3(v.value0)));
+          return append16(extraInner)(map48(injectHoleyDerivZipper)(zipDowns3(v.value0)));
         }
         ;
         if (v.value1) {
           return [];
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 321, column 1 - line 341, column 42): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 322, column 1 - line 342, column 42): " + [v.constructor.name]);
       },
       "zipUp'": function(v) {
         if (!v.value1) {
@@ -36539,7 +36464,7 @@
                 return identity21;
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 333, column 26 - line 335, column 32): " + [v1.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 334, column 26 - line 336, column 32): " + [v1.constructor.name]);
             }();
             return pure110(bimap4(augmentIndices)(injectHoleyDerivZipper)(parentDZipper));
           });
@@ -36549,7 +36474,7 @@
           return pure110(new Tuple(0, new HoleyDerivZipper(v.value0, false)));
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 321, column 1 - line 341, column 42): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 322, column 1 - line 342, column 42): " + [v.constructor.name]);
       }
     };
   };
@@ -36594,7 +36519,7 @@
             return Nothing.value;
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 373, column 5 - line 376, column 27): " + [v.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 374, column 5 - line 377, column 27): " + [v.constructor.name]);
         };
       };
     };
@@ -36657,7 +36582,7 @@
         return bug("couldn't get term in smallstep state");
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 218, column 20 - line 226, column 71): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 219, column 20 - line 227, column 71): " + [v.constructor.name]);
     };
   };
   var hdzIsHolePosition = function(dictIsRuleLabel) {
@@ -36702,7 +36627,7 @@
           return spec.editsAtHoleInterior(derivZipperSort2(hdzipper.value0));
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 196, column 41 - line 198, column 76): " + [hdzipper.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 197, column 41 - line 199, column 76): " + [hdzipper.constructor.name]);
       };
     };
   };
@@ -36767,7 +36692,7 @@
       });
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 436, column 1 - line 436, column 84): " + []);
+    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 437, column 1 - line 437, column 84): " + []);
   };
   var fromHoleyDerivPathToElementIdImpl = function(dictIsRuleLabel) {
     var fromPathToElementIdImpl1 = fromPathToElementIdImpl(isExprLabelDerivLabel(dictIsRuleLabel));
@@ -36786,7 +36711,7 @@
           })(v.value0);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 429, column 33 - line 431, column 247): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 430, column 33 - line 432, column 247): " + [v.constructor.name]);
       };
     }
     ;
@@ -36804,11 +36729,11 @@
           })(v.value0);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 432, column 17 - line 434, column 162): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 433, column 17 - line 435, column 162): " + [v.constructor.name]);
       };
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 427, column 1 - line 427, column 97): " + []);
+    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Base (line 428, column 1 - line 428, column 97): " + []);
   };
   var fromHoleyDerivPathToElementId = function(dictIsRuleLabel) {
     var fromHoleyDerivPathToElementIdImpl1 = fromHoleyDerivPathToElementIdImpl(dictIsRuleLabel);
@@ -36907,11 +36832,11 @@
     };
   };
   var eqRatio = function(dictEq) {
-    var eq8 = eq(dictEq);
+    var eq9 = eq(dictEq);
     return {
       eq: function(v) {
         return function(v1) {
-          return eq8(v.value0)(v1.value0) && eq8(v.value1)(v1.value1);
+          return eq9(v.value0)(v1.value0) && eq9(v.value1)(v1.value1);
         };
       }
     };
@@ -36919,7 +36844,7 @@
   var ordRatio = function(dictOrd) {
     var ringRatio1 = ringRatio(dictOrd);
     var Eq0 = dictOrd.Eq0();
-    var eq8 = eq(Eq0);
+    var eq9 = eq(Eq0);
     var greaterThan2 = greaterThan(dictOrd);
     var eqRatio1 = eqRatio(Eq0);
     return function(dictEuclideanRing) {
@@ -36929,7 +36854,7 @@
         compare: function(x) {
           return function(y) {
             var v = sub3(x)(y);
-            var $130 = eq8(v.value0)(zero2);
+            var $130 = eq9(v.value0)(zero2);
             if ($130) {
               return EQ.value;
             }
@@ -37036,7 +36961,7 @@
   };
 
   // output/Data.Fuzzy/index.js
-  var pure21 = /* @__PURE__ */ pure(applicativeArray);
+  var pure25 = /* @__PURE__ */ pure(applicativeArray);
   var distanceIsSymbol = {
     reflectSymbol: function() {
       return "distance";
@@ -37062,8 +36987,8 @@
   var genericEqSum1 = /* @__PURE__ */ genericEqSum4(/* @__PURE__ */ genericEqSum4(genericEqConstructor3));
   var reduce2 = /* @__PURE__ */ reduce(ordInt)(euclideanRingInt);
   var mempty3 = /* @__PURE__ */ mempty(monoidArray);
-  var append10 = /* @__PURE__ */ append(/* @__PURE__ */ semigroupEither(semigroupString));
-  var append16 = /* @__PURE__ */ append(semigroupArray);
+  var append9 = /* @__PURE__ */ append(/* @__PURE__ */ semigroupEither(semigroupString));
+  var append17 = /* @__PURE__ */ append(semigroupArray);
   var sub1 = /* @__PURE__ */ sub(/* @__PURE__ */ ringRatio(ordInt)(euclideanRingInt));
   var foldl10 = /* @__PURE__ */ foldl(foldableArray);
   var map49 = /* @__PURE__ */ map(functorArray);
@@ -37168,7 +37093,7 @@
   var words = /* @__PURE__ */ function() {
     var regex$prime = regex("\\s+")(parseFlags("g"));
     return either(function($353) {
-      return $$const(pure21($353));
+      return $$const(pure25($353));
     })(split2)(regex$prime);
   }();
   var semigroupDistance = {
@@ -37367,10 +37292,10 @@
               var nextSegment = function(d) {
                 var v52 = new Tuple(d, unsnoc(v3.fuzzy.segments));
                 if (v52.value0 === 0 && v52.value1 instanceof Just) {
-                  return snoc(v52.value1.value0.init)(append10(v52.value1.value0.last)(nextRight(d)));
+                  return snoc(v52.value1.value0.init)(append9(v52.value1.value0.last)(nextRight(d)));
                 }
                 ;
-                return append16(v3.fuzzy.segments)(append16(nextLeft(d))([nextRight(d)]));
+                return append17(v3.fuzzy.segments)(append17(nextLeft(d))([nextRight(d)]));
               };
               var nextDistance = function(d) {
                 var v52 = new Tuple(scope2, v3.pos);
@@ -37527,10 +37452,10 @@
   var map50 = /* @__PURE__ */ map(functorArray);
   var lessThan2 = /* @__PURE__ */ lessThan(/* @__PURE__ */ ordRatio(ordInt)(euclideanRingInt));
   var compare8 = /* @__PURE__ */ compare(ordFuzzyStr);
-  var append11 = /* @__PURE__ */ append(semigroupArray);
+  var append10 = /* @__PURE__ */ append(semigroupArray);
   var show6 = /* @__PURE__ */ show(showInt);
   var discard11 = /* @__PURE__ */ discard(discardUnit)(bindHookM);
-  var pure25 = /* @__PURE__ */ pure(applicativeHookM);
+  var pure26 = /* @__PURE__ */ pure(applicativeHookM);
   var bind26 = /* @__PURE__ */ bind(bindHookM);
   var map118 = /* @__PURE__ */ map(functorHookM);
   var $$void14 = /* @__PURE__ */ $$void(functorHookM);
@@ -37615,7 +37540,7 @@
               })
             };
           })(extraEdits);
-          return append11(extraEditsAndPreviews)(sortedMatchingEdits);
+          return append10(extraEditsAndPreviews)(sortedMatchingEdits);
         }
         ;
         throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Buffer (line 59, column 3 - line 90, column 51): " + [v.mb_oldString.constructor.name]);
@@ -37691,7 +37616,7 @@
                 ;
                 throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Buffer (line 166, column 7 - line 168, column 70): " + [st.focussedEdit.constructor.name]);
               }())(function() {
-                return pure25(st);
+                return pure26(st);
               });
             });
           };
@@ -37715,13 +37640,13 @@
                 })))(function() {
                   return discard11(setPreview(Nothing.value))(function() {
                     return discard11(raise2(tokens.outputToken)(new ActionOutput(force(v2.value1.value0.edit.action))))(function() {
-                      return pure25(true);
+                      return pure26(true);
                     });
                   });
                 });
               }
               ;
-              return pure25(false);
+              return pure26(false);
             });
           };
           var modifyBufferFocus = function(f) {
@@ -37753,7 +37678,7 @@
                         return function(elem4) {
                           return discard11(liftEffect7(focus(elem4)))(function() {
                             if (v1.value1 instanceof Nothing) {
-                              return pure25(unit);
+                              return pure26(unit);
                             }
                             ;
                             if (v1.value1 instanceof Just) {
@@ -37781,7 +37706,7 @@
                   ;
                   return setPreview(Nothing.value);
                 }())(function() {
-                  return pure25(new Just(v1.value2));
+                  return pure26(new Just(v1.value2));
                 });
               });
             }
@@ -37800,22 +37725,22 @@
                       return v3 - 1 | 0;
                     });
                   })(case_))))(function() {
-                    return pure25(new Just(v1.value1));
+                    return pure26(new Just(v1.value1));
                   });
                 }
                 ;
-                return pure25(Nothing.value);
+                return pure26(Nothing.value);
               });
             }
             ;
             if (v1 instanceof SubmitBufferQuery) {
               return bind26(submitBuffer(unit))(function(v2) {
                 if (!v2) {
-                  return pure25(Nothing.value);
+                  return pure26(Nothing.value);
                 }
                 ;
                 if (v2) {
-                  return pure25(new Just(v1.value0));
+                  return pure26(new Just(v1.value0));
                 }
                 ;
                 throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Buffer (line 241, column 29 - line 243, column 30): " + [v2.constructor.name]);
@@ -37848,7 +37773,7 @@
                 if (v.value0.mb_oldString instanceof Nothing) {
                   return pure111(div2([classNames(["buffer-results"])])(flip(mapWithIndex3)(v.value0.edits)(function(i2) {
                     return function(v1) {
-                      return div2([classNames(append11(["buffer-result"])(function() {
+                      return div2([classNames(append10(["buffer-result"])(function() {
                         var $150 = i2 === v.value0.normalBufferFocus;
                         if ($150) {
                           return ["buffer-focus"];
@@ -37884,7 +37809,7 @@
                         }
                         ;
                         if (v2 instanceof WrapEditPreview) {
-                          return append11(v2.value0.before)(append11([placeholderCursorNodeElem])(v2.value0.after));
+                          return append10(v2.value0.before)(append10([placeholderCursorNodeElem])(v2.value0.after));
                         }
                         ;
                         if (v2 instanceof ReplaceEditPreview) {
@@ -37909,7 +37834,7 @@
   // output/Language.Pantograph.Generic.Rendering.Preview/index.js
   var empty11 = /* @__PURE__ */ empty(plusMaybe);
   var discard13 = /* @__PURE__ */ discard(discardUnit)(bindHookM);
-  var pure26 = /* @__PURE__ */ pure(applicativeHookM);
+  var pure27 = /* @__PURE__ */ pure(applicativeHookM);
   var on8 = /* @__PURE__ */ on2();
   var on14 = /* @__PURE__ */ on8({
     reflectSymbol: function() {
@@ -37926,7 +37851,7 @@
       return bind17(useState(empty11))(function(v) {
         return discard8(useQuery(tokens.queryToken)(function(v1) {
           return discard13(put2(v.value1)(v1.value0))(function() {
-            return pure26(new Just(v1.value1));
+            return pure27(new Just(v1.value1));
           });
         }))(function() {
           return pure14(function() {
@@ -37971,9 +37896,8 @@
   var zipDowns4 = /* @__PURE__ */ zipDowns(zippableZipper);
   var mapFlipped7 = /* @__PURE__ */ mapFlipped(functorArray);
   var fromFoldable18 = /* @__PURE__ */ fromFoldable3(foldableList);
-  var append17 = /* @__PURE__ */ append(semigroupArray);
+  var append11 = /* @__PURE__ */ append(semigroupArray);
   var mapFlipped12 = /* @__PURE__ */ mapFlipped(functorLazy);
-  var trace3 = /* @__PURE__ */ trace();
   var slot3 = /* @__PURE__ */ slot()({
     reflectSymbol: function() {
       return "buffer";
@@ -37998,8 +37922,8 @@
   var map51 = /* @__PURE__ */ map(functorArray);
   var applyCssClasses = function(classes2) {
     return function(html2) {
-      var $109 = isEmpty3(classes2);
-      if ($109) {
+      var $106 = isEmpty3(classes2);
+      if ($106) {
         return html2;
       }
       ;
@@ -38024,7 +37948,7 @@
                 return bug("in `renderPreviewDerivTooth`: should not have a tooth with a non-DerivLabel DerivLabel");
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 240, column 23 - line 242, column 119): " + [v.value0.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 241, column 23 - line 243, column 119): " + [v.value0.constructor.name]);
             }();
             var dzipper = new Zipper(up, unTooth(v)(dterm));
             var kidDZippers = zipDowns4(dzipper);
@@ -38042,7 +37966,7 @@
                 return v2.value0;
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 250, column 23 - line 254, column 29): " + [v2.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 251, column 23 - line 255, column 29): " + [v2.constructor.name]);
             };
             var kids = fromFoldable18(unpathAround(dterm)(v.value1));
             var sort2 = getSortFromSub2(v1.value0)(v1.value1);
@@ -38054,7 +37978,8 @@
                   rule: v1.value0,
                   sort: sort2,
                   sigma: v1.value1,
-                  dzipper: new Just(dzipper)
+                  dzipper: new Just(dzipper),
+                  renderTerm: renderDerivTerm(dictIsRuleLabel)(trivialEditorLocals(locs.spec))(false)(false)
                 });
               };
             });
@@ -38105,12 +38030,12 @@
               var next2 = renderPreviewDerivPath(dictIsRuleLabel)(v)(v1)(v2.value1)(unTooth(v2.value0)(v3));
               var v4 = renderPreviewDerivTooth(dictIsRuleLabel)(v)(v1)(v2.value0)(v3);
               return {
-                before: append17(next2.before)(v4.before),
-                after: append17(v4.after)(next2.after)
+                before: append11(next2.before)(v4.before),
+                after: append11(v4.after)(next2.after)
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 219, column 1 - line 224, column 70): " + [v.constructor.name, v1.constructor.name, v2.constructor.name, v3.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 220, column 1 - line 225, column 70): " + [v.constructor.name, v1.constructor.name, v2.constructor.name, v3.constructor.name]);
           };
         };
       };
@@ -38134,7 +38059,7 @@
               return new WrapEditPreview(renderPreviewDerivPath(dictIsRuleLabel)(locs)(hdzipperDerivPath(hdzipper))(v.value0.dpath)(hdzipperDerivTerm2(hdzipper)));
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 214, column 52 - line 217, column 134): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 215, column 52 - line 218, column 134): " + [v.constructor.name]);
           });
         };
       };
@@ -38148,21 +38073,63 @@
           return function(renCtx) {
             var hdzipper = new HoleyDerivZipper(dzipper, true);
             var hdpath = hdzipperHoleyDerivPath(hdzipper);
-            return div2(concat2([[classNames(append17(["node", "holeInterior"])(function() {
+            return div2(concat2([[classNames(append11(["node", "holeInterior"])(function() {
               if (isCursor) {
                 return [cursorClassName];
               }
               ;
               return [];
             }()))], function() {
-              var $149 = !renCtx.isInteractive;
-              if ($149) {
+              var $146 = !renCtx.isInteractive;
+              if ($146) {
                 return [];
               }
               ;
               var elemId = fromHoleyDerivPathToElementId2(renCtx.pathIdPrefix)(hdpath);
               return [id2(elemId), onMouseDown(locs.onMouseDown(new HoleyDerivZipper(dzipper, true))), onMouseOver(locs.onMouseOver(new HoleyDerivZipper(dzipper, true)))];
             }()]))(arrangeNodeSubs(dictIsRuleLabel)(locs)(isCursor)(hdzipper)([div2([classNames(["subnode", "holeInterior-inner"])])([squareElem])]));
+          };
+        };
+      };
+    };
+  };
+  var renderDerivTerm = function(dictIsRuleLabel) {
+    var fromPathToElementId2 = fromPathToElementId(isExprLabelDerivLabel(dictIsRuleLabel));
+    return function(locs) {
+      return function(isCursor) {
+        return function(innerHoleIsCursor) {
+          return function(dzipper) {
+            return function(renCtx) {
+              var isEmptyString = function(v) {
+                if (v.value1.value0 instanceof DerivLiteral && (v.value1.value0.value0 instanceof DataString && $$null2(v.value1.value0.value0.value0))) {
+                  return true;
+                }
+                ;
+                return false;
+              };
+              return div2(concat2([[classNames(append11(["node"])(append11(function() {
+                if (isCursor) {
+                  return [cursorClassName];
+                }
+                ;
+                return [];
+              }())(function() {
+                var $155 = isEmptyString(dzipper);
+                if ($155) {
+                  return [emptyStringClassName];
+                }
+                ;
+                return [];
+              }())))], function() {
+                var $156 = !renCtx.isInteractive;
+                if ($156) {
+                  return [];
+                }
+                ;
+                var elemId = fromPathToElementId2(renCtx.pathIdPrefix)(zipperPath(dzipper));
+                return [id2(elemId), onMouseDown(locs.onMouseDown(injectHoleyDerivZipper(dzipper))), onMouseOver(locs.onMouseOver(injectHoleyDerivZipper(dzipper)))];
+              }()]))(arrangeNodeSubs(dictIsRuleLabel)(locs)(isCursor)(injectHoleyDerivZipper(dzipper))(arrangeDerivTermSubs(dictIsRuleLabel)(locs)(innerHoleIsCursor)(dzipper)(mapFlipped7(zipDowns4(dzipper))(renderDerivTerm(dictIsRuleLabel)(locs)(false)(false)))(renCtx)));
+            };
           };
         };
       };
@@ -38178,26 +38145,24 @@
         return function(hdzipper) {
           return function(subElems) {
             return concat2([function() {
-              var $150 = !isCursor;
-              if ($150) {
+              var $157 = !isCursor;
+              if ($157) {
                 return [];
               }
               ;
-              return trace3("here we are")(function(v) {
-                return [slot3(bufferSlot)(unit)(bufferComponent2)({
-                  hdzipper,
-                  edits: mapFlipped7(editsAtHoleyDerivZipper2(locs.spec)(hdzipper))(function(edit) {
-                    return {
-                      lazy_preview: renderPreview(dictIsRuleLabel)(locs)(hdzipper)(edit),
-                      edit
-                    };
-                  }),
-                  extraEdits: locs.spec.extraQueryEdits(derivTermSort3(hdzipperDerivTerm2(hdzipper)))
-                })(locs.handleBufferOutput), slot_2(previewSlot)(leftDir)(previewComponent)(leftDir)];
-              });
+              return [slot3(bufferSlot)(unit)(bufferComponent2)({
+                hdzipper,
+                edits: mapFlipped7(editsAtHoleyDerivZipper2(locs.spec)(hdzipper))(function(edit) {
+                  return {
+                    lazy_preview: renderPreview(dictIsRuleLabel)(locs)(hdzipper)(edit),
+                    edit
+                  };
+                }),
+                extraEdits: locs.spec.extraQueryEdits(derivTermSort3(hdzipperDerivTerm2(hdzipper)))
+              })(locs.handleBufferOutput), slot_2(previewSlot)(leftDir)(previewComponent)(leftDir)];
             }(), subElems, function() {
-              var $151 = !isCursor;
-              if ($151) {
+              var $158 = !isCursor;
+              if ($158) {
                 return [];
               }
               ;
@@ -38227,12 +38192,13 @@
                       rule: v.value1.value0.value0,
                       sort: sort2,
                       sigma: v.value1.value0.value1,
-                      dzipper: new Just(v)
+                      dzipper: new Just(v),
+                      renderTerm: renderDerivTerm(dictIsRuleLabel)(trivialEditorLocals(locs.spec))(false)(false)
                     });
                     var kidCtxElems$prime = function() {
-                      var $158 = hasInnerHole2(v.value1.value0.value0);
-                      if ($158) {
-                        return append17([renderHoleInterior(dictIsRuleLabel)(locs)(innerHoleIsCursor)(v)])(kidCtxElems);
+                      var $165 = hasInnerHole2(v.value1.value0.value0);
+                      if ($165) {
+                        return append11([renderHoleInterior(dictIsRuleLabel)(locs)(innerHoleIsCursor)(v)])(kidCtxElems);
                       }
                       ;
                       return kidCtxElems;
@@ -38250,14 +38216,14 @@
                         return v2.value0;
                       }
                       ;
-                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 72, column 39 - line 75, column 27): " + [v2.constructor.name]);
+                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 73, column 39 - line 76, column 27): " + [v2.constructor.name]);
                     }));
                   }
                   ;
                   if (v.value1.value0 instanceof DerivLiteral && (v.value1.value0.value0 instanceof DataString && v.value1.value1.length === 0)) {
                     return [function() {
-                      var $168 = $$null2(v.value1.value0.value0.value0);
-                      if ($168) {
+                      var $175 = $$null2(v.value1.value0.value0.value0);
+                      if ($175) {
                         return div2([classNames(["subnode", "string-inner", "empty-string"])])([div2([classNames(["subnode"])])([text5("\u2610")])]);
                       }
                       ;
@@ -38269,53 +38235,9 @@
                     return [div2([classNames(["subnode", "string-inner"])])([text5(show7(v.value1.value0.value0.value0))])];
                   }
                   ;
-                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 60, column 159 - line 81, column 75): " + [v.value1.constructor.name]);
+                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 60, column 159 - line 82, column 75): " + [v.value1.constructor.name]);
                 };
               });
-            };
-          };
-        };
-      };
-    };
-  };
-  var renderDerivTerm = function(dictIsRuleLabel) {
-    var fromPathToElementId2 = fromPathToElementId(isExprLabelDerivLabel(dictIsRuleLabel));
-    var arrangeNodeSubs1 = arrangeNodeSubs(dictIsRuleLabel);
-    var arrangeDerivTermSubs1 = arrangeDerivTermSubs(dictIsRuleLabel);
-    return function(locs) {
-      return function(isCursor) {
-        return function(innerHoleIsCursor) {
-          return function(dzipper) {
-            return function(renCtx) {
-              var isEmptyString = function(v) {
-                if (v.value1.value0 instanceof DerivLiteral && (v.value1.value0.value0 instanceof DataString && $$null2(v.value1.value0.value0.value0))) {
-                  return true;
-                }
-                ;
-                return false;
-              };
-              return div2(concat2([[classNames(append17(["node"])(append17(function() {
-                if (isCursor) {
-                  return [cursorClassName];
-                }
-                ;
-                return [];
-              }())(function() {
-                var $187 = isEmptyString(dzipper);
-                if ($187) {
-                  return [emptyStringClassName];
-                }
-                ;
-                return [];
-              }())))], function() {
-                var $188 = !renCtx.isInteractive;
-                if ($188) {
-                  return [];
-                }
-                ;
-                var elemId = fromPathToElementId2(renCtx.pathIdPrefix)(zipperPath(dzipper));
-                return [id2(elemId), onMouseDown(locs.onMouseDown(injectHoleyDerivZipper(dzipper))), onMouseOver(locs.onMouseOver(injectHoleyDerivZipper(dzipper)))];
-              }()]))(arrangeNodeSubs1(locs)(isCursor)(injectHoleyDerivZipper(dzipper))(arrangeDerivTermSubs1(locs)(innerHoleIsCursor)(dzipper)(mapFlipped7(zipDowns4(dzipper))(renderDerivTerm(dictIsRuleLabel)(locs)(false)(false)))(renCtx)));
             };
           };
         };
@@ -38340,8 +38262,8 @@
           if (v instanceof Just) {
             return renderPath(dictIsRuleLabel)(locs)(v.value0.value1)(function(renCtx) {
               return div2(concat2([[classNames(["node"])], function() {
-                var $190 = !renCtx.isInteractive;
-                if ($190) {
+                var $187 = !renCtx.isInteractive;
+                if ($187) {
                   return [];
                 }
                 ;
@@ -38354,7 +38276,7 @@
             });
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 181, column 3 - line 203, column 26): " + [v.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 182, column 3 - line 204, column 26): " + [v.constructor.name]);
         };
       };
     };
@@ -38362,6 +38284,7 @@
   var renderSSTerm = function(dictIsRuleLabel) {
     var hasInnerHole2 = hasInnerHole(dictIsRuleLabel);
     var getSortFromSub2 = getSortFromSub(dictIsRuleLabel);
+    var renderDerivTerm1 = renderDerivTerm(dictIsRuleLabel);
     var pretty7 = pretty(prettyExpr(isExprLabelChangeLabel(isExprLabelMeta(isExprLabelSortLabel(dictIsRuleLabel.IsExprLabel0())))));
     var pretty13 = pretty(prettyExpr(isExprLabelStepExprLabel(dictIsRuleLabel)));
     return function(locs) {
@@ -38377,9 +38300,9 @@
           ;
           if (term.value0 instanceof SSInj && term.value0.value0 instanceof DerivLabel) {
             return div2([classNames(["node", "smallstep"])])(function() {
-              var kidElems = append17(function() {
-                var $205 = hasInnerHole2(term.value0.value0.value0);
-                if ($205) {
+              var kidElems = append11(function() {
+                var $202 = hasInnerHole2(term.value0.value0.value0);
+                if ($202) {
                   return [function(v) {
                     return div_([interrogativeElem, colonElem]);
                   }];
@@ -38393,7 +38316,8 @@
                 rule: term.value0.value0.value0,
                 sort: getSortFromSub2(term.value0.value0.value0)(term.value0.value0.value1),
                 sigma: term.value0.value0.value1,
-                dzipper: Nothing.value
+                dzipper: Nothing.value,
+                renderTerm: renderDerivTerm1(trivialEditorLocals(locs.spec))(false)(false)
               }))(function(v) {
                 if (v instanceof Left) {
                   return assert(just("renderSSTerm")(index3(kidElems)(v.value0.value1)))(function() {
@@ -38407,7 +38331,7 @@
                   return v.value0;
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 317, column 111 - line 319, column 29): " + [v.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 320, column 94 - line 322, column 29): " + [v.constructor.name]);
               }));
             }());
           }
@@ -38430,7 +38354,7 @@
                 return downArrowElem;
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 330, column 12 - line 332, column 44): " + [term.value0.value0.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Rendering (line 333, column 12 - line 335, column 44): " + [term.value0.value0.constructor.name]);
             }()]), lbracketElem, span3([classNames(["subnode", "smallstep", "sortChange"])])([text5(pretty7(term.value0.value1))]), rbracketElem, lbraceElem, renderSSTerm(dictIsRuleLabel)(locs)(term["value1"][0])(renCtx), rbraceElem]);
           }
           ;
@@ -38578,20 +38502,20 @@
   }();
   var logM = function(dictMonad) {
     var discard19 = discard14(dictMonad.Bind1());
-    var pure33 = pure(dictMonad.Applicative0());
+    var pure34 = pure(dictMonad.Applicative0());
     if (_logging) {
       return function(tag) {
         return function(x) {
-          return discard19(pure33(unit))(function() {
+          return discard19(pure34(unit))(function() {
             return log4(tag)(x)(function(v) {
-              return pure33(unit);
+              return pure34(unit);
             });
           });
         };
       };
     }
     ;
-    return $$const($$const(pure33(unit)));
+    return $$const($$const(pure34(unit)));
   };
 
   // output/Web.UIEvent.KeyboardEvent/foreign.js
@@ -38628,9 +38552,8 @@
     };
   };
   var show8 = /* @__PURE__ */ show(showInt);
-  var trace4 = /* @__PURE__ */ trace();
   var mempty4 = /* @__PURE__ */ mempty(monoidPath);
-  var pure27 = /* @__PURE__ */ pure(applicativeList);
+  var pure28 = /* @__PURE__ */ pure(applicativeList);
   var monadEffectHookM2 = /* @__PURE__ */ monadEffectHookM(monadEffectAff);
   var liftEffect8 = /* @__PURE__ */ liftEffect(monadEffectHookM2);
   var bind27 = /* @__PURE__ */ bind(bindHookM);
@@ -38807,1140 +38730,1140 @@
       var editorIdPrefixNum = editorPrefix.get(unit);
       var v = editorPrefix.set(editorIdPrefixNum + 1 | 0);
       var pathIdPrefix = "Editor" + (show8(editorIdPrefixNum) + "-");
-      return trace4("Editor number " + (show8(editorIdPrefixNum) + "getting created"))(function(v1) {
-        return component(function(tokens) {
-          return function(spec) {
-            var initState = new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, spec.dterm))));
-            return bind17(useState(initState))(function(v2) {
-              return bind17(useRef(false))(function(v3) {
-                return bind17(useRef(pure27(initState)))(function(v4) {
-                  return bind17(useRef(initState))(function(v5) {
+      return component(function(tokens) {
+        return function(spec) {
+          var initState = new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, spec.dterm))));
+          return bind17(useState(initState))(function(v1) {
+            return bind17(useRef(false))(function(v2) {
+              return bind17(useRef(pure28(initState)))(function(v3) {
+                return bind17(useRef(initState))(function(v4) {
+                  return bind17(useRef(Nothing.value))(function(v5) {
                     return bind17(useRef(Nothing.value))(function(v6) {
-                      return bind17(useRef(Nothing.value))(function(v7) {
-                        var pushHistory = function(st) {
-                          return liftEffect8(modify_(Cons.create(st))(v4.value1));
+                      var pushHistory = function(st) {
+                        return liftEffect8(modify_(Cons.create(st))(v3.value1));
+                      };
+                      var $lazy_popHistory = $runtime_lazy10("popHistory", "Language.Pantograph.Generic.Rendering.Editor", function() {
+                        return bind27(liftEffect8(read(v3.value1)))(function(history2) {
+                          if (history2 instanceof Nil) {
+                            return discard15(log5("[popHistory] empty history"))(function() {
+                              return pure112(Nothing.value);
+                            });
+                          }
+                          ;
+                          if (history2 instanceof Cons) {
+                            return discard15(liftEffect8(write(history2.value1)(v3.value1)))(function() {
+                              if (history2.value0 instanceof CursorState && (history2.value0.value0.mode instanceof BufferCursorMode && false)) {
+                                return pure112(new Just(new CursorState({
+                                  hdzipper: history2.value0.value0.hdzipper,
+                                  mode: NavigationCursorMode.value
+                                })));
+                              }
+                              ;
+                              if (history2.value0 instanceof CursorState && (history2.value0.value0.mode instanceof BufferCursorMode && true)) {
+                                return $lazy_popHistory(484);
+                              }
+                              ;
+                              return pure112(new Just(history2.value0));
+                            });
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 470, column 7 - line 485, column 32): " + [history2.constructor.name]);
+                        });
+                      });
+                      var popHistory = $lazy_popHistory(467);
+                      var normalizeZipperpToState = function(zipperp) {
+                        if (zipperp instanceof Left) {
+                          return new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(zipperp.value0)));
+                        }
+                        ;
+                        if (zipperp instanceof Right) {
+                          return new SelectState({
+                            dzipperp: zipperp.value0
+                          });
+                        }
+                        ;
+                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 376, column 39 - line 378, column 53): " + [zipperp.constructor.name]);
+                      };
+                      var getState = get3(v1.value1);
+                      var getFacade = liftEffect8(read(v4.value1));
+                      var getElementIdByHoleyDerivPath = function() {
+                        var $498 = fromHoleyDerivPathToElementId2(pathIdPrefix);
+                        return function($499) {
+                          return pure112($498($499));
                         };
-                        var $lazy_popHistory = $runtime_lazy10("popHistory", "Language.Pantograph.Generic.Rendering.Editor", function() {
-                          return bind27(liftEffect8(read(v4.value1)))(function(history2) {
-                            if (history2 instanceof Nil) {
-                              return discard15(log5("[popHistory] empty history"))(function() {
-                                return pure112(Nothing.value);
-                              });
-                            }
-                            ;
-                            if (history2 instanceof Cons) {
-                              return discard15(liftEffect8(write(history2.value1)(v4.value1)))(function() {
-                                if (history2.value0 instanceof CursorState && (history2.value0.value0.mode instanceof BufferCursorMode && false)) {
-                                  return pure112(new Just(new CursorState({
-                                    hdzipper: history2.value0.value0.hdzipper,
-                                    mode: NavigationCursorMode.value
-                                  })));
-                                }
-                                ;
-                                if (history2.value0 instanceof CursorState && (history2.value0.value0.mode instanceof BufferCursorMode && true)) {
-                                  return $lazy_popHistory(485);
-                                }
-                                ;
-                                return pure112(new Just(history2.value0));
-                              });
-                            }
-                            ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 471, column 7 - line 486, column 32): " + [history2.constructor.name]);
+                      }();
+                      var getElementByHoleyDerivPath = function(hdzipper) {
+                        return bind27(liftEffect8(bind110(windowImpl)(document)))(function(doc) {
+                          return bind27(getElementIdByHoleyDerivPath(hdzipper))(function(elemId) {
+                            return bind27(liftEffect8(getElementById(elemId)(toNonElementParentNode(doc))))(function(v7) {
+                              if (v7 instanceof Nothing) {
+                                return bind27(getState)(function(st) {
+                                  return bug("could not find element" + indent("\n- elemId = " + (elemId + ("\n- hdzipper = " + (pretty13(hdzipper) + ("\n- st = " + pretty23(st)))))));
+                                });
+                              }
+                              ;
+                              if (v7 instanceof Just) {
+                                return pure112(v7.value0);
+                              }
+                              ;
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 121, column 109 - line 125, column 31): " + [v7.constructor.name]);
+                            });
                           });
                         });
-                        var popHistory = $lazy_popHistory(468);
-                        var normalizeZipperpToState = function(zipperp) {
-                          if (zipperp instanceof Left) {
-                            return new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(zipperp.value0)));
-                          }
-                          ;
-                          if (zipperp instanceof Right) {
-                            return new SelectState({
-                              dzipperp: zipperp.value0
-                            });
-                          }
-                          ;
-                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 377, column 39 - line 379, column 53): " + [zipperp.constructor.name]);
-                        };
-                        var getState = get3(v2.value1);
-                        var getFacade = liftEffect8(read(v5.value1));
-                        var getElementIdByHoleyDerivPath = function() {
-                          var $500 = fromHoleyDerivPathToElementId2(pathIdPrefix);
-                          return function($501) {
-                            return pure112($500($501));
-                          };
-                        }();
-                        var getElementByHoleyDerivPath = function(hdzipper) {
-                          return bind27(liftEffect8(bind110(windowImpl)(document)))(function(doc) {
-                            return bind27(getElementIdByHoleyDerivPath(hdzipper))(function(elemId) {
-                              return bind27(liftEffect8(getElementById(elemId)(toNonElementParentNode(doc))))(function(v8) {
-                                if (v8 instanceof Nothing) {
-                                  return bind27(getState)(function(st) {
-                                    return bug("could not find element" + indent("\n- elemId = " + (elemId + ("\n- hdzipper = " + (pretty13(hdzipper) + ("\n- st = " + pretty23(st)))))));
-                                  });
-                                }
-                                ;
-                                if (v8 instanceof Just) {
-                                  return pure112(v8.value0);
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 122, column 109 - line 126, column 31): " + [v8.constructor.name]);
-                              });
-                            });
-                          });
-                        };
-                        var setNodeElementStyle = function(className2) {
-                          return function(mb_hdpath_old) {
-                            return function(mb_hdpath_new) {
-                              var update2 = function() {
-                                if (mb_hdpath_new instanceof Nothing) {
-                                  return pure112(unit);
-                                }
-                                ;
-                                if (mb_hdpath_new instanceof Just) {
-                                  return bind27(getElementByHoleyDerivPath(mb_hdpath_new.value0))(function(elem4) {
-                                    return liftEffect8(setClassName3(elem4)(className2)(true));
-                                  });
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 147, column 9 - line 151, column 58): " + [mb_hdpath_new.constructor.name]);
-                              }();
-                              if (mb_hdpath_old instanceof Nothing) {
-                                return update2;
-                              }
-                              ;
-                              if (mb_hdpath_old instanceof Just) {
-                                var $267 = eq24(new Just(mb_hdpath_old.value0))(mb_hdpath_new);
-                                if ($267) {
-                                  return pure112(unit);
-                                }
-                                ;
-                                return bind27(getElementByHoleyDerivPath(mb_hdpath_old.value0))(function(elem4) {
-                                  return discard15(liftEffect8(setClassName3(elem4)(className2)(false)))(function() {
-                                    return update2;
-                                  });
-                                });
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 131, column 7 - line 144, column 19): " + [mb_hdpath_old.constructor.name]);
-                            };
-                          };
-                        };
-                        var setCursorElement = setNodeElementStyle(cursorClassName);
-                        var setHighlightElement = function(mb_hdpath_new) {
-                          return bind27(liftEffect8(read(v7.value1)))(function(mb_hdpath_old) {
-                            return discard15(setNodeElementStyle(highlightClassName)(mb_hdpath_old)(mb_hdpath_new))(function() {
-                              return liftEffect8(write(mb_hdpath_new)(v7.value1));
-                            });
-                          });
-                        };
-                        var setSelectBottomElement = setNodeElementStyle(selectBottomClassName);
-                        var setSelectTopElement = setNodeElementStyle(selectTopClassName);
-                        var setFacade$prime = function(st) {
-                          return discard15(function() {
-                            if (st instanceof CursorState) {
-                              return setCursorElement(Nothing.value)(new Just(hdzipperHoleyDerivPath(st.value0.hdzipper)));
-                            }
-                            ;
-                            if (st instanceof SelectState) {
-                              return discard15(setSelectTopElement(Nothing.value)(new Just(injectHoleyDerivPath(zipperpTopPath(st.value0.dzipperp)))))(function() {
-                                return setSelectBottomElement(Nothing.value)(new Just(injectHoleyDerivPath(zipperpBottomPath(st.value0.dzipperp))));
-                              });
-                            }
-                            ;
-                            if (st instanceof TopState) {
-                              return pure112(unit);
-                            }
-                            ;
-                            if (st instanceof SmallStepState) {
-                              return pure112(unit);
-                            }
-                            ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 209, column 7 - line 218, column 20): " + [st.constructor.name]);
-                          }())(function() {
-                            return discard15(liftEffect8(write(st)(v5.value1)))(function() {
-                              return liftEffect8(write(true)(v3.value1));
-                            });
-                          });
-                        };
-                        var unsetFacadeElements = bind27(getFacade)(function(currentFacade) {
-                          if (currentFacade instanceof CursorState) {
-                            return discard15(setHighlightElement(Nothing.value))(function() {
-                              return setCursorElement(new Just(hdzipperHoleyDerivPath(currentFacade.value0.hdzipper)))(Nothing.value);
-                            });
-                          }
-                          ;
-                          if (currentFacade instanceof SelectState) {
-                            return discard15(setHighlightElement(Nothing.value))(function() {
-                              return discard15(setSelectTopElement(new Just(injectHoleyDerivPath(zipperpTopPath(currentFacade.value0.dzipperp))))(Nothing.value))(function() {
-                                return setSelectBottomElement(new Just(injectHoleyDerivPath(zipperpBottomPath(currentFacade.value0.dzipperp))))(Nothing.value);
-                              });
-                            });
-                          }
-                          ;
-                          if (currentFacade instanceof TopState) {
-                            return setHighlightElement(Nothing.value);
-                          }
-                          ;
-                          if (currentFacade instanceof SmallStepState) {
-                            return setHighlightElement(Nothing.value);
-                          }
-                          ;
-                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 176, column 7 - line 187, column 38): " + [currentFacade.constructor.name]);
-                        });
-                        var setFacade = function(st) {
-                          return discard15(function() {
-                            if (st instanceof CursorState) {
-                              return bind27(getState)(function(state3) {
-                                if (state3 instanceof CursorState) {
-                                  return tell1(tokens.slotToken)(bufferSlot)(unit)(SetBufferEnabledQuery.create(false)(Nothing.value));
-                                }
-                                ;
-                                return pure112(unit);
-                              });
-                            }
-                            ;
-                            return pure112(unit);
-                          }())(function() {
-                            return discard15(unsetFacadeElements)(function() {
-                              return setFacade$prime(st);
-                            });
-                          });
-                        };
-                        var moveSelect = function(dir2) {
-                          return bind27(getFacade)(function(v8) {
-                            if (v8 instanceof CursorState) {
-                              var path = hdzipperDerivPath(v8.value0.hdzipper);
-                              var dterm = hdzipperDerivTerm2(v8.value0.hdzipper);
-                              var select5 = {
-                                dzipperp: new Zipperp(path, new Left(mempty4), dterm)
-                              };
-                              var v9 = moveZipperpUntil(dir2)(isValidSelect2(spec))(select5.dzipperp);
-                              if (v9 instanceof Nothing) {
-                                return discard15(logM2("moveSelect")("failed to enter SelectState"))(function() {
-                                  return pure112(unit);
-                                });
-                              }
-                              ;
-                              if (v9 instanceof Just && v9.value0 instanceof Left) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v9.value0.value0))));
-                              }
-                              ;
-                              if (v9 instanceof Just && v9.value0 instanceof Right) {
-                                return setFacade(new SelectState({
-                                  dzipperp: v9.value0.value0
-                                }));
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 386, column 9 - line 391, column 88): " + [v9.constructor.name]);
-                            }
-                            ;
-                            if (v8 instanceof SelectState) {
-                              var v9 = moveZipperpUntil(dir2)(isValidSelect2(spec))(v8.value0.dzipperp);
-                              if (v9 instanceof Nothing) {
-                                return logM2("moveSelect")("failed to move selection");
-                              }
-                              ;
-                              if (v9 instanceof Just && v9.value0 instanceof Left) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v9.value0.value0))));
-                              }
-                              ;
-                              if (v9 instanceof Just && v9.value0 instanceof Right) {
-                                return setFacade(new SelectState({
-                                  dzipperp: v9.value0.value0
-                                }));
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 393, column 9 - line 397, column 88): " + [v9.constructor.name]);
-                            }
-                            ;
-                            if (v8 instanceof TopState) {
-                              var mb_select = function(v92) {
-                                return v92(dir2);
-                              }(on16(_next)(function(v92) {
-                                return new Just(hole2("moveSelect next when TopState"));
-                              })(on27(_down)(function(v92) {
-                                return new Just({
-                                  dzipperp: new Zipperp(mempty4, new Left(mempty4), v8.value0.dterm)
-                                });
-                              })($$default(Nothing.value))));
-                              if (mb_select instanceof Nothing) {
+                      };
+                      var setNodeElementStyle = function(className2) {
+                        return function(mb_hdpath_old) {
+                          return function(mb_hdpath_new) {
+                            var update2 = function() {
+                              if (mb_hdpath_new instanceof Nothing) {
                                 return pure112(unit);
                               }
                               ;
-                              if (mb_select instanceof Just) {
-                                var v9 = moveZipperpUntil(dir2)(isValidSelect2(spec))(mb_select.value0.dzipperp);
-                                if (v9 instanceof Nothing) {
-                                  return pure112(unit);
-                                }
-                                ;
-                                if (v9 instanceof Just && v9.value0 instanceof Left) {
-                                  return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v9.value0.value0))));
-                                }
-                                ;
-                                if (v9 instanceof Just && v9.value0 instanceof Right) {
-                                  return setFacade(new SelectState({
-                                    dzipperp: v9.value0.value0
-                                  }));
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 404, column 26 - line 407, column 90): " + [v9.constructor.name]);
+                              if (mb_hdpath_new instanceof Just) {
+                                return bind27(getElementByHoleyDerivPath(mb_hdpath_new.value0))(function(elem4) {
+                                  return liftEffect8(setClassName3(elem4)(className2)(true));
+                                });
                               }
                               ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 402, column 9 - line 407, column 90): " + [mb_select.constructor.name]);
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 146, column 9 - line 150, column 58): " + [mb_hdpath_new.constructor.name]);
+                            }();
+                            if (mb_hdpath_old instanceof Nothing) {
+                              return update2;
                             }
                             ;
-                            if (v8 instanceof SmallStepState) {
-                              return pure112(unit);
+                            if (mb_hdpath_old instanceof Just) {
+                              var $265 = eq24(new Just(mb_hdpath_old.value0))(mb_hdpath_new);
+                              if ($265) {
+                                return pure112(unit);
+                              }
+                              ;
+                              return bind27(getElementByHoleyDerivPath(mb_hdpath_old.value0))(function(elem4) {
+                                return discard15(liftEffect8(setClassName3(elem4)(className2)(false)))(function() {
+                                  return update2;
+                                });
+                              });
                             }
                             ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 381, column 36 - line 408, column 36): " + [v8.constructor.name]);
-                          });
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 130, column 7 - line 143, column 19): " + [mb_hdpath_old.constructor.name]);
+                          };
                         };
-                        var moveToNextHole = bind27(getFacade)(function(v8) {
-                          if (v8 instanceof CursorState && v8.value0.mode instanceof BufferCursorMode) {
+                      };
+                      var setCursorElement = setNodeElementStyle(cursorClassName);
+                      var setHighlightElement = function(mb_hdpath_new) {
+                        return bind27(liftEffect8(read(v6.value1)))(function(mb_hdpath_old) {
+                          return discard15(setNodeElementStyle(highlightClassName)(mb_hdpath_old)(mb_hdpath_new))(function() {
+                            return liftEffect8(write(mb_hdpath_new)(v6.value1));
+                          });
+                        });
+                      };
+                      var setSelectBottomElement = setNodeElementStyle(selectBottomClassName);
+                      var setSelectTopElement = setNodeElementStyle(selectTopClassName);
+                      var setFacade$prime = function(st) {
+                        return discard15(function() {
+                          if (st instanceof CursorState) {
+                            return setCursorElement(Nothing.value)(new Just(hdzipperHoleyDerivPath(st.value0.hdzipper)));
+                          }
+                          ;
+                          if (st instanceof SelectState) {
+                            return discard15(setSelectTopElement(Nothing.value)(new Just(injectHoleyDerivPath(zipperpTopPath(st.value0.dzipperp)))))(function() {
+                              return setSelectBottomElement(Nothing.value)(new Just(injectHoleyDerivPath(zipperpBottomPath(st.value0.dzipperp))));
+                            });
+                          }
+                          ;
+                          if (st instanceof TopState) {
                             return pure112(unit);
                           }
                           ;
-                          if (v8 instanceof CursorState) {
-                            var v9 = moveHDZUntil2(nextDir)(function(hdz) {
-                              return isValidCursor2(spec.isValidCursorSort)(hdz) && hdzIsHolePosition2(hdz);
-                            })(v8.value0.hdzipper);
-                            if (v9 instanceof Nothing) {
+                          if (st instanceof SmallStepState) {
+                            return pure112(unit);
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 208, column 7 - line 217, column 20): " + [st.constructor.name]);
+                        }())(function() {
+                          return discard15(liftEffect8(write(st)(v4.value1)))(function() {
+                            return liftEffect8(write(true)(v2.value1));
+                          });
+                        });
+                      };
+                      var unsetFacadeElements = bind27(getFacade)(function(currentFacade) {
+                        if (currentFacade instanceof CursorState) {
+                          return discard15(setHighlightElement(Nothing.value))(function() {
+                            return setCursorElement(new Just(hdzipperHoleyDerivPath(currentFacade.value0.hdzipper)))(Nothing.value);
+                          });
+                        }
+                        ;
+                        if (currentFacade instanceof SelectState) {
+                          return discard15(setHighlightElement(Nothing.value))(function() {
+                            return discard15(setSelectTopElement(new Just(injectHoleyDerivPath(zipperpTopPath(currentFacade.value0.dzipperp))))(Nothing.value))(function() {
+                              return setSelectBottomElement(new Just(injectHoleyDerivPath(zipperpBottomPath(currentFacade.value0.dzipperp))))(Nothing.value);
+                            });
+                          });
+                        }
+                        ;
+                        if (currentFacade instanceof TopState) {
+                          return setHighlightElement(Nothing.value);
+                        }
+                        ;
+                        if (currentFacade instanceof SmallStepState) {
+                          return setHighlightElement(Nothing.value);
+                        }
+                        ;
+                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 175, column 7 - line 186, column 38): " + [currentFacade.constructor.name]);
+                      });
+                      var setFacade = function(st) {
+                        return discard15(function() {
+                          if (st instanceof CursorState) {
+                            return bind27(getState)(function(state3) {
+                              if (state3 instanceof CursorState) {
+                                return tell1(tokens.slotToken)(bufferSlot)(unit)(SetBufferEnabledQuery.create(false)(Nothing.value));
+                              }
+                              ;
                               return pure112(unit);
-                            }
-                            ;
-                            if (v9 instanceof Just) {
-                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(v9.value0)));
-                            }
-                            ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 309, column 11 - line 311, column 93): " + [v9.constructor.name]);
+                            });
                           }
                           ;
                           return pure112(unit);
+                        }())(function() {
+                          return discard15(unsetFacadeElements)(function() {
+                            return setFacade$prime(st);
+                          });
                         });
-                        var onMouseDown2 = function(hdzipper) {
-                          return function(event) {
-                            var $311 = isValidCursor2(spec.isValidCursorSort)(hdzipper);
+                      };
+                      var moveSelect = function(dir2) {
+                        return bind27(getFacade)(function(v7) {
+                          if (v7 instanceof CursorState) {
+                            var path = hdzipperDerivPath(v7.value0.hdzipper);
+                            var dterm = hdzipperDerivTerm2(v7.value0.hdzipper);
+                            var select5 = {
+                              dzipperp: new Zipperp(path, new Left(mempty4), dterm)
+                            };
+                            var v8 = moveZipperpUntil(dir2)(isValidSelect2(spec))(select5.dzipperp);
+                            if (v8 instanceof Nothing) {
+                              return discard15(logM2("moveSelect")("failed to enter SelectState"))(function() {
+                                return pure112(unit);
+                              });
+                            }
+                            ;
+                            if (v8 instanceof Just && v8.value0 instanceof Left) {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v8.value0.value0))));
+                            }
+                            ;
+                            if (v8 instanceof Just && v8.value0 instanceof Right) {
+                              return setFacade(new SelectState({
+                                dzipperp: v8.value0.value0
+                              }));
+                            }
+                            ;
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 385, column 9 - line 390, column 88): " + [v8.constructor.name]);
+                          }
+                          ;
+                          if (v7 instanceof SelectState) {
+                            var v8 = moveZipperpUntil(dir2)(isValidSelect2(spec))(v7.value0.dzipperp);
+                            if (v8 instanceof Nothing) {
+                              return logM2("moveSelect")("failed to move selection");
+                            }
+                            ;
+                            if (v8 instanceof Just && v8.value0 instanceof Left) {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v8.value0.value0))));
+                            }
+                            ;
+                            if (v8 instanceof Just && v8.value0 instanceof Right) {
+                              return setFacade(new SelectState({
+                                dzipperp: v8.value0.value0
+                              }));
+                            }
+                            ;
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 392, column 9 - line 396, column 88): " + [v8.constructor.name]);
+                          }
+                          ;
+                          if (v7 instanceof TopState) {
+                            var mb_select = function(v82) {
+                              return v82(dir2);
+                            }(on16(_next)(function(v82) {
+                              return new Just(hole2("moveSelect next when TopState"));
+                            })(on27(_down)(function(v82) {
+                              return new Just({
+                                dzipperp: new Zipperp(mempty4, new Left(mempty4), v7.value0.dterm)
+                              });
+                            })($$default(Nothing.value))));
+                            if (mb_select instanceof Nothing) {
+                              return pure112(unit);
+                            }
+                            ;
+                            if (mb_select instanceof Just) {
+                              var v8 = moveZipperpUntil(dir2)(isValidSelect2(spec))(mb_select.value0.dzipperp);
+                              if (v8 instanceof Nothing) {
+                                return pure112(unit);
+                              }
+                              ;
+                              if (v8 instanceof Just && v8.value0 instanceof Left) {
+                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v8.value0.value0))));
+                              }
+                              ;
+                              if (v8 instanceof Just && v8.value0 instanceof Right) {
+                                return setFacade(new SelectState({
+                                  dzipperp: v8.value0.value0
+                                }));
+                              }
+                              ;
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 403, column 26 - line 406, column 90): " + [v8.constructor.name]);
+                            }
+                            ;
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 401, column 9 - line 406, column 90): " + [mb_select.constructor.name]);
+                          }
+                          ;
+                          if (v7 instanceof SmallStepState) {
+                            return pure112(unit);
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 380, column 36 - line 407, column 36): " + [v7.constructor.name]);
+                        });
+                      };
+                      var moveToNextHole = bind27(getFacade)(function(v7) {
+                        if (v7 instanceof CursorState && v7.value0.mode instanceof BufferCursorMode) {
+                          return pure112(unit);
+                        }
+                        ;
+                        if (v7 instanceof CursorState) {
+                          var v8 = moveHDZUntil2(nextDir)(function(hdz) {
+                            return isValidCursor2(spec.isValidCursorSort)(hdz) && hdzIsHolePosition2(hdz);
+                          })(v7.value0.hdzipper);
+                          if (v8 instanceof Nothing) {
+                            return pure112(unit);
+                          }
+                          ;
+                          if (v8 instanceof Just) {
+                            return setFacade(new CursorState(cursorFromHoleyDerivZipper(v8.value0)));
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 308, column 11 - line 310, column 93): " + [v8.constructor.name]);
+                        }
+                        ;
+                        return pure112(unit);
+                      });
+                      var onMouseDown2 = function(hdzipper) {
+                        return function(event) {
+                          var $309 = isValidCursor2(spec.isValidCursorSort)(hdzipper);
+                          if ($309) {
+                            return discard15(liftEffect8(stopPropagation(toEvent(event))))(function() {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(hdzipper)));
+                            });
+                          }
+                          ;
+                          return pure112(unit);
+                        };
+                      };
+                      var onMouseOver2 = function(hdzipper) {
+                        return function(event) {
+                          var stopprop = liftEffect8(stopPropagation(toEvent(event)));
+                          var checkValidity10 = function(dzipperp) {
+                            var v7 = derivZipperpSorts2(dzipperp);
+                            var $311 = isValidSelect2(spec)(dzipperp);
                             if ($311) {
-                              return discard15(liftEffect8(stopPropagation(toEvent(event))))(function() {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(hdzipper)));
+                              return discard15(stopprop)(function() {
+                                return setFacade(new SelectState({
+                                  dzipperp
+                                }));
                               });
                             }
                             ;
                             return pure112(unit);
                           };
-                        };
-                        var onMouseOver2 = function(hdzipper) {
-                          return function(event) {
-                            var stopprop = liftEffect8(stopPropagation(toEvent(event)));
-                            var checkValidity10 = function(dzipperp) {
-                              var v8 = derivZipperpSorts2(dzipperp);
-                              var $313 = isValidSelect2(spec)(dzipperp);
-                              if ($313) {
-                                return discard15(stopprop)(function() {
-                                  return setFacade(new SelectState({
-                                    dzipperp
-                                  }));
-                                });
+                          var dzipper = hdzipperDerivZipper2(hdzipper);
+                          var $314 = (buttons(event) & 1) !== 0;
+                          if ($314) {
+                            return discard15(bind27(getFacade)(function(v7) {
+                              if (v7 instanceof CursorState) {
+                                var v8 = zipperpFromTo2(hdzipperDerivZipper2(v7.value0.hdzipper))(dzipper);
+                                if (v8 instanceof Nothing) {
+                                  return pure112(unit);
+                                }
+                                ;
+                                if (v8 instanceof Just) {
+                                  return checkValidity10(v8.value0);
+                                }
+                                ;
+                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 796, column 13 - line 798, column 54): " + [v8.constructor.name]);
                               }
                               ;
-                              return pure112(unit);
-                            };
-                            var dzipper = hdzipperDerivZipper2(hdzipper);
-                            var $316 = (buttons(event) & 1) !== 0;
-                            if ($316) {
-                              return discard15(bind27(getFacade)(function(v8) {
-                                if (v8 instanceof CursorState) {
-                                  var v9 = zipperpFromTo2(hdzipperDerivZipper2(v8.value0.hdzipper))(dzipper);
-                                  if (v9 instanceof Nothing) {
-                                    return pure112(unit);
-                                  }
-                                  ;
-                                  if (v9 instanceof Just) {
+                              if (v7 instanceof SelectState) {
+                                var from3 = unzipperp2(v7.value0.dzipperp);
+                                var v8 = zipperpFromTo2(from3)(dzipper);
+                                if (v8 instanceof Nothing) {
+                                  return pure112(unit);
+                                }
+                                ;
+                                if (v8 instanceof Just) {
+                                  var v9 = normalizeZipperp(v8.value0);
+                                  if (v9 instanceof Right) {
                                     return checkValidity10(v9.value0);
                                   }
                                   ;
-                                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 795, column 13 - line 797, column 54): " + [v9.constructor.name]);
-                                }
-                                ;
-                                if (v8 instanceof SelectState) {
-                                  var from3 = unzipperp2(v8.value0.dzipperp);
-                                  var v9 = zipperpFromTo2(from3)(dzipper);
-                                  if (v9 instanceof Nothing) {
-                                    return pure112(unit);
+                                  if (v9 instanceof Left) {
+                                    return discard15(stopprop)(function() {
+                                      return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v9.value0))));
+                                    });
                                   }
                                   ;
-                                  if (v9 instanceof Just) {
-                                    var v10 = normalizeZipperp(v9.value0);
-                                    if (v10 instanceof Right) {
-                                      return checkValidity10(v10.value0);
-                                    }
-                                    ;
-                                    if (v10 instanceof Left) {
-                                      return discard15(stopprop)(function() {
-                                        return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(v10.value0))));
-                                      });
-                                    }
-                                    ;
-                                    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 809, column 17 - line 813, column 110): " + [v10.constructor.name]);
-                                  }
-                                  ;
-                                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 802, column 13 - line 813, column 110): " + [v9.constructor.name]);
+                                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 810, column 17 - line 814, column 110): " + [v9.constructor.name]);
                                 }
                                 ;
-                                if (v8 instanceof TopState) {
-                                  return pure112(unit);
-                                }
-                                ;
-                                if (v8 instanceof SmallStepState) {
-                                  return pure112(unit);
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 793, column 23 - line 815, column 40): " + [v8.constructor.name]);
-                              }))(function() {
-                                return setHighlightElement(Nothing.value);
-                              });
-                            }
-                            ;
-                            var $329 = isValidCursor2(spec.isValidCursorSort)(hdzipper);
-                            if ($329) {
-                              return discard15(stopprop)(function() {
-                                return setHighlightElement(new Just(hdzipperHoleyDerivPath(hdzipper)));
-                              });
-                            }
-                            ;
-                            return pure112(unit);
-                          };
+                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 803, column 13 - line 814, column 110): " + [v8.constructor.name]);
+                              }
+                              ;
+                              if (v7 instanceof TopState) {
+                                return pure112(unit);
+                              }
+                              ;
+                              if (v7 instanceof SmallStepState) {
+                                return pure112(unit);
+                              }
+                              ;
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 794, column 23 - line 816, column 40): " + [v7.constructor.name]);
+                            }))(function() {
+                              return setHighlightElement(Nothing.value);
+                            });
+                          }
+                          ;
+                          var $327 = isValidCursor2(spec.isValidCursorSort)(hdzipper);
+                          if ($327) {
+                            return discard15(stopprop)(function() {
+                              return setHighlightElement(new Just(hdzipperHoleyDerivPath(hdzipper)));
+                            });
+                          }
+                          ;
+                          return pure112(unit);
                         };
-                        var setState = function(st) {
-                          return discard15(unsetFacadeElements)(function() {
-                            return discard15(put2(v2.value1)(st))(function() {
-                              return discard15(setFacade$prime(st))(function() {
-                                return discard15(liftEffect8(write(true)(v3.value1)))(function() {
-                                  return pushHistory(st);
-                                });
+                      };
+                      var setState = function(st) {
+                        return discard15(unsetFacadeElements)(function() {
+                          return discard15(put2(v1.value1)(st))(function() {
+                            return discard15(setFacade$prime(st))(function() {
+                              return discard15(liftEffect8(write(true)(v2.value1)))(function() {
+                                return pushHistory(st);
                               });
                             });
                           });
-                        };
-                        var setBufferEnabled = function(isEnabled) {
-                          return function(mb_str) {
-                            return bind27(bind27(getFacade)(function(st) {
-                              return assert(cursorState("setBufferEnabled")(st))(function() {
-                                return pure112;
-                              });
-                            }))(function(cursor2) {
-                              return discard15(setState(new CursorState({
-                                hdzipper: cursor2.hdzipper,
-                                mode: function() {
-                                  if (isEnabled) {
-                                    return BufferCursorMode.value;
-                                  }
-                                  ;
-                                  return NavigationCursorMode.value;
-                                }()
-                              })))(function() {
-                                return tell1(tokens.slotToken)(bufferSlot)(unit)(SetBufferEnabledQuery.create(isEnabled)(mb_str));
-                              });
-                            });
-                          };
-                        };
-                        var getCursorState = function(source3) {
-                          return bind27(getState)(function(st) {
-                            return assert(cursorState(source3)(st))(function() {
+                        });
+                      };
+                      var setBufferEnabled = function(isEnabled) {
+                        return function(mb_str) {
+                          return bind27(bind27(getFacade)(function(st) {
+                            return assert(cursorState("setBufferEnabled")(st))(function() {
                               return pure112;
                             });
-                          });
-                        };
-                        var getBoundingClientRectFromPath = function(path) {
-                          return bind27(getElementByHoleyDerivPath(path))(function(elem4) {
-                            return bind27(liftEffect8(getBoundingClientRect(elem4)))(function(rect) {
-                              return pure112(rect);
+                          }))(function(cursor2) {
+                            return discard15(setState(new CursorState({
+                              hdzipper: cursor2.hdzipper,
+                              mode: function() {
+                                if (isEnabled) {
+                                  return BufferCursorMode.value;
+                                }
+                                ;
+                                return NavigationCursorMode.value;
+                              }()
+                            })))(function() {
+                              return tell1(tokens.slotToken)(bufferSlot)(unit)(SetBufferEnabledQuery.create(isEnabled)(mb_str));
                             });
                           });
                         };
-                        var genAndCopyClipTerm = function(dterm) {
-                          var generalizingChange = spec.generalizeDerivation(derivTermSort3(dterm));
-                          var generalizedDTerm = assertJustExpr2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(generalizingChange)(termToSSTerm(dterm)))(spec.stepRules));
-                          var forgottenDTerm = map57(forgetDerivLabelSorts2(spec.forgetSorts))(generalizedDTerm);
-                          var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(infer2(forgottenDTerm));
-                          var expectedClipSort = spec.clipboardSort(derivTermSort3(forgottenDTerm));
-                          var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(derivTermSort3(forgottenDTerm));
-                          var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedClipSort)(forgottenTopSort))));
-                          var unifiedDTerm = subDerivTerm3(unifyingSub)(forgottenDTerm);
-                          return liftEffect8(write(new Just(new Right(unifiedDTerm)))(v6.value1));
-                        };
-                        var genAndCopyClipPath = function(dpath) {
-                          var generalizingChange = spec.generalizeDerivation(nonemptyUpPathTopSort2(dpath));
-                          var v8 = ssTermToChangedPath2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(generalizingChange)(wrapPath(dpath)(new Expr(new Marker(0), []))))(spec.stepRules));
-                          var forgottenDPath = map119(forgetDerivLabelSorts2(spec.forgetSorts))(v8.value1.value0);
-                          var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(inferPath2(nonemptyPathInnerSort2(forgottenDPath))(forgottenDPath));
-                          var expectedClipSort = spec.clipboardSort(nonemptyUpPathTopSort2(forgottenDPath));
-                          var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(nonemptyUpPathTopSort2(forgottenDPath));
-                          var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedClipSort)(forgottenTopSort))));
-                          var unifiedDPath = subDerivPath2(unifyingSub)(forgottenDPath);
-                          return liftEffect8(write(new Just(new Left(unifiedDPath)))(v6.value1));
-                        };
-                        var finalizeSmallstep = function(ssterm) {
-                          var preFinal = termToZipper2(stepRepeatedly2(Nothing.value)(ssterm)(spec.stepRules));
-                          var forgottenFinal = map215(forgetDerivLabelSorts2(spec.forgetSorts))(preFinal);
-                          var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(inferZipper2(forgottenFinal));
-                          var forgottenFinalSort = derivZipperTopSort2(forgottenFinal);
-                          var expectedProgSort = spec.clipboardSort(forgottenFinalSort);
-                          var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(forgottenFinalSort);
-                          var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedProgSort)(forgottenTopSort))));
-                          var $$final = subDerivZipper2(unifyingSub)(forgottenFinal);
-                          return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper($$final))));
-                        };
-                        var doSmallstep = function(ssterm) {
-                          if (false) {
-                            return setState(new SmallStepState({
-                              ssterm
-                            }));
+                      };
+                      var getCursorState = function(source3) {
+                        return bind27(getState)(function(st) {
+                          return assert(cursorState(source3)(st))(function() {
+                            return pure112;
+                          });
+                        });
+                      };
+                      var getBoundingClientRectFromPath = function(path) {
+                        return bind27(getElementByHoleyDerivPath(path))(function(elem4) {
+                          return bind27(liftEffect8(getBoundingClientRect(elem4)))(function(rect) {
+                            return pure112(rect);
+                          });
+                        });
+                      };
+                      var genAndCopyClipTerm = function(dterm) {
+                        var generalizingChange = spec.generalizeDerivation(derivTermSort3(dterm));
+                        var generalizedDTerm = assertJustExpr2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(generalizingChange)(termToSSTerm(dterm)))(spec.stepRules));
+                        var forgottenDTerm = map57(forgetDerivLabelSorts2(spec.forgetSorts))(generalizedDTerm);
+                        var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(infer2(forgottenDTerm));
+                        var expectedClipSort = spec.clipboardSort(derivTermSort3(forgottenDTerm));
+                        var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(derivTermSort3(forgottenDTerm));
+                        var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedClipSort)(forgottenTopSort))));
+                        var unifiedDTerm = subDerivTerm3(unifyingSub)(forgottenDTerm);
+                        return liftEffect8(write(new Just(new Right(unifiedDTerm)))(v5.value1));
+                      };
+                      var genAndCopyClipPath = function(dpath) {
+                        var generalizingChange = spec.generalizeDerivation(nonemptyUpPathTopSort2(dpath));
+                        var v7 = ssTermToChangedPath2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(generalizingChange)(wrapPath(dpath)(new Expr(new Marker(0), []))))(spec.stepRules));
+                        var forgottenDPath = map119(forgetDerivLabelSorts2(spec.forgetSorts))(v7.value1.value0);
+                        var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(inferPath2(nonemptyPathInnerSort2(forgottenDPath))(forgottenDPath));
+                        var expectedClipSort = spec.clipboardSort(nonemptyUpPathTopSort2(forgottenDPath));
+                        var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(nonemptyUpPathTopSort2(forgottenDPath));
+                        var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedClipSort)(forgottenTopSort))));
+                        var unifiedDPath = subDerivPath2(unifyingSub)(forgottenDPath);
+                        return liftEffect8(write(new Just(new Left(unifiedDPath)))(v5.value1));
+                      };
+                      var finalizeSmallstep = function(ssterm) {
+                        var preFinal = termToZipper2(stepRepeatedly2(Nothing.value)(ssterm)(spec.stepRules));
+                        var forgottenFinal = map215(forgetDerivLabelSorts2(spec.forgetSorts))(preFinal);
+                        var unifyingSub$prime = fromJust$prime("shouldn't fail if term typechecks")(inferZipper2(forgottenFinal));
+                        var forgottenFinalSort = derivZipperTopSort2(forgottenFinal);
+                        var expectedProgSort = spec.clipboardSort(forgottenFinalSort);
+                        var forgottenTopSort = subMetaExprPartially3(unifyingSub$prime)(forgottenFinalSort);
+                        var unifyingSub = composeSub3(unifyingSub$prime)(snd(fromJust$prime("gacct shouldn't fail")(unify3(expectedProgSort)(forgottenTopSort))));
+                        var $$final = subDerivZipper2(unifyingSub)(forgottenFinal);
+                        return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper($$final))));
+                      };
+                      var doSmallstep = function(ssterm) {
+                        if (false) {
+                          return setState(new SmallStepState({
+                            ssterm
+                          }));
+                        }
+                        ;
+                        return finalizeSmallstep(ssterm);
+                      };
+                      var handleAction = function(v7) {
+                        if (v7 instanceof WrapAction) {
+                          return bind27(getCursorState("handleAction"))(function(cursor2) {
+                            var up = hdzipperDerivPath(cursor2.hdzipper);
+                            var dterm = hdzipperDerivTerm2(cursor2.hdzipper);
+                            var ssterm = setupSSTermFromWrapAction2(v7.value0.cursorGoesInside)(map119(subDerivLabel2(v7.value0.sub))(up))(v7.value0.topChange)(v7.value0.dpath)(v7.value0.botChange)(map57(subDerivLabel2(v7.value0.sub))(dterm));
+                            return doSmallstep(ssterm);
+                          });
+                        }
+                        ;
+                        if (v7 instanceof FillAction) {
+                          return bind27(getCursorState("handleAction"))(function(cursor2) {
+                            var up = hdzipperDerivPath(cursor2.hdzipper);
+                            var dzipper0 = new Zipper(up, v7.value0.dterm);
+                            var dzipper1 = subDerivZipper2(v7.value0.sub)(dzipper0);
+                            return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(dzipper1))));
+                          });
+                        }
+                        ;
+                        if (v7 instanceof ReplaceAction) {
+                          return bind27(getCursorState("handleAction"))(function(cursor2) {
+                            var up = hdzipperDerivPath(cursor2.hdzipper);
+                            var ssterm = setupSSTermFromReplaceAction2(up)(v7.value0.topChange)(v7.value0.dterm);
+                            return doSmallstep(ssterm);
+                          });
+                        }
+                        ;
+                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 269, column 20 - line 302, column 27): " + [v7.constructor.name]);
+                      };
+                      var handleBufferOutput = function(v7) {
+                        if (v7 instanceof ActionOutput) {
+                          return handleAction(v7.value0);
+                        }
+                        ;
+                        if (v7 instanceof SetPreviewOutput) {
+                          return discard15(tell22(tokens.slotToken)(previewSlot)(leftDir)(SetPreviewQuery.create(v7.value0)))(function() {
+                            return tell22(tokens.slotToken)(previewSlot)(rightDir)(SetPreviewQuery.create(v7.value0));
+                          });
+                        }
+                        ;
+                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 749, column 26 - line 753, column 83): " + [v7.constructor.name]);
+                      };
+                      var deleteTermAtCursor = function(restOfProg) {
+                        return function(dterm) {
+                          var upChange = spec.onDelete(derivTermSort3(dterm));
+                          var v7 = defaultDerivTerm3(rEndpoint3(upChange));
+                          if (v7 instanceof Nothing) {
+                            return pure112(unit);
                           }
                           ;
-                          return finalizeSmallstep(ssterm);
+                          if (v7 instanceof Just) {
+                            var ssterm = setupSSTermFromReplaceAction2(restOfProg)(upChange)(v7.value0);
+                            return doSmallstep(ssterm);
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 457, column 9 - line 465, column 31): " + [v7.constructor.name]);
                         };
-                        var handleAction = function(v8) {
-                          if (v8 instanceof WrapAction) {
-                            return bind27(getCursorState("handleAction"))(function(cursor2) {
-                              var up = hdzipperDerivPath(cursor2.hdzipper);
-                              var dterm = hdzipperDerivTerm2(cursor2.hdzipper);
-                              var ssterm = setupSSTermFromWrapAction2(v8.value0.cursorGoesInside)(map119(subDerivLabel2(v8.value0.sub))(up))(v8.value0.topChange)(v8.value0.dpath)(v8.value0.botChange)(map57(subDerivLabel2(v8.value0.sub))(dterm));
-                              return doSmallstep(ssterm);
-                            });
-                          }
-                          ;
-                          if (v8 instanceof FillAction) {
-                            return bind27(getCursorState("handleAction"))(function(cursor2) {
-                              var up = hdzipperDerivPath(cursor2.hdzipper);
-                              var dzipper0 = new Zipper(up, v8.value0.dterm);
-                              var dzipper1 = subDerivZipper2(v8.value0.sub)(dzipper0);
-                              return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(dzipper1))));
-                            });
-                          }
-                          ;
-                          if (v8 instanceof ReplaceAction) {
-                            return bind27(getCursorState("handleAction"))(function(cursor2) {
-                              var up = hdzipperDerivPath(cursor2.hdzipper);
-                              var ssterm = setupSSTermFromReplaceAction2(up)(v8.value0.topChange)(v8.value0.dterm);
-                              return doSmallstep(ssterm);
-                            });
-                          }
-                          ;
-                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 270, column 20 - line 303, column 27): " + [v8.constructor.name]);
+                      };
+                      var computeCursorMovement = function(dir2) {
+                        return function(hdzipper) {
+                          return moveHDZUntil2(dir2)(isValidCursor2(spec.isValidCursorSort))(hdzipper);
                         };
-                        var handleBufferOutput = function(v8) {
-                          if (v8 instanceof ActionOutput) {
-                            return handleAction(v8.value0);
+                      };
+                      var moveCursor = function(dir2) {
+                        return bind27(getFacade)(function(v7) {
+                          if (v7 instanceof CursorState && v7.value0.mode instanceof BufferCursorMode) {
+                            return pure112(unit);
                           }
                           ;
-                          if (v8 instanceof SetPreviewOutput) {
-                            return discard15(tell22(tokens.slotToken)(previewSlot)(leftDir)(SetPreviewQuery.create(v8.value0)))(function() {
-                              return tell22(tokens.slotToken)(previewSlot)(rightDir)(SetPreviewQuery.create(v8.value0));
-                            });
-                          }
-                          ;
-                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 748, column 26 - line 752, column 83): " + [v8.constructor.name]);
-                        };
-                        var deleteTermAtCursor = function(restOfProg) {
-                          return function(dterm) {
-                            var upChange = spec.onDelete(derivTermSort3(dterm));
-                            var v8 = defaultDerivTerm3(rEndpoint3(upChange));
+                          if (v7 instanceof CursorState) {
+                            var v8 = computeCursorMovement(dir2)(v7.value0.hdzipper);
                             if (v8 instanceof Nothing) {
                               return pure112(unit);
                             }
                             ;
                             if (v8 instanceof Just) {
-                              var ssterm = setupSSTermFromReplaceAction2(restOfProg)(upChange)(v8.value0);
-                              return doSmallstep(ssterm);
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(v8.value0)));
                             }
                             ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 458, column 9 - line 466, column 31): " + [v8.constructor.name]);
-                          };
-                        };
-                        var computeCursorMovement = function(dir2) {
-                          return function(hdzipper) {
-                            return moveHDZUntil2(dir2)(isValidCursor2(spec.isValidCursorSort))(hdzipper);
-                          };
-                        };
-                        var moveCursor = function(dir2) {
-                          return bind27(getFacade)(function(v8) {
-                            if (v8 instanceof CursorState && v8.value0.mode instanceof BufferCursorMode) {
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 353, column 11 - line 355, column 93): " + [v8.constructor.name]);
+                          }
+                          ;
+                          if (v7 instanceof SelectState) {
+                            var atTop = on34(_prev)(function(v82) {
+                              return true;
+                            })($$default(false))(dir2);
+                            return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(zipperpToZipper2(atTop)(v7.value0.dzipperp)))));
+                          }
+                          ;
+                          if (v7 instanceof TopState) {
+                            var dzipper = new Zipper(mempty4, v7.value0.dterm);
+                            var v8 = moveHoleyDerivZipper2(dir2)(injectHoleyDerivZipper(dzipper));
+                            if (v8 instanceof Nothing) {
                               return pure112(unit);
                             }
                             ;
-                            if (v8 instanceof CursorState) {
-                              var v9 = computeCursorMovement(dir2)(v8.value0.hdzipper);
-                              if (v9 instanceof Nothing) {
-                                return pure112(unit);
-                              }
-                              ;
-                              if (v9 instanceof Just) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(v9.value0)));
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 354, column 11 - line 356, column 93): " + [v9.constructor.name]);
+                            if (v8 instanceof Just) {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(v8.value0)));
                             }
                             ;
-                            if (v8 instanceof SelectState) {
-                              var atTop = on34(_prev)(function(v92) {
-                                return true;
-                              })($$default(false))(dir2);
-                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(zipperpToZipper2(atTop)(v8.value0.dzipperp)))));
-                            }
-                            ;
-                            if (v8 instanceof TopState) {
-                              var dzipper = new Zipper(mempty4, v8.value0.dterm);
-                              var v9 = moveHoleyDerivZipper2(dir2)(injectHoleyDerivZipper(dzipper));
-                              if (v9 instanceof Nothing) {
-                                return pure112(unit);
-                              }
-                              ;
-                              if (v9 instanceof Just) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(v9.value0)));
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 372, column 11 - line 374, column 93): " + [v9.constructor.name]);
-                            }
-                            ;
-                            if (v8 instanceof SmallStepState) {
-                              return pure112(unit);
-                            }
-                            ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 351, column 21 - line 375, column 38): " + [v8.constructor.name]);
-                          });
-                        };
-                        var moveCursorVertically = function(verticalOrHorizontal) {
-                          return bind27(getFacade)(function(v8) {
-                            if (v8 instanceof CursorState && v8.value0.mode instanceof BufferCursorMode) {
-                              return pure112(unit);
-                            }
-                            ;
-                            if (v8 instanceof CursorState) {
-                              var getPos = function(hdzipper) {
-                                return getBoundingClientRectFromPath(hdzipperHoleyDerivPath(hdzipper));
-                              };
-                              return bind27(getPos(v8.value0.hdzipper))(function(startRect) {
-                                var goUntil = function(dir2) {
-                                  return function(hdzipper) {
-                                    return function(check) {
-                                      return bind27(getPos(hdzipper))(function(newPos) {
-                                        var $369 = check(newPos);
-                                        if ($369) {
-                                          return pure112(hdzipper);
-                                        }
-                                        ;
-                                        var v9 = computeCursorMovement(dir2)(hdzipper);
-                                        if (v9 instanceof Nothing) {
-                                          return pure112(hdzipper);
-                                        }
-                                        ;
-                                        if (v9 instanceof Just) {
-                                          return goUntil(dir2)(v9.value0)(check);
-                                        }
-                                        ;
-                                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 326, column 30 - line 328, column 78): " + [v9.constructor.name]);
-                                      });
-                                    };
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 371, column 11 - line 373, column 93): " + [v8.constructor.name]);
+                          }
+                          ;
+                          if (v7 instanceof SmallStepState) {
+                            return pure112(unit);
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 350, column 21 - line 374, column 38): " + [v7.constructor.name]);
+                        });
+                      };
+                      var moveCursorVertically = function(verticalOrHorizontal) {
+                        return bind27(getFacade)(function(v7) {
+                          if (v7 instanceof CursorState && v7.value0.mode instanceof BufferCursorMode) {
+                            return pure112(unit);
+                          }
+                          ;
+                          if (v7 instanceof CursorState) {
+                            var getPos = function(hdzipper) {
+                              return getBoundingClientRectFromPath(hdzipperHoleyDerivPath(hdzipper));
+                            };
+                            return bind27(getPos(v7.value0.hdzipper))(function(startRect) {
+                              var goUntil = function(dir2) {
+                                return function(hdzipper) {
+                                  return function(check) {
+                                    return bind27(getPos(hdzipper))(function(newPos) {
+                                      var $367 = check(newPos);
+                                      if ($367) {
+                                        return pure112(hdzipper);
+                                      }
+                                      ;
+                                      var v8 = computeCursorMovement(dir2)(hdzipper);
+                                      if (v8 instanceof Nothing) {
+                                        return pure112(hdzipper);
+                                      }
+                                      ;
+                                      if (v8 instanceof Just) {
+                                        return goUntil(dir2)(v8.value0)(check);
+                                      }
+                                      ;
+                                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 325, column 30 - line 327, column 78): " + [v8.constructor.name]);
+                                    });
                                   };
                                 };
-                                return bind27(function() {
-                                  if (verticalOrHorizontal) {
-                                    return bind27(goUntil(prevDir)(v8.value0.hdzipper)(function(newpos) {
-                                      return newpos.top + 4 < startRect.top;
-                                    }))(function(pos1) {
-                                      return goUntil(prevDir)(pos1)(function(newpos) {
-                                        return newpos.left <= startRect.left + 4;
-                                      });
-                                    });
-                                  }
-                                  ;
-                                  return bind27(goUntil(nextDir)(v8.value0.hdzipper)(function(newpos) {
-                                    return newpos.top > startRect.top + 4;
+                              };
+                              return bind27(function() {
+                                if (verticalOrHorizontal) {
+                                  return bind27(goUntil(prevDir)(v7.value0.hdzipper)(function(newpos) {
+                                    return newpos.top + 4 < startRect.top;
                                   }))(function(pos1) {
-                                    return bind27(getPos(pos1))(function(rect1) {
-                                      return bind27(goUntil(nextDir)(pos1)(function(newpos) {
-                                        return newpos.left + 4 >= startRect.left || newpos.top > rect1.top + 4;
-                                      }))(function(pos2) {
-                                        return bind27(getPos(pos2))(function(rect2) {
-                                          var $373 = rect2.top > rect1.top + 4;
-                                          if ($373) {
-                                            var v9 = computeCursorMovement(prevDir)(pos2);
-                                            if (v9 instanceof Nothing) {
-                                              return pure112(pos2);
-                                            }
-                                            ;
-                                            if (v9 instanceof Just) {
-                                              return pure112(v9.value0);
-                                            }
-                                            ;
-                                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 339, column 30 - line 341, column 45): " + [v9.constructor.name]);
+                                    return goUntil(prevDir)(pos1)(function(newpos) {
+                                      return newpos.left <= startRect.left + 4;
+                                    });
+                                  });
+                                }
+                                ;
+                                return bind27(goUntil(nextDir)(v7.value0.hdzipper)(function(newpos) {
+                                  return newpos.top > startRect.top + 4;
+                                }))(function(pos1) {
+                                  return bind27(getPos(pos1))(function(rect1) {
+                                    return bind27(goUntil(nextDir)(pos1)(function(newpos) {
+                                      return newpos.left + 4 >= startRect.left || newpos.top > rect1.top + 4;
+                                    }))(function(pos2) {
+                                      return bind27(getPos(pos2))(function(rect2) {
+                                        var $371 = rect2.top > rect1.top + 4;
+                                        if ($371) {
+                                          var v8 = computeCursorMovement(prevDir)(pos2);
+                                          if (v8 instanceof Nothing) {
+                                            return pure112(pos2);
                                           }
                                           ;
-                                          return pure112(pos2);
-                                        });
+                                          if (v8 instanceof Just) {
+                                            return pure112(v8.value0);
+                                          }
+                                          ;
+                                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 338, column 30 - line 340, column 45): " + [v8.constructor.name]);
+                                        }
+                                        ;
+                                        return pure112(pos2);
                                       });
                                     });
                                   });
-                                }())(function(finalZipper) {
-                                  return setFacade(new CursorState(cursorFromHoleyDerivZipper(finalZipper)));
                                 });
+                              }())(function(finalZipper) {
+                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(finalZipper)));
+                              });
+                            });
+                          }
+                          ;
+                          return pure112(unit);
+                        });
+                      };
+                      var handleKeyboardEvent = function(event) {
+                        var shiftKey3 = shiftKey2(event);
+                        var metaKey3 = metaKey2(event);
+                        var key2 = key(event);
+                        var keyCodePoint = function() {
+                          var v7 = toCodePointArray(key2);
+                          if (v7.length === 1) {
+                            return new Just(v7[0]);
+                          }
+                          ;
+                          return Nothing.value;
+                        }();
+                        var ctrlKey3 = ctrlKey2(event);
+                        var cmdKey = ctrlKey3 || metaKey3;
+                        return bind27(getFacade)(function(v7) {
+                          if (v7 instanceof CursorState && v7.value0.mode instanceof BufferCursorMode) {
+                            var $378 = key2 === "Enter" || key2 === " ";
+                            if ($378) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return discard15(tell1(tokens.slotToken)(bufferSlot)(unit)(SubmitBufferQuery.create))(function() {
+                                  var $379 = key2 === " ";
+                                  if ($379) {
+                                    return moveToNextHole;
+                                  }
+                                  ;
+                                  return pure112(unit);
+                                });
+                              });
+                            }
+                            ;
+                            var $380 = key2 === "Escape";
+                            if ($380) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return setBufferEnabled(false)(Nothing.value);
+                              });
+                            }
+                            ;
+                            var $381 = isJust(readVerticalDir(key2));
+                            if ($381) {
+                              return assert(just("handleKeyboardEvent")(readVerticalDir(key2)))(function() {
+                                return function(dir2) {
+                                  return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                    return tell1(tokens.slotToken)(bufferSlot)(unit)(MoveBufferQuery.create(dir2));
+                                  });
+                                };
                               });
                             }
                             ;
                             return pure112(unit);
-                          });
-                        };
-                        var handleKeyboardEvent = function(event) {
-                          var shiftKey3 = shiftKey2(event);
-                          var metaKey3 = metaKey2(event);
-                          var key2 = key(event);
-                          var keyCodePoint = function() {
-                            var v8 = toCodePointArray(key2);
-                            if (v8.length === 1) {
-                              return new Just(v8[0]);
+                          }
+                          ;
+                          if (v7 instanceof CursorState && v7.value0.mode instanceof NavigationCursorMode) {
+                            var path = hdzipperDerivPath(v7.value0.hdzipper);
+                            var dterm = hdzipperDerivTerm2(v7.value0.hdzipper);
+                            var $384 = isJust(spec.keyAction(key2)(derivTermSort3(dterm)));
+                            if ($384) {
+                              return discard15(setState(v7))(function() {
+                                var action2 = fromJust6(spec.keyAction(key2)(derivTermSort3(dterm)));
+                                return handleAction(action2);
+                              });
                             }
                             ;
-                            return Nothing.value;
-                          }();
-                          var ctrlKey3 = ctrlKey2(event);
-                          var cmdKey = ctrlKey3 || metaKey3;
-                          return bind27(getFacade)(function(v8) {
-                            if (v8 instanceof CursorState && v8.value0.mode instanceof BufferCursorMode) {
-                              var $380 = key2 === "Enter" || key2 === " ";
-                              if ($380) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return discard15(tell1(tokens.slotToken)(bufferSlot)(unit)(SubmitBufferQuery.create))(function() {
-                                    var $381 = key2 === " ";
-                                    if ($381) {
-                                      return moveToNextHole;
+                            var $385 = cmdKey && key2 === "z";
+                            if ($385) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return bind27(popHistory)(function(v82) {
+                                  return bind27(popHistory)(function(v9) {
+                                    if (v9 instanceof Nothing) {
+                                      return pure112(unit);
                                     }
                                     ;
-                                    return pure112(unit);
+                                    if (v9 instanceof Just) {
+                                      return setState(v9.value0);
+                                    }
+                                    ;
+                                    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 546, column 49 - line 548, column 39): " + [v9.constructor.name]);
                                   });
                                 });
-                              }
-                              ;
-                              var $382 = key2 === "Escape";
-                              if ($382) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return setBufferEnabled(false)(Nothing.value);
-                                });
-                              }
-                              ;
-                              var $383 = isJust(readVerticalDir(key2));
-                              if ($383) {
-                                return assert(just("handleKeyboardEvent")(readVerticalDir(key2)))(function() {
-                                  return function(dir2) {
-                                    return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                      return tell1(tokens.slotToken)(bufferSlot)(unit)(MoveBufferQuery.create(dir2));
-                                    });
-                                  };
-                                });
-                              }
-                              ;
-                              return pure112(unit);
+                              });
                             }
                             ;
-                            if (v8 instanceof CursorState && v8.value0.mode instanceof NavigationCursorMode) {
-                              var path = hdzipperDerivPath(v8.value0.hdzipper);
-                              var dterm = hdzipperDerivTerm2(v8.value0.hdzipper);
-                              var $386 = isJust(spec.keyAction(key2)(derivTermSort3(dterm)));
-                              if ($386) {
-                                return discard15(setState(v8))(function() {
-                                  var action2 = fromJust6(spec.keyAction(key2)(derivTermSort3(dterm)));
-                                  return handleAction(action2);
+                            var $388 = cmdKey && key2 === "c";
+                            if ($388) {
+                              return genAndCopyClipTerm(dterm);
+                            }
+                            ;
+                            var $389 = cmdKey && key2 === "x";
+                            if ($389) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return discard15(genAndCopyClipTerm(dterm))(function() {
+                                  return deleteTermAtCursor(path)(dterm);
                                 });
-                              }
-                              ;
-                              var $387 = cmdKey && key2 === "z";
-                              if ($387) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return bind27(popHistory)(function(v92) {
-                                    return bind27(popHistory)(function(v10) {
+                              });
+                            }
+                            ;
+                            var $390 = cmdKey && key2 === "v";
+                            if ($390) {
+                              return bind27(liftEffect8(read(v5.value1)))(function(v82) {
+                                if (v82 instanceof Nothing) {
+                                  return pure112(unit);
+                                }
+                                ;
+                                if (v82 instanceof Just && v82.value0 instanceof Left) {
+                                  return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                    var specializingChange = spec.specializeDerivation(nonemptyUpPathTopSort2(v82.value0.value0))(derivTermSort3(dterm));
+                                    var v9 = ssTermToChangedPath2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(specializingChange)(wrapPath(v82.value0.value0)(new Expr(new Marker(0), []))))(spec.stepRules));
+                                    var pathChange = getPathChange22(v9.value1.value0)(spec.forgetSorts);
+                                    var v10 = spec.splitChange(pathChange);
+                                    var v11 = unify3(v10.cursorSort)(derivTermSort3(dterm));
+                                    if (v11 instanceof Just) {
+                                      var unifiedClipDPath = subDerivPath2(v11.value0.value1)(v9.value1.value0);
+                                      var unifiedProgPath = subDerivPath2(v11.value0.value1)(path);
+                                      var unifiedProgDTerm = subDerivTerm3(v11.value0.value1)(dterm);
+                                      var unifiedDownChange = subSomeMetaChange2(v11.value0.value1)(v10.downChange);
+                                      var unifiedUpChange = subSomeMetaChange2(v11.value0.value1)(v10.upChange);
+                                      var ssterm = setupSSTermFromWrapAction2(false)(unifiedProgPath)(unifiedUpChange)(unifiedClipDPath)(invert(unifiedDownChange))(unifiedProgDTerm);
+                                      return doSmallstep(ssterm);
+                                    }
+                                    ;
+                                    if (v11 instanceof Nothing) {
+                                      return pure112(unit);
+                                    }
+                                    ;
+                                    throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 576, column 17 - line 593, column 34): " + [v11.constructor.name]);
+                                  });
+                                }
+                                ;
+                                if (v82 instanceof Just && v82.value0 instanceof Right) {
+                                  return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                    var specializingChange = spec.specializeDerivation(derivTermSort3(v82.value0.value0))(derivTermSort3(dterm));
+                                    var v9 = ssTermToChangedTerm2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(specializingChange)(termToSSTerm(v82.value0.value0)))(spec.stepRules));
+                                    return discard15(function() {
+                                      var v10 = unify3(derivTermSort3(v9.value1))(derivTermSort3(dterm));
+                                      if (v10 instanceof Just) {
+                                        var unifiedDTerm = subDerivTerm3(v10.value0.value1)(v9.value1);
+                                        var unifiedPath = subDerivPath2(v10.value0.value1)(path);
+                                        return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(unifiedPath, unifiedDTerm)))));
+                                      }
+                                      ;
                                       if (v10 instanceof Nothing) {
                                         return pure112(unit);
                                       }
                                       ;
-                                      if (v10 instanceof Just) {
-                                        return setState(v10.value0);
-                                      }
-                                      ;
-                                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 546, column 49 - line 548, column 39): " + [v10.constructor.name]);
-                                    });
-                                  });
-                                });
-                              }
-                              ;
-                              var $390 = cmdKey && key2 === "c";
-                              if ($390) {
-                                return genAndCopyClipTerm(dterm);
-                              }
-                              ;
-                              var $391 = cmdKey && key2 === "x";
-                              if ($391) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return discard15(genAndCopyClipTerm(dterm))(function() {
-                                    return deleteTermAtCursor(path)(dterm);
-                                  });
-                                });
-                              }
-                              ;
-                              var $392 = cmdKey && key2 === "v";
-                              if ($392) {
-                                return bind27(liftEffect8(read(v6.value1)))(function(v92) {
-                                  if (v92 instanceof Nothing) {
-                                    return pure112(unit);
-                                  }
-                                  ;
-                                  if (v92 instanceof Just && v92.value0 instanceof Left) {
-                                    return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                      var specializingChange = spec.specializeDerivation(nonemptyUpPathTopSort2(v92.value0.value0))(derivTermSort3(dterm));
-                                      var v10 = ssTermToChangedPath2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(specializingChange)(wrapPath(v92.value0.value0)(new Expr(new Marker(0), []))))(spec.stepRules));
-                                      var pathChange = getPathChange22(v10.value1.value0)(spec.forgetSorts);
-                                      var v11 = spec.splitChange(pathChange);
-                                      var v12 = unify3(v11.cursorSort)(derivTermSort3(dterm));
-                                      if (v12 instanceof Just) {
-                                        var unifiedClipDPath = subDerivPath2(v12.value0.value1)(v10.value1.value0);
-                                        var unifiedProgPath = subDerivPath2(v12.value0.value1)(path);
-                                        var unifiedProgDTerm = subDerivTerm3(v12.value0.value1)(dterm);
-                                        var unifiedDownChange = subSomeMetaChange2(v12.value0.value1)(v11.downChange);
-                                        var unifiedUpChange = subSomeMetaChange2(v12.value0.value1)(v11.upChange);
-                                        var ssterm = setupSSTermFromWrapAction2(false)(unifiedProgPath)(unifiedUpChange)(unifiedClipDPath)(invert(unifiedDownChange))(unifiedProgDTerm);
-                                        return doSmallstep(ssterm);
-                                      }
-                                      ;
-                                      if (v12 instanceof Nothing) {
+                                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 603, column 17 - line 609, column 34): " + [v10.constructor.name]);
+                                    }())(function() {
+                                      var $412 = hdzIsHolePosition2(v7.value0.hdzipper);
+                                      if ($412) {
                                         return pure112(unit);
                                       }
                                       ;
-                                      throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 576, column 17 - line 593, column 34): " + [v12.constructor.name]);
+                                      return genAndCopyClipTerm(dterm);
                                     });
-                                  }
-                                  ;
-                                  if (v92 instanceof Just && v92.value0 instanceof Right) {
-                                    return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                      var specializingChange = spec.specializeDerivation(derivTermSort3(v92.value0.value0))(derivTermSort3(dterm));
-                                      var v10 = ssTermToChangedTerm2(stepRepeatedly2(Nothing.value)(wrapBoundary3(Down.value)(specializingChange)(termToSSTerm(v92.value0.value0)))(spec.stepRules));
-                                      return discard15(function() {
-                                        var v11 = unify3(derivTermSort3(v10.value1))(derivTermSort3(dterm));
-                                        if (v11 instanceof Just) {
-                                          var unifiedDTerm = subDerivTerm3(v11.value0.value1)(v10.value1);
-                                          var unifiedPath = subDerivPath2(v11.value0.value1)(path);
-                                          return setState(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(unifiedPath, unifiedDTerm)))));
-                                        }
-                                        ;
-                                        if (v11 instanceof Nothing) {
-                                          return pure112(unit);
-                                        }
-                                        ;
-                                        throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 603, column 17 - line 609, column 34): " + [v11.constructor.name]);
-                                      }())(function() {
-                                        var $414 = hdzIsHolePosition2(v8.value0.hdzipper);
-                                        if ($414) {
-                                          return pure112(unit);
-                                        }
-                                        ;
-                                        return genAndCopyClipTerm(dterm);
-                                      });
-                                    });
-                                  }
-                                  ;
-                                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 562, column 53 - line 612, column 45): " + [v92.constructor.name]);
-                                });
-                              }
-                              ;
-                              var $419 = cmdKey && key2 === "s";
-                              if ($419) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return bind27(getBoundingClientRectFromPath(hdzipperHoleyDerivPath(v8.value0.hdzipper)))(function(rect) {
-                                    return traceM2(pretty5("[print sort]" + bullets(["path = " + pretty33(path), "dterm = " + pretty42(dterm), "sort = " + pretty52(derivTermSort3(dterm)), "dlabel = " + pretty62(exprLabel(dterm)), "rect = " + show15(rect), "serialized-path = " + serializePath2(path)])));
                                   });
+                                }
+                                ;
+                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 562, column 53 - line 612, column 45): " + [v82.constructor.name]);
+                              });
+                            }
+                            ;
+                            var $417 = cmdKey && key2 === "s";
+                            if ($417) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return bind27(getBoundingClientRectFromPath(hdzipperHoleyDerivPath(v7.value0.hdzipper)))(function(rect) {
+                                  return traceM2(pretty5("[print sort]" + bullets(["path = " + pretty33(path), "dterm = " + pretty42(dterm), "sort = " + pretty52(derivTermSort3(dterm)), "dlabel = " + pretty62(exprLabel(dterm)), "rect = " + show15(rect), "serialized-path = " + serializePath2(path)])));
                                 });
-                              }
-                              ;
-                              var $420 = cmdKey && key2 === "p";
-                              if ($420) {
-                                return discard15(traceM2(printSerializedDerivZipper22(hdzipperDerivZipper2(v8.value0.hdzipper))))(function() {
+                              });
+                            }
+                            ;
+                            var $418 = cmdKey && key2 === "p";
+                            if ($418) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return discard15(traceM2(printSerializedDerivZipper22(hdzipperDerivZipper2(v7.value0.hdzipper))))(function() {
                                   return pure112(unit);
                                 });
-                              }
-                              ;
-                              var $421 = isOpenBufferKey(key2);
-                              if ($421) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return bind27(function() {
-                                    var v92 = hdzipperDerivTerm2(v8.value0.hdzipper);
-                                    if (v92.value0 instanceof DerivLiteral && v92.value0.value0 instanceof DataString) {
-                                      return pure112(new Just(v92.value0.value0.value0));
-                                    }
-                                    ;
-                                    if (v92.value0 instanceof DerivLiteral && v92.value0.value0 instanceof DataInt) {
-                                      return pure112(new Just(show8(v92.value0.value0.value0)));
-                                    }
-                                    ;
-                                    return pure112(Nothing.value);
-                                  }())(function(mb_str) {
-                                    return setBufferEnabled(true)(mb_str);
-                                  });
+                              });
+                            }
+                            ;
+                            var $419 = isOpenBufferKey(key2);
+                            if ($419) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return bind27(function() {
+                                  var v82 = hdzipperDerivTerm2(v7.value0.hdzipper);
+                                  if (v82.value0 instanceof DerivLiteral && v82.value0.value0 instanceof DataString) {
+                                    return pure112(new Just(v82.value0.value0.value0));
+                                  }
+                                  ;
+                                  if (v82.value0 instanceof DerivLiteral && v82.value0.value0 instanceof DataInt) {
+                                    return pure112(new Just(show8(v82.value0.value0.value0)));
+                                  }
+                                  ;
+                                  return pure112(Nothing.value);
+                                }())(function(mb_str) {
+                                  return setBufferEnabled(true)(mb_str);
                                 });
-                              }
-                              ;
-                              var $431 = eq14(map313(isQueryKey)(keyCodePoint))(new Just(true));
-                              if ($431) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                              });
+                            }
+                            ;
+                            var $429 = eq14(map313(isQueryKey)(keyCodePoint))(new Just(true));
+                            if ($429) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return setBufferEnabled(true)(new Just(key2));
+                              });
+                            }
+                            ;
+                            var $430 = key2 === "Backspace";
+                            if ($430) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return deleteTermAtCursor(path)(dterm);
+                              });
+                            }
+                            ;
+                            var $431 = key2 === "Escape";
+                            if ($431) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return setFacade(new TopState({
+                                  dterm: unzipper2(hdzipperDerivZipper2(v7.value0.hdzipper))
+                                }));
+                              });
+                            }
+                            ;
+                            var $432 = key2 === "ArrowUp";
+                            if ($432) {
+                              return moveCursorVertically(true);
+                            }
+                            ;
+                            var $433 = key2 === "ArrowDown";
+                            if ($433) {
+                              return moveCursorVertically(false);
+                            }
+                            ;
+                            var $434 = isJust(readMoveDir(key2));
+                            if ($434) {
+                              return assert(just("handleKeyboardEvent")(readMoveDir(key2)))(function() {
+                                return function(dir2) {
+                                  return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                    return function() {
+                                      if (shiftKey3) {
+                                        return moveSelect;
+                                      }
+                                      ;
+                                      return moveCursor;
+                                    }()(dir2);
+                                  });
+                                };
+                              });
+                            }
+                            ;
+                            var $436 = key2 === " ";
+                            if ($436) {
+                              return moveToNextHole;
+                            }
+                            ;
+                            return pure112(unit);
+                          }
+                          ;
+                          if (v7 instanceof SelectState) {
+                            var deleteSelection = function(unit2) {
+                              var sort2 = derivTermSort3(v7.value0.dzipperp.value2);
+                              var selection$prime$prime = function() {
+                                if (v7.value0.dzipperp.value1 instanceof Left) {
+                                  return reversePath5(v7.value0.dzipperp.value1.value0);
+                                }
+                                ;
+                                if (v7.value0.dzipperp.value1 instanceof Right) {
+                                  return v7.value0.dzipperp.value1.value0;
+                                }
+                                ;
+                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 670, column 35 - line 672, column 35): " + [v7.value0.dzipperp.value1.constructor.name]);
+                              }();
+                              var v82 = spec.splitChange(getPathChange22(selection$prime$prime)(spec.forgetSorts));
+                              var ssterm = setupSSTermFromWrapAction2(false)(v7.value0.dzipperp.value0)(invert(v82.upChange))(mempty13)(v82.downChange)(v7.value0.dzipperp.value2);
+                              return doSmallstep(ssterm);
+                            };
+                            var $451 = cmdKey && key2 === "c";
+                            if ($451) {
+                              return genAndCopyClipPath(either(reversePath5)(identity22)(v7.value0.dzipperp.value1));
+                            }
+                            ;
+                            var $452 = cmdKey && key2 === "x";
+                            if ($452) {
+                              return discard15(genAndCopyClipPath(either(reversePath5)(identity22)(v7.value0.dzipperp.value1)))(function() {
+                                return deleteSelection(unit);
+                              });
+                            }
+                            ;
+                            var $453 = key2 === "Escape";
+                            if ($453) {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v7.value0.dzipperp)))));
+                            }
+                            ;
+                            var $454 = key2 === "Backspace";
+                            if ($454) {
+                              return deleteSelection(unit);
+                            }
+                            ;
+                            var $455 = isOpenBufferKey(key2);
+                            if ($455) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                var cursor2 = cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v7.value0.dzipperp)));
+                                return discard15(setFacade(new CursorState(cursor2)))(function() {
+                                  return setBufferEnabled(true)(Nothing.value);
+                                });
+                              });
+                            }
+                            ;
+                            var $456 = eq14(map313(isQueryKey)(keyCodePoint))(new Just(true));
+                            if ($456) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                var cursor2 = cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v7.value0.dzipperp)));
+                                return discard15(setFacade(new CursorState(cursor2)))(function() {
                                   return setBufferEnabled(true)(new Just(key2));
                                 });
-                              }
-                              ;
-                              var $432 = key2 === "Backspace";
-                              if ($432) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return deleteTermAtCursor(path)(dterm);
-                                });
-                              }
-                              ;
-                              var $433 = key2 === "Escape";
-                              if ($433) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return setFacade(new TopState({
-                                    dterm: unzipper2(hdzipperDerivZipper2(v8.value0.hdzipper))
-                                  }));
-                                });
-                              }
-                              ;
-                              var $434 = key2 === "ArrowUp";
-                              if ($434) {
-                                return moveCursorVertically(true);
-                              }
-                              ;
-                              var $435 = key2 === "ArrowDown";
-                              if ($435) {
-                                return moveCursorVertically(false);
-                              }
-                              ;
-                              var $436 = isJust(readMoveDir(key2));
-                              if ($436) {
-                                return assert(just("handleKeyboardEvent")(readMoveDir(key2)))(function() {
-                                  return function(dir2) {
-                                    return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                      return function() {
-                                        if (shiftKey3) {
-                                          return moveSelect;
-                                        }
-                                        ;
-                                        return moveCursor;
-                                      }()(dir2);
-                                    });
-                                  };
-                                });
-                              }
-                              ;
-                              var $438 = key2 === " ";
-                              if ($438) {
-                                return moveToNextHole;
-                              }
-                              ;
-                              return pure112(unit);
+                              });
                             }
                             ;
-                            if (v8 instanceof SelectState) {
-                              var deleteSelection = function(unit2) {
-                                var sort2 = derivTermSort3(v8.value0.dzipperp.value2);
-                                var selection$prime$prime = function() {
-                                  if (v8.value0.dzipperp.value1 instanceof Left) {
-                                    return reversePath5(v8.value0.dzipperp.value1.value0);
-                                  }
-                                  ;
-                                  if (v8.value0.dzipperp.value1 instanceof Right) {
-                                    return v8.value0.dzipperp.value1.value0;
-                                  }
-                                  ;
-                                  throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 669, column 35 - line 671, column 35): " + [v8.value0.dzipperp.value1.constructor.name]);
-                                }();
-                                var v92 = spec.splitChange(getPathChange22(selection$prime$prime)(spec.forgetSorts));
-                                var ssterm = setupSSTermFromWrapAction2(false)(v8.value0.dzipperp.value0)(invert(v92.upChange))(mempty13)(v92.downChange)(v8.value0.dzipperp.value2);
-                                return doSmallstep(ssterm);
-                              };
-                              var $453 = cmdKey && key2 === "c";
-                              if ($453) {
-                                return genAndCopyClipPath(either(reversePath5)(identity22)(v8.value0.dzipperp.value1));
-                              }
-                              ;
-                              var $454 = cmdKey && key2 === "x";
-                              if ($454) {
-                                return discard15(genAndCopyClipPath(either(reversePath5)(identity22)(v8.value0.dzipperp.value1)))(function() {
-                                  return deleteSelection(unit);
-                                });
-                              }
-                              ;
-                              var $455 = key2 === "Escape";
-                              if ($455) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v8.value0.dzipperp)))));
-                              }
-                              ;
-                              var $456 = key2 === "Backspace";
-                              if ($456) {
-                                return deleteSelection(unit);
-                              }
-                              ;
-                              var $457 = isOpenBufferKey(key2);
-                              if ($457) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  var cursor2 = cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v8.value0.dzipperp)));
-                                  return discard15(setFacade(new CursorState(cursor2)))(function() {
-                                    return setBufferEnabled(true)(Nothing.value);
+                            var $457 = isJust(readMoveDir(key2));
+                            if ($457) {
+                              return assert(just("handleKeyboardEvent")(readMoveDir(key2)))(function() {
+                                return function(dir2) {
+                                  return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                    return function() {
+                                      if (shiftKey3) {
+                                        return moveSelect;
+                                      }
+                                      ;
+                                      return moveCursor;
+                                    }()(dir2);
                                   });
-                                });
-                              }
-                              ;
-                              var $458 = eq14(map313(isQueryKey)(keyCodePoint))(new Just(true));
-                              if ($458) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  var cursor2 = cursorFromHoleyDerivZipper(injectHoleyDerivZipper(unzipperp2(v8.value0.dzipperp)));
-                                  return discard15(setFacade(new CursorState(cursor2)))(function() {
-                                    return setBufferEnabled(true)(new Just(key2));
-                                  });
-                                });
-                              }
-                              ;
-                              var $459 = isJust(readMoveDir(key2));
-                              if ($459) {
-                                return assert(just("handleKeyboardEvent")(readMoveDir(key2)))(function() {
-                                  return function(dir2) {
-                                    return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                      return function() {
-                                        if (shiftKey3) {
-                                          return moveSelect;
-                                        }
-                                        ;
-                                        return moveCursor;
-                                      }()(dir2);
-                                    });
-                                  };
-                                });
-                              }
-                              ;
-                              return pure112(unit);
+                                };
+                              });
                             }
                             ;
-                            if (v8 instanceof TopState) {
-                              var $465 = isOpenBufferKey(key2);
-                              if ($465) {
-                                return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
-                                  return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, v8.value0.dterm)))));
-                                });
-                              }
-                              ;
-                              var $466 = isJust(readMoveDir(key2));
-                              if ($466) {
-                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, v8.value0.dterm)))));
-                              }
-                              ;
-                              return pure112(unit);
+                            return pure112(unit);
+                          }
+                          ;
+                          if (v7 instanceof TopState) {
+                            var $463 = isOpenBufferKey(key2);
+                            if ($463) {
+                              return discard15(liftEffect8(preventDefault(toEvent2(event))))(function() {
+                                return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, v7.value0.dterm)))));
+                              });
                             }
                             ;
-                            if (v8 instanceof SmallStepState) {
-                              var $468 = key2 === " ";
-                              if ($468) {
-                                var v9 = step5(Nothing.value)(v8.value0.ssterm)(spec.stepRules);
-                                if (v9 instanceof Nothing) {
-                                  return finalizeSmallstep(v8.value0.ssterm);
-                                }
-                                ;
-                                if (v9 instanceof Just) {
-                                  return setState(new SmallStepState({
-                                    ssterm: v9.value0
-                                  }));
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 734, column 13 - line 736, column 76): " + [v9.constructor.name]);
-                              }
-                              ;
-                              var $471 = key2 === "Enter";
-                              if ($471) {
-                                var $$final = stepRepeatedly2(Nothing.value)(v8.value0.ssterm)(spec.stepRules);
-                                return finalizeSmallstep($$final);
-                              }
-                              ;
-                              return pure112(unit);
+                            var $464 = isJust(readMoveDir(key2));
+                            if ($464) {
+                              return setFacade(new CursorState(cursorFromHoleyDerivZipper(injectHoleyDerivZipper(new Zipper(mempty4, v7.value0.dterm)))));
                             }
                             ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 509, column 21 - line 741, column 22): " + [v8.constructor.name]);
-                          });
-                        };
-                        var locs = {
-                          spec,
-                          handleBufferOutput,
-                          onMouseDown: onMouseDown2,
-                          onMouseOver: onMouseOver2
-                        };
-                        return discard8(useLifecycleEffect(bind27(liftEffect8(bind110(windowImpl)(document)))(function(doc) {
-                          return bind27(subscribe3(eventListener2(keydown)(toEventTarget(doc))(function() {
-                            var $502 = map313(handleKeyboardEvent);
-                            return function($503) {
-                              return $502(fromEvent($503));
-                            };
-                          }())))(function(kbdSubId) {
-                            return pure112(new Just(unsubscribe4(kbdSubId)));
-                          });
-                        })))(function() {
-                          return discard8(useQuery(tokens.queryToken)(function(v8) {
-                            if (v8 instanceof SetProgram) {
-                              return discard15(setState(new TopState({
-                                dterm: v8.value0
+                            return pure112(unit);
+                          }
+                          ;
+                          if (v7 instanceof SmallStepState) {
+                            var $466 = key2 === " ";
+                            if ($466) {
+                              var v8 = step5(Nothing.value)(v7.value0.ssterm)(spec.stepRules);
+                              if (v8 instanceof Nothing) {
+                                return finalizeSmallstep(v7.value0.ssterm);
+                              }
+                              ;
+                              if (v8 instanceof Just) {
+                                return setState(new SmallStepState({
+                                  ssterm: v8.value0
+                                }));
+                              }
+                              ;
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 735, column 13 - line 737, column 76): " + [v8.constructor.name]);
+                            }
+                            ;
+                            var $469 = key2 === "Enter";
+                            if ($469) {
+                              var $$final = stepRepeatedly2(Nothing.value)(v7.value0.ssterm)(spec.stepRules);
+                              return finalizeSmallstep($$final);
+                            }
+                            ;
+                            return pure112(unit);
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 508, column 21 - line 742, column 22): " + [v7.constructor.name]);
+                        });
+                      };
+                      var locs = {
+                        spec,
+                        handleBufferOutput,
+                        onMouseDown: onMouseDown2,
+                        onMouseOver: onMouseOver2
+                      };
+                      return discard8(useLifecycleEffect(bind27(liftEffect8(bind110(windowImpl)(document)))(function(doc) {
+                        return bind27(subscribe3(eventListener2(keydown)(toEventTarget(doc))(function() {
+                          var $500 = map313(handleKeyboardEvent);
+                          return function($501) {
+                            return $500(fromEvent($501));
+                          };
+                        }())))(function(kbdSubId) {
+                          return pure112(new Just(unsubscribe4(kbdSubId)));
+                        });
+                      })))(function() {
+                        return discard8(useQuery(tokens.queryToken)(function(v7) {
+                          if (v7 instanceof SetProgram) {
+                            return discard15(setState(new TopState({
+                              dterm: v7.value0
+                            })))(function() {
+                              return bind27(sequence6(mapFlipped8(v7.value1)(function(path) {
+                                return setNodeElementStyle("marked")(Nothing.value)(new Just(path));
                               })))(function() {
-                                return bind27(sequence6(mapFlipped8(v8.value1)(function(path) {
-                                  return setNodeElementStyle("marked")(Nothing.value)(new Just(path));
-                                })))(function() {
-                                  return pure112(new Just(v8.value2));
-                                });
+                                return pure112(new Just(v7.value2));
                               });
+                            });
+                          }
+                          ;
+                          if (v7 instanceof GetProgram) {
+                            return bind27(getState)(function(st) {
+                              return pure112(new Just(v7.value0(stateToDerivTerm2(st))));
+                            });
+                          }
+                          ;
+                          throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 858, column 33 - line 865, column 51): " + [v7.constructor.name]);
+                        }))(function() {
+                          return pure14(div2([classNames(["editor"])])([div2([classNames(["program"]), onMouseLeave(function(event) {
+                            return discard15(liftEffect8(stopPropagation(toEvent(event))))(function() {
+                              return setHighlightElement(Nothing.value);
+                            });
+                          })])(function() {
+                            if (v1.value0 instanceof CursorState) {
+                              var dzipper = hdzipperDerivZipper2(v1.value0.value0.hdzipper);
+                              if (!v1.value0.value0.hdzipper.value1) {
+                                return [renderPath2(locs)(dzipper)(renderDerivTerm2(locs)(true)(false)(dzipper))(defaultRenderingContext(pathIdPrefix))];
+                              }
+                              ;
+                              if (v1.value0.value0.hdzipper.value1) {
+                                return [renderPath2(locs)(dzipper)(renderDerivTerm2(locs)(false)(true)(dzipper))(defaultRenderingContext(pathIdPrefix))];
+                              }
+                              ;
+                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 896, column 11 - line 906, column 16): " + [v1.value0.value0.hdzipper.constructor.name]);
                             }
                             ;
-                            if (v8 instanceof GetProgram) {
-                              return bind27(getState)(function(st) {
-                                return pure112(new Just(v8.value0(stateToDerivTerm2(st))));
-                              });
+                            if (v1.value0 instanceof SelectState) {
+                              return hole2("render SelectState");
                             }
                             ;
-                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 857, column 33 - line 864, column 51): " + [v8.constructor.name]);
-                          }))(function() {
-                            return pure14(div2([classNames(["editor"])])([div2([classNames(["program"]), onMouseLeave(function(event) {
-                              return discard15(liftEffect8(stopPropagation(toEvent(event))))(function() {
-                                return setHighlightElement(Nothing.value);
-                              });
-                            })])(function() {
-                              if (v2.value0 instanceof CursorState) {
-                                var dzipper = hdzipperDerivZipper2(v2.value0.value0.hdzipper);
-                                if (!v2.value0.value0.hdzipper.value1) {
-                                  return [renderPath2(locs)(dzipper)(renderDerivTerm2(locs)(true)(false)(dzipper))(defaultRenderingContext(pathIdPrefix))];
-                                }
-                                ;
-                                if (v2.value0.value0.hdzipper.value1) {
-                                  return [renderPath2(locs)(dzipper)(renderDerivTerm2(locs)(false)(true)(dzipper))(defaultRenderingContext(pathIdPrefix))];
-                                }
-                                ;
-                                throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 895, column 11 - line 905, column 16): " + [v2.value0.value0.hdzipper.constructor.name]);
-                              }
-                              ;
-                              if (v2.value0 instanceof SelectState) {
-                                return hole2("render SelectState");
-                              }
-                              ;
-                              if (v2.value0 instanceof TopState) {
-                                return [renderDerivTerm2(locs)(false)(false)(new Zipper(Nil.value, v2.value0.value0.dterm))(defaultRenderingContext(pathIdPrefix))];
-                              }
-                              ;
-                              if (v2.value0 instanceof SmallStepState) {
-                                return [div2([classNames(["smallstep-program"])])([renderSSTerm2(locs)(v2.value0.value0.ssterm)(defaultRenderingContext(pathIdPrefix))])];
-                              }
-                              ;
-                              throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 891, column 7 - line 913, column 15): " + [v2.value0.constructor.name]);
-                            }())]));
-                          });
+                            if (v1.value0 instanceof TopState) {
+                              return [renderDerivTerm2(locs)(false)(false)(new Zipper(Nil.value, v1.value0.value0.dterm))(defaultRenderingContext(pathIdPrefix))];
+                            }
+                            ;
+                            if (v1.value0 instanceof SmallStepState) {
+                              return [div2([classNames(["smallstep-program"])])([renderSSTerm2(locs)(v1.value0.value0.ssterm)(defaultRenderingContext(pathIdPrefix))])];
+                            }
+                            ;
+                            throw new Error("Failed pattern match at Language.Pantograph.Generic.Rendering.Editor (line 892, column 7 - line 914, column 15): " + [v1.value0.constructor.name]);
+                          }())]));
                         });
                       });
                     });
@@ -39948,8 +39871,8 @@
                 });
               });
             });
-          };
-        });
+          });
+        };
       });
     };
   };
@@ -40135,7 +40058,7 @@
 
   // output/Language.Pantograph.Lib.DefaultEdits/index.js
   var bind28 = /* @__PURE__ */ bind(bindMaybe);
-  var pure28 = /* @__PURE__ */ pure(applicativeMaybe);
+  var pure29 = /* @__PURE__ */ pure(applicativeMaybe);
   var map59 = /* @__PURE__ */ map(functorList);
   var fromFoldable19 = /* @__PURE__ */ fromFoldable(foldableArray);
   var zipDowns5 = /* @__PURE__ */ zipDowns(zippableZipper);
@@ -40147,7 +40070,7 @@
       return function(name15) {
         return function(cursorSort) {
           return bind28(unify3(derivTermSort3(dterm))(cursorSort))(function(v) {
-            return pure28({
+            return pure29({
               label: name15,
               action: defer3(function(v1) {
                 return new FillAction({
@@ -40171,7 +40094,7 @@
       return function(name15) {
         return function(cursorSort) {
           return bind28(unify3(derivTermSort3(dterm))(cursorSort))(function(v) {
-            return pure28({
+            return pure29({
               label: name15,
               action: defer3(function(v1) {
                 return new ReplaceAction({
@@ -40203,7 +40126,7 @@
                   var topChange = subSomeMetaChange2(v1.value1)(v.upChange);
                   var botChange = subSomeMetaChange2(v1.value1)(invert(v.downChange));
                   var pathSubbed = subDerivPath2(v1.value1)(path);
-                  return pure28(new WrapAction({
+                  return pure29(new WrapAction({
                     topChange,
                     dpath: pathSubbed,
                     botChange,
@@ -40226,7 +40149,7 @@
           return function(name15) {
             return function(cursorSort) {
               return bind28(makeActionFromPath1(false)(forgetSorts2)(splitChange2)(v.value0)(name15)(cursorSort))(function(action2) {
-                return pure28({
+                return pure29({
                   label: name15,
                   action: defer3(function(v1) {
                     return action2;
@@ -40565,6 +40488,11 @@
       return "IntegerLiteral";
     }
   };
+  var CommentIsSymbol = {
+    reflectSymbol: function() {
+      return "Comment";
+    }
+  };
   var genericEqConstructor4 = /* @__PURE__ */ genericEqConstructor(genericEqNoArguments);
   var genericEqSum5 = /* @__PURE__ */ genericEqSum(genericEqConstructor4);
   var genericEqSum12 = /* @__PURE__ */ genericEqSum5(genericEqConstructor4);
@@ -40583,15 +40511,15 @@
   var genericEnumSum1 = /* @__PURE__ */ genericEnumSum2(genericEnumConstructor2)(genericBottomConstructor2);
   var genericBottomSum2 = /* @__PURE__ */ genericBottomSum(genericBottomConstructor2);
   var genericEnumSum22 = /* @__PURE__ */ genericEnumSum2(genericEnumSum1)(genericBottomSum2);
-  var genericEnumSum3 = /* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(genericEnumSum22)(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2);
-  var genericEnumSum4 = /* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(genericEnumSum3)(genericBottomSum2))(genericBottomSum2))(genericBottomSum2);
+  var genericEnumSum3 = /* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(genericEnumSum22)(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2))(genericBottomSum2);
+  var genericEnumSum4 = /* @__PURE__ */ genericEnumSum2(/* @__PURE__ */ genericEnumSum2(genericEnumSum3)(genericBottomSum2))(genericBottomSum2);
   var genericTopSum2 = /* @__PURE__ */ genericTopSum(genericTopConstructor2);
   var genericTopSum1 = /* @__PURE__ */ genericTopSum(genericTopSum2);
   var genericTopSum22 = /* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(genericTopSum1)))))))));
   var lookup$prime3 = /* @__PURE__ */ lookup$prime(ordMetaVar);
   var bind29 = /* @__PURE__ */ bind(bindMaybe);
-  var pure29 = /* @__PURE__ */ pure(applicativeMaybe);
-  var trace5 = /* @__PURE__ */ trace();
+  var pure30 = /* @__PURE__ */ pure(applicativeMaybe);
+  var trace3 = /* @__PURE__ */ trace();
   var append18 = /* @__PURE__ */ append(semigroupArray);
   var empty12 = /* @__PURE__ */ empty(plusMaybe);
   var identity23 = /* @__PURE__ */ identity(categoryFn);
@@ -40606,6 +40534,8 @@
   var pure113 = /* @__PURE__ */ pure(applicativeEither);
   var insert15 = /* @__PURE__ */ insert7(ordString);
   var lookup14 = /* @__PURE__ */ lookup(ordMetaVar);
+  var filter6 = /* @__PURE__ */ filter4(ordMetaVar);
+  var toUnfoldable7 = /* @__PURE__ */ toUnfoldable4(unfoldableArray);
   var OpPlus = /* @__PURE__ */ function() {
     function OpPlus2() {
     }
@@ -40996,6 +40926,13 @@
     IntegerLiteral2.value = new IntegerLiteral2();
     return IntegerLiteral2;
   }();
+  var Comment = /* @__PURE__ */ function() {
+    function Comment2() {
+    }
+    ;
+    Comment2.value = new Comment2();
+    return Comment2;
+  }();
   var genericRuleLabel_ = {
     to: function(x) {
       if (x instanceof Inl) {
@@ -41102,11 +41039,15 @@
         return ListMatchRule.value;
       }
       ;
-      if (x instanceof Inr && (x.value0 instanceof Inr && (x.value0.value0 instanceof Inr && (x.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr))))))))))))))))))))))))) {
+      if (x instanceof Inr && (x.value0 instanceof Inr && (x.value0.value0 instanceof Inr && (x.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inl)))))))))))))))))))))))))) {
         return IntegerLiteral.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 318, column 1 - line 318, column 36): " + [x.constructor.name]);
+      if (x instanceof Inr && (x.value0 instanceof Inr && (x.value0.value0 instanceof Inr && (x.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && (x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr && x.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0.value0 instanceof Inr)))))))))))))))))))))))))) {
+        return Comment.value;
+      }
+      ;
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 320, column 1 - line 320, column 36): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof Zero) {
@@ -41214,10 +41155,14 @@
       }
       ;
       if (x instanceof IntegerLiteral) {
-        return new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(NoArguments.value))))))))))))))))))))))))));
+        return new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inl(NoArguments.value)))))))))))))))))))))))))));
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 318, column 1 - line 318, column 36): " + [x.constructor.name]);
+      if (x instanceof Comment) {
+        return new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(NoArguments.value)))))))))))))))))))))))))));
+      }
+      ;
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 320, column 1 - line 320, column 36): " + [x.constructor.name]);
     }
   };
   var genericPreSortLabel_ = {
@@ -41262,7 +41207,7 @@
         return NonLocal.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 120, column 1 - line 120, column 39): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 121, column 1 - line 121, column 39): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof VarSort) {
@@ -41305,7 +41250,7 @@
         return new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(NoArguments.value)))))))));
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 120, column 1 - line 120, column 39): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 121, column 1 - line 121, column 39): " + [x.constructor.name]);
     }
   };
   var genericInfixOperator_ = {
@@ -41358,7 +41303,7 @@
         return OpOr.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 239, column 1 - line 239, column 40): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 240, column 1 - line 240, column 40): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof OpPlus) {
@@ -41409,7 +41354,7 @@
         return new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(new Inr(NoArguments.value)))))))))));
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 239, column 1 - line 239, column 40): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 240, column 1 - line 240, column 40): " + [x.constructor.name]);
     }
   };
   var genericShow9 = /* @__PURE__ */ genericShow(genericInfixOperator_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpPlusIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpMinusIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpTimesIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpDivideIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpModIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpPowIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpLessIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpGreaterIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpLessEqIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpGreaterEqIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(OpAndIsSymbol))(/* @__PURE__ */ genericShowConstructor5(OpOrIsSymbol)))))))))))));
@@ -41434,7 +41379,7 @@
         return Int.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 89, column 1 - line 89, column 35): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 90, column 1 - line 90, column 35): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof Bool) {
@@ -41445,7 +41390,7 @@
         return new Inr(NoArguments.value);
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 89, column 1 - line 89, column 35): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 90, column 1 - line 90, column 35): " + [x.constructor.name]);
     }
   };
   var genericShow14 = /* @__PURE__ */ genericShow(genericDataType_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(BoolIsSymbol))(/* @__PURE__ */ genericShowConstructor5(IntIsSymbol)));
@@ -41492,7 +41437,7 @@
         return ConstNot.value;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 198, column 1 - line 198, column 35): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 199, column 1 - line 199, column 35): " + [x.constructor.name]);
     },
     from: function(x) {
       if (x instanceof ConstTrue) {
@@ -41507,7 +41452,7 @@
         return new Inr(new Inr(NoArguments.value));
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 198, column 1 - line 198, column 35): " + [x.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 199, column 1 - line 199, column 35): " + [x.constructor.name]);
     }
   };
   var genericShow34 = /* @__PURE__ */ genericShow(genericConstant_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ConstTrueIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ConstFalseIsSymbol))(/* @__PURE__ */ genericShowConstructor5(ConstNotIsSymbol))));
@@ -41522,7 +41467,7 @@
       return genericShow34(x);
     }
   };
-  var genericShow42 = /* @__PURE__ */ genericShow(genericRuleLabel_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ZeroIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(SucIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LamIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LetIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(AppIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(GreyAppIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(VarIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(FreeVarIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TermHoleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TypeHoleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor12(DataTypeRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ArrowRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ListRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(NewlineIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(IfIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ErrorBoundaryIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor(/* @__PURE__ */ genericShowArgsArgument(showConstant))(ConstantRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor(/* @__PURE__ */ genericShowArgsArgument(showInfixOperator))(InfixRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(EqualsRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(NilRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ConsRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LengthRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(HeadRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TailRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(IndexRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ListMatchRuleIsSymbol))(/* @__PURE__ */ genericShowConstructor5(IntegerLiteralIsSymbol))))))))))))))))))))))))))));
+  var genericShow42 = /* @__PURE__ */ genericShow(genericRuleLabel_)(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ZeroIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(SucIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LamIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LetIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(AppIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(GreyAppIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(VarIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(FreeVarIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TermHoleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TypeHoleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor12(DataTypeRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ArrowRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ListRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(NewlineIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(IfIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ErrorBoundaryIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor(/* @__PURE__ */ genericShowArgsArgument(showConstant))(ConstantRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor(/* @__PURE__ */ genericShowArgsArgument(showInfixOperator))(InfixRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(EqualsRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(NilRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ConsRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(LengthRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(HeadRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(TailRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(IndexRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(ListMatchRuleIsSymbol))(/* @__PURE__ */ genericShowSum(/* @__PURE__ */ genericShowConstructor5(IntegerLiteralIsSymbol))(/* @__PURE__ */ genericShowConstructor5(CommentIsSymbol)))))))))))))))))))))))))))));
   var showRuleLabel = {
     show: function(x) {
       return genericShow42(x);
@@ -41538,7 +41483,7 @@
       return genericEq5(x);
     }
   };
-  var eq15 = /* @__PURE__ */ eq(eqInfixOperator);
+  var eq23 = /* @__PURE__ */ eq(eqInfixOperator);
   var ordInfixOperator = {
     compare: function(x) {
       return function(y) {
@@ -41556,7 +41501,7 @@
     }
   };
   var genericEq32 = /* @__PURE__ */ genericEq(genericPreSortLabel_)(/* @__PURE__ */ genericEqSum5(/* @__PURE__ */ genericEqSum5(/* @__PURE__ */ genericEqSum5(/* @__PURE__ */ genericEqSum5(/* @__PURE__ */ genericEqSum5(/* @__PURE__ */ genericEqSum(/* @__PURE__ */ genericEqConstructor(/* @__PURE__ */ genericEqArgument(eqDataType)))(genericEqSum32)))))));
-  var eq23 = /* @__PURE__ */ eq(eqDataType);
+  var eq33 = /* @__PURE__ */ eq(eqDataType);
   var eqPreSortLabel = {
     eq: function(x) {
       return genericEq32(x);
@@ -41564,8 +41509,8 @@
   };
   var eqMeta2 = /* @__PURE__ */ eqMeta(/* @__PURE__ */ eqSortLabel(eqPreSortLabel));
   var diff2 = /* @__PURE__ */ diff(eqMeta2);
-  var eq33 = /* @__PURE__ */ eq(/* @__PURE__ */ eqExpr(eqMeta2));
-  var eq42 = /* @__PURE__ */ eq(/* @__PURE__ */ eqExpr(/* @__PURE__ */ eqChangeLabel(eqMeta2)));
+  var eq42 = /* @__PURE__ */ eq(/* @__PURE__ */ eqExpr(eqMeta2));
+  var eq52 = /* @__PURE__ */ eq(/* @__PURE__ */ eqExpr(/* @__PURE__ */ eqChangeLabel(eqMeta2)));
   var ordDataType = {
     compare: function(x) {
       return function(y) {
@@ -41635,7 +41580,7 @@
           return appendSpaced("List")(v["value1"][0]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 130, column 1 - line 153, column 29): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 131, column 1 - line 154, column 29): " + [v.constructor.name]);
       };
     },
     expectedKidsCount: function(v) {
@@ -41679,7 +41624,7 @@
         return 1;
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 130, column 1 - line 153, column 29): " + [v.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 131, column 1 - line 154, column 29): " + [v.constructor.name]);
     },
     Eq0: function() {
       return eqPreSortLabel;
@@ -41716,7 +41661,7 @@
       return genericEq23(x);
     }
   };
-  var eq52 = /* @__PURE__ */ eq(eqConstant);
+  var eq62 = /* @__PURE__ */ eq(eqConstant);
   var eqRuleLabel = {
     eq: function(x) {
       return function(y) {
@@ -41761,7 +41706,7 @@
         }
         ;
         if (x instanceof DataTypeRule && y instanceof DataTypeRule) {
-          return eq23(x.value0)(y.value0);
+          return eq33(x.value0)(y.value0);
         }
         ;
         if (x instanceof ArrowRule && y instanceof ArrowRule) {
@@ -41785,11 +41730,11 @@
         }
         ;
         if (x instanceof ConstantRule && y instanceof ConstantRule) {
-          return eq52(x.value0)(y.value0);
+          return eq62(x.value0)(y.value0);
         }
         ;
         if (x instanceof InfixRule && y instanceof InfixRule) {
-          return eq15(x.value0)(y.value0);
+          return eq23(x.value0)(y.value0);
         }
         ;
         if (x instanceof EqualsRule && y instanceof EqualsRule) {
@@ -41828,12 +41773,16 @@
           return true;
         }
         ;
+        if (x instanceof Comment && y instanceof Comment) {
+          return true;
+        }
+        ;
         return false;
       };
     }
   };
-  var eq62 = /* @__PURE__ */ eq(eqRuleLabel);
-  var eq7 = /* @__PURE__ */ eq(/* @__PURE__ */ eqMaybe(eqRuleLabel));
+  var eq7 = /* @__PURE__ */ eq(eqRuleLabel);
+  var eq8 = /* @__PURE__ */ eq(/* @__PURE__ */ eqMaybe(eqRuleLabel));
   var ordConstant = {
     compare: function(x) {
       return function(y) {
@@ -42164,6 +42113,18 @@
           return EQ.value;
         }
         ;
+        if (x instanceof IntegerLiteral) {
+          return LT.value;
+        }
+        ;
+        if (y instanceof IntegerLiteral) {
+          return GT.value;
+        }
+        ;
+        if (x instanceof Comment && y instanceof Comment) {
+          return EQ.value;
+        }
+        ;
         throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 0, column 0 - line 0, column 0): " + [x.constructor.name, y.constructor.name]);
       };
     },
@@ -42171,6 +42132,7 @@
       return eqRuleLabel;
     }
   };
+  var lookup15 = /* @__PURE__ */ lookup7(ordRuleLabel);
   var enumInfixOperator = {
     pred: function(x) {
       return genericPred2(x);
@@ -42226,7 +42188,7 @@
       return genericEncodeJson22(a2);
     }
   };
-  var genericEncodeJson42 = /* @__PURE__ */ genericEncodeJson(genericRuleLabel_)(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ZeroIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(SucIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LamIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LetIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(AppIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(GreyAppIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(VarIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(FreeVarIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TermHoleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TypeHoleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(DataTypeRuleIsSymbol)(encodeRepArgsArgument2))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ArrowRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ListRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(NewlineIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(IfIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ErrorBoundaryIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ConstantRuleIsSymbol)(/* @__PURE__ */ encodeRepArgsArgument(encodeJsonConstant)))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(InfixRuleIsSymbol)(/* @__PURE__ */ encodeRepArgsArgument(encodeJsonInfixOperator)))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(EqualsRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(NilRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ConsRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LengthRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(HeadRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TailRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(IndexRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ListMatchRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepConstructor(IntegerLiteralIsSymbol)(encodeRepArgsNoArguments))))))))))))))))))))))))))));
+  var genericEncodeJson42 = /* @__PURE__ */ genericEncodeJson(genericRuleLabel_)(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ZeroIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(SucIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LamIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LetIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(AppIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(GreyAppIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(VarIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(FreeVarIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TermHoleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TypeHoleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(DataTypeRuleIsSymbol)(encodeRepArgsArgument2))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ArrowRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ListRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(NewlineIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(IfIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ErrorBoundaryIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ConstantRuleIsSymbol)(/* @__PURE__ */ encodeRepArgsArgument(encodeJsonConstant)))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(InfixRuleIsSymbol)(/* @__PURE__ */ encodeRepArgsArgument(encodeJsonInfixOperator)))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(EqualsRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(NilRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ConsRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(LengthRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(HeadRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(TailRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(IndexRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(ListMatchRuleIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepSum(/* @__PURE__ */ encodeRepConstructor(IntegerLiteralIsSymbol)(encodeRepArgsNoArguments))(/* @__PURE__ */ encodeRepConstructor(CommentIsSymbol)(encodeRepArgsNoArguments)))))))))))))))))))))))))))));
   var encodeJsonRuleLabel = {
     encodeJson: function(a2) {
       return genericEncodeJson42(a2);
@@ -42253,7 +42215,7 @@
       return genericDecodeJson22(a2);
     }
   };
-  var genericDecodeJson42 = /* @__PURE__ */ genericDecodeJson(genericRuleLabel_)(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ZeroIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(SucIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LamIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LetIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(AppIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(GreyAppIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(VarIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(FreeVarIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TermHoleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TypeHoleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(DataTypeRuleIsSymbol)(decodeJsonDataType))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ArrowRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ListRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(NewlineIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(IfIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ErrorBoundaryIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(ConstantRuleIsSymbol)(decodeJsonConstant))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(InfixRuleIsSymbol)(decodeJsonInfixOperator))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(EqualsRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(NilRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ConsRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LengthRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(HeadRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TailRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(IndexRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ListMatchRuleIsSymbol))(/* @__PURE__ */ decodeRepConstructorNoArgs(IntegerLiteralIsSymbol))))))))))))))))))))))))))));
+  var genericDecodeJson42 = /* @__PURE__ */ genericDecodeJson(genericRuleLabel_)(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ZeroIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(SucIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LamIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LetIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(AppIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(GreyAppIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(VarIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(FreeVarIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TermHoleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TypeHoleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(DataTypeRuleIsSymbol)(decodeJsonDataType))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ArrowRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ListRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(NewlineIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(IfIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ErrorBoundaryIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(ConstantRuleIsSymbol)(decodeJsonConstant))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorArg(InfixRuleIsSymbol)(decodeJsonInfixOperator))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(EqualsRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(NilRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ConsRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(LengthRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(HeadRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(TailRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(IndexRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(ListMatchRuleIsSymbol))(/* @__PURE__ */ decodeRepSum(/* @__PURE__ */ decodeRepConstructorNoArgs(IntegerLiteralIsSymbol))(/* @__PURE__ */ decodeRepConstructorNoArgs(CommentIsSymbol)))))))))))))))))))))))))))));
   var decodeJsonRuleLabel = {
     decodeJson: function(a2) {
       return genericDecodeJson42(a2);
@@ -42261,7 +42223,7 @@
   };
   var boundedRuleLabel = {
     bottom: /* @__PURE__ */ genericBottom(genericRuleLabel_)(genericBottomSum2),
-    top: /* @__PURE__ */ genericTop(genericRuleLabel_)(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(genericTopSum22)))))))))))))))),
+    top: /* @__PURE__ */ genericTop(genericRuleLabel_)(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(/* @__PURE__ */ genericTopSum(genericTopSum22))))))))))))))))),
     Ord0: function() {
       return ordRuleLabel;
     }
@@ -42312,14 +42274,14 @@
           var v2 = function(v3) {
             return Nothing.value;
           };
-          var $1794 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, dMINUS(Arrow.value)([slot2])(cSlot)([])]));
-          if ($1794 instanceof Just && ($1794.value0.value0.length === 1 && $1794.value0.value1.length === 2)) {
-            return pure29(new Expr(csor(TermSort.value), [minusChange(sor(CtxConsSort.value))([varName, $1794["value0"]["value0"][0]])($1794["value0"]["value1"][0])([]), $1794["value0"]["value1"][1]]));
+          var $1847 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, dMINUS(Arrow.value)([slot2])(cSlot)([])]));
+          if ($1847 instanceof Just && ($1847.value0.value0.length === 1 && $1847.value0.value1.length === 2)) {
+            return pure30(new Expr(csor(TermSort.value), [minusChange(sor(CtxConsSort.value))([varName, $1847["value0"]["value0"][0]])($1847["value0"]["value1"][0])([]), $1847["value0"]["value1"][1]]));
           }
           ;
           return v2(true);
         }())(function(restOfCh) {
-          return pure29(wrapBoundary2(Down.value)(restOfCh)(v1["value1"][0]["value1"][2]));
+          return pure30(wrapBoundary2(Down.value)(restOfCh)(v1["value1"][0]["value1"][2]));
         });
       }
       ;
@@ -42345,8 +42307,8 @@
         ;
         return bug("splitChange - got c = " + pretty22(v));
       };
-      var $1820 = matchChange2(v)(injectChangeMatchExpr(TypeSort.value)([cSlot]));
-      if ($1820 instanceof Just && ($1820.value0.value0.length === 0 && $1820.value0.value1.length === 1)) {
+      var $1873 = matchChange2(v)(injectChangeMatchExpr(TypeSort.value)([cSlot]));
+      if ($1873 instanceof Just && ($1873.value0.value0.length === 0 && $1873.value0.value1.length === 1)) {
         return {
           upChange: v,
           cursorSort: lEndpoint2(v),
@@ -42356,14 +42318,14 @@
       ;
       return v32(true);
     };
-    var $1826 = matchChange2(v)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-    if ($1826 instanceof Just && ($1826.value0.value0.length === 0 && $1826.value0.value1.length === 2)) {
-      var v2 = endpoints2($1826["value0"]["value1"][0]);
-      var v3 = endpoints2($1826["value0"]["value1"][1]);
+    var $1879 = matchChange2(v)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+    if ($1879 instanceof Just && ($1879.value0.value0.length === 0 && $1879.value0.value1.length === 2)) {
+      var v2 = endpoints2($1879["value0"]["value1"][0]);
+      var v3 = endpoints2($1879["value0"]["value1"][1]);
       return {
-        upChange: new Expr(csor(TermSort.value), [inject(v2.value1), $1826["value0"]["value1"][1]]),
+        upChange: new Expr(csor(TermSort.value), [inject(v2.value1), $1879["value0"]["value1"][1]]),
         cursorSort: new Expr(sor(TermSort.value), [v2.value1, v3.value0]),
-        downChange: new Expr(csor(TermSort.value), [$1826["value0"]["value1"][0], inject(v3.value0)])
+        downChange: new Expr(csor(TermSort.value), [$1879["value0"]["value1"][0], inject(v3.value0)])
       };
     }
     ;
@@ -42374,11 +42336,11 @@
       var v2 = function(v3) {
         return inject(v);
       };
-      var $1842 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-      if ($1842 instanceof Just && $1842.value0.length === 2) {
-        var $1843 = matchExprImpl2(v1)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-        if ($1843 instanceof Just && $1843.value0.length === 2) {
-          return new Expr(csor(TermSort.value), [diff2($1842["value0"][0])($1843["value0"][0]), inject($1842["value0"][1])]);
+      var $1895 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+      if ($1895 instanceof Just && $1895.value0.length === 2) {
+        var $1896 = matchExprImpl2(v1)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+        if ($1896 instanceof Just && $1896.value0.length === 2) {
+          return new Expr(csor(TermSort.value), [diff2($1895["value0"][0])($1896["value0"][0]), inject($1895["value0"][1])]);
         }
         ;
         return v2(true);
@@ -42390,7 +42352,7 @@
   var removeGreyedApp = function(v) {
     return function(dterm) {
       if (dterm.value0 instanceof SSInj && (dterm.value0.value0 instanceof DerivLabel && (dterm.value0.value0.value0 instanceof GreyApp && (dterm.value1.length === 2 && (dterm["value1"][1].value0 instanceof SSInj && (dterm["value1"][1].value0.value0 instanceof DerivLabel && dterm["value1"][1].value0.value0.value0 instanceof TermHole)))))) {
-        return pure29(dterm["value1"][0]);
+        return pure30(dterm["value1"][0]);
       }
       ;
       return Nothing.value;
@@ -42401,9 +42363,9 @@
       if (v1.value0 instanceof SSInj && (v1.value0.value0 instanceof DerivLabel && (v1.value0.value0.value0 instanceof ErrorBoundary && v1.value1.length === 1))) {
         var insideType = lookup$prime3(new RuleMetaVar("insideType"))(v1.value0.value0.value1);
         var outsideType = lookup$prime3(new RuleMetaVar("outsideType"))(v1.value0.value0.value1);
-        var $1874 = eq33(insideType)(outsideType);
-        if ($1874) {
-          return pure29(v1["value1"][0]);
+        var $1927 = eq42(insideType)(outsideType);
+        if ($1927) {
+          return pure30(v1["value1"][0]);
         }
         ;
         return Nothing.value;
@@ -42420,9 +42382,9 @@
       ;
       return inject(v);
     };
-    var $1888 = matchExprImpl2(v)(injectMatchExpr(sor(TypeSort.value))([slot2]));
-    if ($1888 instanceof Just && $1888.value0.length === 1) {
-      return new Expr(csor(TypeSort.value), [replaceChange($1888["value0"][0])(fromMetaVar(freshMetaVar("deleted")))]);
+    var $1941 = matchExprImpl2(v)(injectMatchExpr(sor(TypeSort.value))([slot2]));
+    if ($1941 instanceof Just && $1941.value0.length === 1) {
+      return new Expr(csor(TypeSort.value), [replaceChange($1941["value0"][0])(fromMetaVar(freshMetaVar("deleted")))]);
     }
     ;
     return v1(true);
@@ -42435,8 +42397,8 @@
   };
   var mergeAppGreyApp2 = function(v) {
     return function(dterm) {
-      if (dterm.value0 instanceof SSInj && (dterm.value0.value0 instanceof DerivLabel && (dterm.value0.value0.value0 instanceof App2 && (dterm.value1.length === 2 && (dterm["value1"][0].value0 instanceof SSInj && (dterm["value1"][0].value0.value0 instanceof DerivLabel && (dterm["value1"][0].value0.value0.value0 instanceof GreyApp && (dterm["value1"][0].value1.length === 2 && (dterm["value1"][1].value0 instanceof SSInj && (dterm["value1"][1].value0.value0 instanceof DerivLabel && (dterm["value1"][1].value0.value0.value0 instanceof TermHole && eq33(lookup$prime3(new RuleMetaVar("a"))(dterm.value0.value0.value1))(lookup$prime3(new RuleMetaVar("a"))(dterm["value1"][0].value0.value0.value1))))))))))))) {
-        return pure29(new Expr(new SSInj(new DerivLabel(App2.value, dterm.value0.value0.value1)), [dterm["value1"][0]["value1"][0], dterm["value1"][0]["value1"][1]]));
+      if (dterm.value0 instanceof SSInj && (dterm.value0.value0 instanceof DerivLabel && (dterm.value0.value0.value0 instanceof App2 && (dterm.value1.length === 2 && (dterm["value1"][0].value0 instanceof SSInj && (dterm["value1"][0].value0.value0 instanceof DerivLabel && (dterm["value1"][0].value0.value0.value0 instanceof GreyApp && (dterm["value1"][0].value1.length === 2 && (dterm["value1"][1].value0 instanceof SSInj && (dterm["value1"][1].value0.value0 instanceof DerivLabel && (dterm["value1"][1].value0.value0.value0 instanceof TermHole && eq42(lookup$prime3(new RuleMetaVar("a"))(dterm.value0.value0.value1))(lookup$prime3(new RuleMetaVar("a"))(dterm["value1"][0].value0.value0.value1))))))))))))) {
+        return pure30(new Expr(new SSInj(new DerivLabel(App2.value, dterm.value0.value0.value1)), [dterm["value1"][0]["value1"][0], dterm["value1"][0]["value1"][1]]));
       }
       ;
       return Nothing.value;
@@ -42444,8 +42406,8 @@
   };
   var mergeAppGreyApp = function(v) {
     return function(dterm) {
-      if (dterm.value0 instanceof SSInj && (dterm.value0.value0 instanceof DerivLabel && (dterm.value0.value0.value0 instanceof GreyApp && (dterm.value1.length === 2 && (dterm["value1"][0].value0 instanceof SSInj && (dterm["value1"][0].value0.value0 instanceof DerivLabel && (dterm["value1"][0].value0.value0.value0 instanceof App2 && (dterm["value1"][0].value1.length === 2 && (dterm["value1"][0]["value1"][1].value0 instanceof SSInj && (dterm["value1"][0]["value1"][1].value0.value0 instanceof DerivLabel && (dterm["value1"][0]["value1"][1].value0.value0.value0 instanceof TermHole && eq33(lookup$prime3(new RuleMetaVar("a"))(dterm["value1"][0].value0.value0.value1))(lookup$prime3(new RuleMetaVar("a"))(dterm.value0.value0.value1))))))))))))) {
-        return pure29(new Expr(new SSInj(new DerivLabel(App2.value, dterm["value1"][0].value0.value0.value1)), [dterm["value1"][0]["value1"][0], dterm["value1"][1]]));
+      if (dterm.value0 instanceof SSInj && (dterm.value0.value0 instanceof DerivLabel && (dterm.value0.value0.value0 instanceof GreyApp && (dterm.value1.length === 2 && (dterm["value1"][0].value0 instanceof SSInj && (dterm["value1"][0].value0.value0 instanceof DerivLabel && (dterm["value1"][0].value0.value0.value0 instanceof App2 && (dterm["value1"][0].value1.length === 2 && (dterm["value1"][0]["value1"][1].value0 instanceof SSInj && (dterm["value1"][0]["value1"][1].value0.value0 instanceof DerivLabel && (dterm["value1"][0]["value1"][1].value0.value0.value0 instanceof TermHole && eq42(lookup$prime3(new RuleMetaVar("a"))(dterm["value1"][0].value0.value0.value1))(lookup$prime3(new RuleMetaVar("a"))(dterm.value0.value0.value1))))))))))))) {
+        return pure30(new Expr(new SSInj(new DerivLabel(App2.value, dterm["value1"][0].value0.value0.value1)), [dterm["value1"][0]["value1"][0], dterm["value1"][1]]));
       }
       ;
       return Nothing.value;
@@ -42659,7 +42621,7 @@
       };
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 258, column 5 - line 270, column 55): " + [op.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 259, column 5 - line 271, column 55): " + [op.constructor.name]);
   };
   var infixName = function(op) {
     if (op instanceof OpPlus) {
@@ -42710,7 +42672,7 @@
       return "or";
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 274, column 5 - line 286, column 17): " + [op.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 275, column 5 - line 287, column 17): " + [op.constructor.name]);
   };
   var inElem = /* @__PURE__ */ makePuncElem("inLet")("in");
   var ifElem = /* @__PURE__ */ makePuncElem("if")("if");
@@ -42718,16 +42680,16 @@
     var v1 = function(v2) {
       return inject(v);
     };
-    var $2020 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-    if ($2020 instanceof Just && $2020.value0.length === 2) {
-      return new Expr(csor(TermSort.value), [diff2($2020["value0"][0])(startCtx), inject($2020["value0"][1])]);
+    var $2073 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+    if ($2073 instanceof Just && $2073.value0.length === 2) {
+      return new Expr(csor(TermSort.value), [diff2($2073["value0"][0])(startCtx), inject($2073["value0"][1])]);
     }
     ;
     return v1(true);
   };
   var forgetSorts = function(v) {
     if (v instanceof DerivLabel && v.value0 instanceof FreeVar) {
-      return pure29(v);
+      return pure30(v);
     }
     ;
     return Nothing.value;
@@ -42752,7 +42714,7 @@
       return injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(new DataType(Bool.value))([]), injectSortLabelDerivLabel(new DataType(Bool.value))([])]);
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 214, column 16 - line 217, column 74): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 215, column 16 - line 218, column 74): " + [v.constructor.name]);
   };
   var language3 = /* @__PURE__ */ makeTotalMap2(function(v) {
     if (v instanceof Zero) {
@@ -42762,7 +42724,7 @@
             return new Tuple([], injectSortLabelDerivLabel(VarSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[1], v12[2], v12[0]]), v12[1], v12[2], injectSortLabelDerivLabel(Local.value)([])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 402, column 51 - line 405, column 77): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 405, column 51 - line 408, column 77): " + [v12.constructor.name]);
         };
       });
     }
@@ -42774,7 +42736,7 @@
             return new Tuple([injectSortLabelDerivLabel(VarSort.value)([v12[0], v12[1], v12[2], v12[5]])], injectSortLabelDerivLabel(VarSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[3], v12[4], v12[0]]), v12[1], v12[2], v12[5]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 407, column 77 - line 410, column 78): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 410, column 77 - line 413, column 78): " + [v12.constructor.name]);
         };
       });
     }
@@ -42786,7 +42748,7 @@
             return new Tuple([pureMetaExpr(new TypeOfLabel(SortString.value))([v12[0]]), injectSortLabelDerivLabel(TypeSort.value)([v12[1]]), injectSortLabelDerivLabel(TermSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[0], v12[1], v12[3]]), v12[2]])], injectSortLabelDerivLabel(TermSort.value)([v12[3], injectSortLabelDerivLabel(Arrow.value)([v12[1], v12[2]])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 412, column 52 - line 417, column 48): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 415, column 52 - line 420, column 48): " + [v12.constructor.name]);
         };
       });
     }
@@ -42798,7 +42760,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([v12[1], v12[2]])]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 419, column 47 - line 423, column 33): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 422, column 47 - line 426, column 33): " + [v12.constructor.name]);
         };
       });
     }
@@ -42810,7 +42772,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 425, column 51 - line 429, column 33): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 428, column 51 - line 432, column 33): " + [v12.constructor.name]);
         };
       });
     }
@@ -42822,7 +42784,7 @@
             return new Tuple([], injectSortLabelDerivLabel(VarSort.value)([injectSortLabelDerivLabel(CtxNilSort.value)([]), v12[0], v12[1], injectSortLabelDerivLabel(NonLocal.value)([])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 431, column 48 - line 434, column 70): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 434, column 48 - line 437, column 70): " + [v12.constructor.name]);
         };
       });
     }
@@ -42834,7 +42796,7 @@
             return new Tuple([injectSortLabelDerivLabel(VarSort.value)([v12[0], v12[1], v12[2], v12[3]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 436, column 62 - line 439, column 34): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 439, column 62 - line 442, column 34): " + [v12.constructor.name]);
         };
       });
     }
@@ -42846,19 +42808,19 @@
             return new Tuple([injectSortLabelDerivLabel(TypeSort.value)([v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 441, column 50 - line 444, column 34): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 444, column 50 - line 447, column 34): " + [v12.constructor.name]);
         };
       });
     }
     ;
     if (v instanceof Newline) {
-      return makeRule(["s"])(function() {
+      return makeRule(["gamma", "type"])(function() {
         return function(v12) {
-          if (v12.length === 1) {
-            return new Tuple([v12[0]], v12[0]);
+          if (v12.length === 2) {
+            return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 446, column 37 - line 449, column 10): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 449, column 49 - line 452, column 29): " + [v12.constructor.name]);
         };
       });
     }
@@ -42870,7 +42832,7 @@
             return new Tuple([pureMetaExpr(new TypeOfLabel(SortString.value))([v12[0]]), injectSortLabelDerivLabel(TypeSort.value)([v12[1]]), injectSortLabelDerivLabel(TermSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[0], v12[1], v12[3]]), v12[1]]), injectSortLabelDerivLabel(TermSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[0], v12[1], v12[3]]), v12[2]])], injectSortLabelDerivLabel(TermSort.value)([v12[3], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 451, column 52 - line 457, column 32): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 454, column 52 - line 460, column 32): " + [v12.constructor.name]);
         };
       });
     }
@@ -42882,7 +42844,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TypeSort.value)([v12[0]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 459, column 41 - line 462, column 27): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 462, column 41 - line 465, column 27): " + [v12.constructor.name]);
         };
       });
     }
@@ -42894,7 +42856,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TypeSort.value)([injectSortLabelDerivLabel(new DataType(v.value0))([])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 464, column 50 - line 467, column 50): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 467, column 50 - line 470, column 50): " + [v12.constructor.name]);
         };
       });
     }
@@ -42906,7 +42868,7 @@
             return new Tuple([injectSortLabelDerivLabel(TypeSort.value)([v12[0]])], injectSortLabelDerivLabel(TypeSort.value)([injectSortLabelDerivLabel(List2.value)([v12[0]])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 469, column 41 - line 472, column 39): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 472, column 41 - line 475, column 39): " + [v12.constructor.name]);
         };
       });
     }
@@ -42918,7 +42880,7 @@
             return new Tuple([injectSortLabelDerivLabel(TypeSort.value)([v12[0]]), injectSortLabelDerivLabel(TypeSort.value)([v12[1]])], injectSortLabelDerivLabel(TypeSort.value)([injectSortLabelDerivLabel(Arrow.value)([v12[0], v12[1]])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 474, column 44 - line 477, column 42): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 477, column 44 - line 480, column 42): " + [v12.constructor.name]);
         };
       });
     }
@@ -42930,7 +42892,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(new DataType(Bool.value))([])]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 479, column 44 - line 484, column 36): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 482, column 44 - line 487, column 36): " + [v12.constructor.name]);
         };
       });
     }
@@ -42942,7 +42904,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 486, column 76 - line 489, column 42): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 489, column 76 - line 492, column 42): " + [v12.constructor.name]);
         };
       });
     }
@@ -42954,7 +42916,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], constantType(v.value0)]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 491, column 48 - line 494, column 45): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 494, column 48 - line 497, column 45): " + [v12.constructor.name]);
         };
       });
     }
@@ -42967,7 +42929,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v2[0], v1.left]), injectSortLabelDerivLabel(TermSort.value)([v2[0], v1.right])], injectSortLabelDerivLabel(TermSort.value)([v2[0], v1.output]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 498, column 32 - line 501, column 37): " + [v2.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 501, column 32 - line 504, column 37): " + [v2.constructor.name]);
         };
       });
     }
@@ -42979,7 +42941,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(new DataType(Bool.value))([])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 503, column 52 - line 506, column 52): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 506, column 52 - line 509, column 52): " + [v12.constructor.name]);
         };
       });
     }
@@ -42991,7 +42953,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(List2.value)([v12[1]])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 508, column 49 - line 511, column 45): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 511, column 49 - line 514, column 45): " + [v12.constructor.name]);
         };
       });
     }
@@ -43003,7 +42965,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([v12[1], injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(List2.value)([v12[1]]), injectSortLabelDerivLabel(List2.value)([v12[1]])])])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 513, column 50 - line 516, column 91): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 516, column 50 - line 519, column 91): " + [v12.constructor.name]);
         };
       });
     }
@@ -43015,7 +42977,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(List2.value)([v12[1]]), v12[1]])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 518, column 50 - line 521, column 62): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 521, column 50 - line 524, column 62): " + [v12.constructor.name]);
         };
       });
     }
@@ -43027,7 +42989,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(List2.value)([v12[1]]), injectSortLabelDerivLabel(List2.value)([v12[1]])])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 523, column 50 - line 526, column 74): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 526, column 50 - line 529, column 74): " + [v12.constructor.name]);
         };
       });
     }
@@ -43039,7 +43001,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(List2.value)([v12[1]]), injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(new DataType(Int.value))([]), v12[1]])])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 528, column 51 - line 531, column 97): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 531, column 51 - line 534, column 97): " + [v12.constructor.name]);
         };
       });
     }
@@ -43051,7 +43013,7 @@
             return new Tuple([], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(Arrow.value)([injectSortLabelDerivLabel(List2.value)([v12[1]]), injectSortLabelDerivLabel(new DataType(Int.value))([])])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 533, column 52 - line 536, column 80): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 536, column 52 - line 539, column 80): " + [v12.constructor.name]);
         };
       });
     }
@@ -43063,7 +43025,7 @@
             return new Tuple([injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(List2.value)([v12[1]])]), injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]), pureMetaExpr(new TypeOfLabel(SortString.value))([v12[3]]), pureMetaExpr(new TypeOfLabel(SortString.value))([v12[4]]), injectSortLabelDerivLabel(TermSort.value)([injectSortLabelDerivLabel(CtxConsSort.value)([v12[3], v12[1], injectSortLabelDerivLabel(CtxConsSort.value)([v12[4], injectSortLabelDerivLabel(List2.value)([v12[1]]), v12[0]])]), v12[2]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], v12[2]]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 538, column 94 - line 545, column 36): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 541, column 94 - line 548, column 36): " + [v12.constructor.name]);
         };
       });
     }
@@ -43075,12 +43037,24 @@
             return new Tuple([pureMetaExpr(new TypeOfLabel(SortInt.value))([v12[1]])], injectSortLabelDerivLabel(TermSort.value)([v12[0], injectSortLabelDerivLabel(new DataType(Int.value))([])]));
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 547, column 53 - line 550, column 52): " + [v12.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 550, column 53 - line 553, column 52): " + [v12.constructor.name]);
         };
       });
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 400, column 34 - line 550, column 52): " + [v.constructor.name]);
+    if (v instanceof Comment) {
+      return makeRule(["c", "gamma", "type"])(function() {
+        return function(v12) {
+          if (v12.length === 3) {
+            return new Tuple([pureMetaExpr(new TypeOfLabel(SortString.value))([v12[0]]), injectSortLabelDerivLabel(TermSort.value)([v12[1], v12[2]])], injectSortLabelDerivLabel(TermSort.value)([v12[1], v12[2]]));
+          }
+          ;
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 555, column 54 - line 559, column 29): " + [v12.constructor.name]);
+        };
+      });
+    }
+    ;
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 403, column 34 - line 559, column 29): " + [v.constructor.name]);
   });
   var constantName = function(v) {
     if (v instanceof ConstTrue) {
@@ -43095,7 +43069,7 @@
       return "not";
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 220, column 16 - line 223, column 22): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 221, column 16 - line 224, column 22): " + [v.constructor.name]);
   };
   var sortToType = function(v) {
     if (v.value0 instanceof MInj && (v.value0.value0 instanceof SInj && (v.value0.value0.value0 instanceof DataType && v.value1.length === 0))) {
@@ -43227,6 +43201,10 @@
           return v["value1"][0];
         }
         ;
+        if (v.value0 instanceof Comment && v.value1.length === 2) {
+          return "/* " + (v["value1"][0] + (" */ " + v["value1"][1]));
+        }
+        ;
         return bug("[prettyExprF'...] the input was: " + show52(v));
       };
     },
@@ -43245,7 +43223,7 @@
     "defaultDerivTerm'": function() {
       return function(v) {
         if (v.value0 instanceof MInj && (v.value0.value0 instanceof SInj && (v.value0.value0.value0 instanceof TermSort && v.value1.length === 2))) {
-          return pure29(new Expr(makeLabel(isRuleLabelPreSortLabelRu)(TermHole.value)([new Tuple("gamma", v["value1"][0]), new Tuple("type", v["value1"][1])]), [sortToType(v["value1"][1])]));
+          return pure30(new Expr(makeLabel(isRuleLabelPreSortLabelRu)(TermHole.value)([new Tuple("gamma", v["value1"][0]), new Tuple("type", v["value1"][1])]), [sortToType(v["value1"][1])]));
         }
         ;
         if (v.value0 instanceof MInj && (v.value0.value0 instanceof SInj && (v.value0.value0.value0 instanceof VarSort && v.value1.length === 4))) {
@@ -43253,7 +43231,7 @@
         }
         ;
         if (v.value0 instanceof MInj && (v.value0.value0 instanceof SInj && (v.value0.value0.value0 instanceof TypeSort && v.value1.length === 1))) {
-          return pure29(sortToType(v["value1"][0]));
+          return pure30(sortToType(v["value1"][0]));
         }
         ;
         return bug("[defaultDerivTerm] no match: " + pretty32(v));
@@ -43310,19 +43288,19 @@
       var v2 = function(v32) {
         return [];
       };
-      var $2260 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-      if ($2260 instanceof Just && $2260.value0.length === 2) {
+      var $2322 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+      if ($2322 instanceof Just && $2322.value0.length === 2) {
         var v3 = fromString(v1);
         if (v3 instanceof Nothing) {
           return [];
         }
         ;
         if (v3 instanceof Just) {
-          var dterm = new Expr(makeLabel2(IntegerLiteral.value)([new Tuple("gamma", $2260["value0"][0]), new Tuple("n", new Expr(new MInj(new DataLabel(new DataInt(v3.value0))), []))]), [new Expr(new DerivLiteral(new DataInt(v3.value0)), [])]);
+          var dterm = new Expr(makeLabel2(IntegerLiteral.value)([new Tuple("gamma", $2322["value0"][0]), new Tuple("n", new Expr(new MInj(new DataLabel(new DataInt(v3.value0))), []))]), [new Expr(new DerivLiteral(new DataInt(v3.value0)), [])]);
           return mapMaybe2(identity23)([makeSubEditFromTerm2(dterm)(show16(v3.value0))(v)]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1422, column 9 - line 1427, column 103): " + [v3.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1484, column 9 - line 1489, column 103): " + [v3.constructor.name]);
       }
       ;
       return v2(true);
@@ -43334,12 +43312,12 @@
         return Nothing.value;
       };
       if (v1.value0 instanceof Boundary && (v1.value0.value0 instanceof Down && (v1.value1.length === 1 && v1["value1"][0].value0 instanceof SSInj))) {
-        var $2268 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-        if ($2268 instanceof Just && ($2268.value0.value0.length === 0 && $2268.value0.value1.length === 2)) {
-          var $2269 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-          if ($2269 instanceof Just && $2269.value0.length === 2) {
-            return trace5("fallbackDownError called")(function(v3) {
-              return pure29(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2268["value0"]["value1"][0])), new Tuple("insideType", $2269["value0"][1]), new Tuple("outsideType", rEndpoint2($2268["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2268["value0"]["value1"][0], inject($2269["value0"][1])]))(v1["value1"][0])]));
+        var $2330 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+        if ($2330 instanceof Just && ($2330.value0.value0.length === 0 && $2330.value0.value1.length === 2)) {
+          var $2331 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+          if ($2331 instanceof Just && $2331.value0.length === 2) {
+            return trace3("fallbackDownError called")(function(v3) {
+              return pure30(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2330["value0"]["value1"][0])), new Tuple("insideType", $2331["value0"][1]), new Tuple("outsideType", rEndpoint2($2330["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2330["value0"]["value1"][0], inject($2331["value0"][1])]))(v1["value1"][0])]));
             });
           }
           ;
@@ -43361,11 +43339,11 @@
               return Nothing.value;
             };
             if (v1.value0 instanceof Boundary && (v1.value0.value0 instanceof Up && v1.value1.length === 1)) {
-              var $2288 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-              if ($2288 instanceof Just && ($2288.value0.value0.length === 0 && $2288.value0.value1.length === 2)) {
-                var $2289 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-                if ($2289 instanceof Just && $2289.value0.length === 2) {
-                  return pure29(new Tuple($2288["value0"]["value1"][0], new Tuple($2288["value0"]["value1"][1], new Tuple(v1["value1"][0], $2289["value0"][1]))));
+              var $2350 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+              if ($2350 instanceof Just && ($2350.value0.value0.length === 0 && $2350.value0.value1.length === 2)) {
+                var $2351 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+                if ($2351 instanceof Just && $2351.value0.length === 2) {
+                  return pure30(new Tuple($2350["value0"]["value1"][0], new Tuple($2350["value0"]["value1"][1], new Tuple(v1["value1"][0], $2351["value0"][1]))));
                 }
                 ;
                 return v2(true);
@@ -43379,7 +43357,7 @@
         }))(function(v1) {
           return discard16(traceM3("fallbackUpError called"))(function() {
             var outsideTy = lEndpoint2(v1.value0.value1.value0);
-            return pure29(new Expr(new SSInj(sterm.value0.value0), fromJust6(updateAt(v1.value1)(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v1.value0.value0, inject(outsideTy)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2(v1.value0.value0)), new Tuple("insideType", v1.value0.value1.value1.value1), new Tuple("outsideType", outsideTy)])([v1.value0.value1.value1.value0])))(sterm.value1))));
+            return pure30(new Expr(new SSInj(sterm.value0.value0), fromJust6(updateAt(v1.value1)(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v1.value0.value0, inject(outsideTy)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2(v1.value0.value0)), new Tuple("insideType", v1.value0.value1.value1.value1), new Tuple("outsideType", outsideTy)])([v1.value0.value1.value1.value0])))(sterm.value1))));
           });
         });
       }
@@ -43395,18 +43373,18 @@
             if (v1.length === 4) {
               return function(v2) {
                 if (v2.length === 1) {
-                  return pure29(dTERM2(Suc.value)([new Tuple("gamma", rEndpoint2(v1[0])), new Tuple("x", rEndpoint2(v1[1])), new Tuple("typeX", rEndpoint2(v1[2])), new Tuple("y", v[0]), new Tuple("typeY", v[1]), new Tuple("locality", rEndpoint2(v1[3]))])([wrapBoundary2(Down.value)(new Expr(csor(VarSort.value), [v1[0], v1[1], v1[2], v1[3]]))(v2[0])]));
+                  return pure30(dTERM2(Suc.value)([new Tuple("gamma", rEndpoint2(v1[0])), new Tuple("x", rEndpoint2(v1[1])), new Tuple("typeX", rEndpoint2(v1[2])), new Tuple("y", v[0]), new Tuple("typeY", v[1]), new Tuple("locality", rEndpoint2(v1[3]))])([wrapBoundary2(Down.value)(new Expr(csor(VarSort.value), [v1[0], v1[1], v1[2], v1[3]]))(v2[0])]));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 914, column 6 - line 920, column 18): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 957, column 6 - line 963, column 18): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 914, column 6 - line 920, column 18): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 957, column 6 - line 963, column 18): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 914, column 6 - line 920, column 18): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 957, column 6 - line 963, column 18): " + [v.constructor.name]);
       };
     });
   }();
@@ -43416,23 +43394,23 @@
         return Nothing.value;
       };
       if (v1.value0 instanceof Boundary && (v1.value0.value0 instanceof Down && (v1.value1.length === 1 && v1["value1"][0].value0 instanceof SSInj))) {
-        var $2329 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-        if ($2329 instanceof Just && ($2329.value0.value0.length === 0 && $2329.value0.value1.length === 2)) {
-          var $2330 = isNeutralFormWithCursor(v1["value1"][0]);
-          if ($2330) {
-            var $2331 = !isMerelyASubstitution2($2329["value0"]["value1"][1]);
-            if ($2331) {
-              var $2341 = function() {
+        var $2391 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+        if ($2391 instanceof Just && ($2391.value0.value0.length === 0 && $2391.value0.value1.length === 2)) {
+          var $2392 = isNeutralFormWithCursor(v1["value1"][0]);
+          if ($2392) {
+            var $2393 = !isMerelyASubstitution2($2391["value0"]["value1"][1]);
+            if ($2393) {
+              var $2403 = function() {
                 if (v instanceof Just && (v.value0.value0 instanceof SSInj && (v.value0.value0.value0 instanceof DerivLabel && v.value0.value1.value1 === 0))) {
-                  return !(eq62(v.value0.value0.value0.value0)(App2.value) || eq62(v.value0.value0.value0.value0)(GreyApp.value));
+                  return !(eq7(v.value0.value0.value0.value0)(App2.value) || eq7(v.value0.value0.value0.value0)(GreyApp.value));
                 }
                 ;
                 return true;
               }();
-              if ($2341) {
-                var $2342 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-                if ($2342 instanceof Just && $2342.value0.length === 2) {
-                  return pure29(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2329["value0"]["value1"][0])), new Tuple("insideType", $2342["value0"][1]), new Tuple("outsideType", rEndpoint2($2329["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2329["value0"]["value1"][0], inject($2342["value0"][1])]))(v1["value1"][0])]));
+              if ($2403) {
+                var $2404 = matchExprImpl2(ssTermSort2(v1["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+                if ($2404 instanceof Just && $2404.value0.length === 2) {
+                  return pure30(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2391["value0"]["value1"][0])), new Tuple("insideType", $2404["value0"][1]), new Tuple("outsideType", rEndpoint2($2391["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2391["value0"]["value1"][0], inject($2404["value0"][1])]))(v1["value1"][0])]));
                 }
                 ;
                 return v2(true);
@@ -43461,23 +43439,23 @@
             return Nothing.value;
           };
           if (v2.value0 instanceof Boundary && (v2.value0.value0 instanceof Up && v2.value1.length === 1)) {
-            var $2394 = matchChange2(v2.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-            if ($2394 instanceof Just && ($2394.value0.value0.length === 0 && $2394.value0.value1.length === 2)) {
-              var $2399 = function() {
+            var $2456 = matchChange2(v2.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+            if ($2456 instanceof Just && ($2456.value0.value0.length === 0 && $2456.value0.value1.length === 2)) {
+              var $2461 = function() {
                 if (v1.value0 instanceof SSInj && v1.value0.value0 instanceof DerivLabel) {
-                  return !((eq62(v1.value0.value0.value0)(App2.value) || eq62(v1.value0.value0.value0)(GreyApp.value)) && i2 === 0);
+                  return !((eq7(v1.value0.value0.value0)(App2.value) || eq7(v1.value0.value0.value0)(GreyApp.value)) && i2 === 0);
                 }
                 ;
                 return true;
               }();
-              if ($2399) {
-                var $2400 = isNeutralFormWithoutCursor(v2["value1"][0]);
-                if ($2400) {
-                  var $2401 = !isMerelyASubstitution2($2394["value0"]["value1"][1]);
-                  if ($2401) {
-                    var $2402 = matchExprImpl2(ssTermSort2(v2["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-                    if ($2402 instanceof Just && $2402.value0.length === 2) {
-                      return pure29(new Tuple($2394["value0"]["value1"][0], new Tuple($2394["value0"]["value1"][1], new Tuple(v2["value1"][0], $2402["value0"][1]))));
+              if ($2461) {
+                var $2462 = isNeutralFormWithoutCursor(v2["value1"][0]);
+                if ($2462) {
+                  var $2463 = !isMerelyASubstitution2($2456["value0"]["value1"][1]);
+                  if ($2463) {
+                    var $2464 = matchExprImpl2(ssTermSort2(v2["value1"][0]))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+                    if ($2464 instanceof Just && $2464.value0.length === 2) {
+                      return pure30(new Tuple($2456["value0"]["value1"][0], new Tuple($2456["value0"]["value1"][1], new Tuple(v2["value1"][0], $2464["value0"][1]))));
                     }
                     ;
                     return v3(true);
@@ -43499,7 +43477,7 @@
         };
       }))(function(v2) {
         var outsideTy = lEndpoint2(v2.value0.value1.value0);
-        return pure29(new Expr(v1.value0, fromJust6(updateAt(v2.value1)(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v2.value0.value0, inject(outsideTy)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2(v2.value0.value0)), new Tuple("insideType", v2.value0.value1.value1.value1), new Tuple("outsideType", outsideTy)])([v2.value0.value1.value1.value0])))(v1.value1))));
+        return pure30(new Expr(v1.value0, fromJust6(updateAt(v2.value1)(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v2.value0.value0, inject(outsideTy)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2(v2.value0.value0)), new Tuple("insideType", v2.value0.value1.value1.value1), new Tuple("outsideType", outsideTy)])([v2.value0.value1.value1.value0])))(v1.value1))));
       });
     };
   };
@@ -43522,9 +43500,9 @@
         return Nothing.value;
       };
       if (v1.value0 instanceof SSInj && (v1.value0.value0 instanceof DerivLabel && (v1.value0.value0.value0 instanceof App2 && (v1.value1.length === 2 && (v1["value1"][0].value0 instanceof Boundary && (v1["value1"][0].value0.value0 instanceof Up && v1["value1"][0].value1.length === 1)))))) {
-        var $2436 = matchChange2(v1["value1"][0].value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, dMINUS(Arrow.value)([slot2])(cSlot)([])]));
-        if ($2436 instanceof Just && ($2436.value0.value0.length === 1 && $2436.value0.value1.length === 2)) {
-          return pure29(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [$2436["value0"]["value1"][0], $2436["value0"]["value1"][1]]))(new Expr(new SSInj(makeLabel2(GreyApp.value)([new Tuple("gamma", rEndpoint2($2436["value0"]["value1"][0])), new Tuple("a", $2436["value0"]["value0"][0]), new Tuple("b", rEndpoint2($2436["value0"]["value1"][1]))])), [v1["value1"][0]["value1"][0], wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2436["value0"]["value1"][0], inject($2436["value0"]["value0"][0])]))(v1["value1"][1])])));
+        var $2498 = matchChange2(v1["value1"][0].value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, dMINUS(Arrow.value)([slot2])(cSlot)([])]));
+        if ($2498 instanceof Just && ($2498.value0.value0.length === 1 && $2498.value0.value1.length === 2)) {
+          return pure30(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [$2498["value0"]["value1"][0], $2498["value0"]["value1"][1]]))(new Expr(new SSInj(makeLabel2(GreyApp.value)([new Tuple("gamma", rEndpoint2($2498["value0"]["value1"][0])), new Tuple("a", $2498["value0"]["value0"][0]), new Tuple("b", rEndpoint2($2498["value0"]["value1"][1]))])), [v1["value1"][0]["value1"][0], wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2498["value0"]["value1"][0], inject($2498["value0"]["value0"][0])]))(v1["value1"][1])])));
         }
         ;
         return v2(true);
@@ -43540,11 +43518,11 @@
         return Nothing.value;
       };
       if (v1.value0 instanceof Boundary && (v1.value0.value0 instanceof Down && (v1.value1.length === 1 && (v1["value1"][0].value0 instanceof SSInj && (v1["value1"][0].value0.value0 instanceof DerivLabel && (v1["value1"][0].value0.value0.value0 instanceof ErrorBoundary && v1["value1"][0].value1.length === 1)))))) {
-        var $2471 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-        if ($2471 instanceof Just && ($2471.value0.value0.length === 0 && $2471.value0.value1.length === 2)) {
+        var $2533 = matchChange2(v1.value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+        if ($2533 instanceof Just && ($2533.value0.value0.length === 0 && $2533.value0.value1.length === 2)) {
           var insideInside = lookup$prime3(new RuleMetaVar("insideType"))(v1["value1"][0].value0.value0.value1);
-          var outsideOutside = rEndpoint2($2471["value0"]["value1"][1]);
-          return pure29(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2471["value0"]["value1"][0])), new Tuple("insideType", insideInside), new Tuple("outsideType", outsideOutside)])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2471["value0"]["value1"][0], inject(insideInside)]))(v1["value1"][0]["value1"][0])]));
+          var outsideOutside = rEndpoint2($2533["value0"]["value1"][1]);
+          return pure30(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2533["value0"]["value1"][0])), new Tuple("insideType", insideInside), new Tuple("outsideType", outsideOutside)])([wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [$2533["value0"]["value1"][0], inject(insideInside)]))(v1["value1"][0]["value1"][0])]));
         }
         ;
         return v2(true);
@@ -43559,11 +43537,11 @@
         return Nothing.value;
       };
       if (v1.value0 instanceof SSInj && (v1.value0.value0 instanceof DerivLabel && (v1.value0.value0.value0 instanceof ErrorBoundary && (v1.value1.length === 1 && (v1["value1"][0].value0 instanceof Boundary && (v1["value1"][0].value0.value0 instanceof Up && v1["value1"][0].value1.length === 1)))))) {
-        var $2490 = matchChange2(v1["value1"][0].value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
-        if ($2490 instanceof Just && ($2490.value0.value0.length === 0 && $2490.value0.value1.length === 2)) {
-          var insideInside = rEndpoint2($2490["value0"]["value1"][1]);
+        var $2552 = matchChange2(v1["value1"][0].value0.value1)(injectChangeMatchExpr(TermSort.value)([cSlot, cSlot]));
+        if ($2552 instanceof Just && ($2552.value0.value0.length === 0 && $2552.value0.value1.length === 2)) {
+          var insideInside = rEndpoint2($2552["value0"]["value1"][1]);
           var outsideOutside = lookup$prime3(new RuleMetaVar("outsideType"))(v1.value0.value0.value1);
-          return pure29(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [$2490["value0"]["value1"][0], inject(outsideOutside)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2490["value0"]["value1"][0])), new Tuple("insideType", insideInside), new Tuple("outsideType", outsideOutside)])([v1["value1"][0]["value1"][0]])));
+          return pure30(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [$2552["value0"]["value1"][0], inject(outsideOutside)]))(dTERM2(ErrorBoundary.value)([new Tuple("gamma", rEndpoint2($2552["value0"]["value1"][0])), new Tuple("insideType", insideInside), new Tuple("outsideType", outsideOutside)])([v1["value1"][0]["value1"][0]])));
         }
         ;
         return v2(true);
@@ -43580,23 +43558,23 @@
             if (v1.length === 3) {
               return function(v2) {
                 if (v2.length === 1) {
-                  var $2510 = !(eq42(inject(v[0]))(v1[1]) && isJust(unify2(v[1])(rEndpoint2(v1[2]))));
-                  if ($2510) {
+                  var $2572 = !(eq52(inject(v[0]))(v1[1]) && isJust(unify2(v[1])(rEndpoint2(v1[2]))));
+                  if ($2572) {
                     return Nothing.value;
                   }
                   ;
-                  return pure29(wrapBoundary2(Up.value)(new Expr(csor(VarSort.value), [new Expr(csor(CtxConsSort.value), [v1[1], inject(v[1]), inject(rEndpoint2(v1[0]))]), v1[1], diff2(rEndpoint2(v1[2]))(v[1]), replaceChange(new Expr(sor(NonLocal.value), []))(new Expr(sor(Local.value), []))]))(dTERM2(Zero.value)([new Tuple("gamma", rEndpoint2(v1[0])), new Tuple("x", v[0]), new Tuple("type", v[1])])([])));
+                  return pure30(wrapBoundary2(Up.value)(new Expr(csor(VarSort.value), [new Expr(csor(CtxConsSort.value), [v1[1], inject(v[1]), inject(rEndpoint2(v1[0]))]), v1[1], diff2(rEndpoint2(v1[2]))(v[1]), replaceChange(new Expr(sor(NonLocal.value), []))(new Expr(sor(Local.value), []))]))(dTERM2(Zero.value)([new Tuple("gamma", rEndpoint2(v1[0])), new Tuple("x", v[0]), new Tuple("type", v[1])])([])));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 954, column 6 - line 961, column 79): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 997, column 6 - line 1004, column 79): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 954, column 6 - line 961, column 79): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 997, column 6 - line 1004, column 79): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 954, column 6 - line 961, column 79): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 997, column 6 - line 1004, column 79): " + [v.constructor.name]);
       };
     });
   }();
@@ -43606,9 +43584,9 @@
         return Nothing.value;
       };
       if (dterm.value0 instanceof Boundary && (dterm.value0.value0 instanceof Down && (dterm.value1.length === 1 && (dterm["value1"][0].value0 instanceof SSInj && (dterm["value1"][0].value0.value0 instanceof DerivLabel && (dterm["value1"][0].value0.value0.value0 instanceof ArrowRule && dterm["value1"][0].value1.length === 2)))))) {
-        var $2518 = matchChange2(dterm.value0.value1)(injectChangeMatchExpr(TypeSort.value)([injectChangeMatchExpr(Arrow.value)([cSlot, cSlot])]));
-        if ($2518 instanceof Just && ($2518.value0.value0.length === 0 && $2518.value0.value1.length === 2)) {
-          return pure29(dTERM2(ArrowRule.value)([new Tuple("a", rEndpoint2($2518["value0"]["value1"][0])), new Tuple("b", rEndpoint2($2518["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TypeSort.value), [$2518["value0"]["value1"][0]]))(dterm["value1"][0]["value1"][0]), wrapBoundary2(Down.value)(new Expr(csor(TypeSort.value), [$2518["value0"]["value1"][1]]))(dterm["value1"][0]["value1"][1])]));
+        var $2580 = matchChange2(dterm.value0.value1)(injectChangeMatchExpr(TypeSort.value)([injectChangeMatchExpr(Arrow.value)([cSlot, cSlot])]));
+        if ($2580 instanceof Just && ($2580.value0.value0.length === 0 && $2580.value0.value1.length === 2)) {
+          return pure30(dTERM2(ArrowRule.value)([new Tuple("a", rEndpoint2($2580["value0"]["value1"][0])), new Tuple("b", rEndpoint2($2580["value0"]["value1"][1]))])([wrapBoundary2(Down.value)(new Expr(csor(TypeSort.value), [$2580["value0"]["value1"][0]]))(dterm["value1"][0]["value1"][0]), wrapBoundary2(Down.value)(new Expr(csor(TypeSort.value), [$2580["value0"]["value1"][1]]))(dterm["value1"][0]["value1"][1])]));
         }
         ;
         return v1(true);
@@ -43625,18 +43603,18 @@
             if (v1.length === 4) {
               return function(v2) {
                 if (v2.length === 1) {
-                  return pure29(wrapBoundary2(Down.value)(new Expr(csor(VarSort.value), [v1[0], v1[1], v1[2], v1[3]]))(v2[0]));
+                  return pure30(wrapBoundary2(Down.value)(new Expr(csor(VarSort.value), [v1[0], v1[1], v1[2], v1[3]]))(v2[0]));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 944, column 6 - line 946, column 10): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 987, column 6 - line 989, column 10): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 944, column 6 - line 946, column 10): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 987, column 6 - line 989, column 10): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 944, column 6 - line 946, column 10): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 987, column 6 - line 989, column 10): " + [v.constructor.name]);
       };
     });
   }();
@@ -43646,7 +43624,7 @@
         return function(toBeWrapped) {
           var answerIfMe = function(v2) {
             return bind29(unify2(cursorTy)(tyOft))(function(v12) {
-              return pure29(new Tuple(subDerivTerm2(v12.value1)(toBeWrapped), v12.value1));
+              return pure30(new Tuple(subDerivTerm2(v12.value1)(toBeWrapped), v12.value1));
             });
           };
           var v = matchExprImpl2(tyOft)(injectMatchExpr(sor(Arrow.value))([slot2, slot2]));
@@ -43661,7 +43639,7 @@
               return answerIfMe(unit);
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 745, column 9 - line 747, column 39): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 787, column 9 - line 789, column 39): " + [v1.constructor.name]);
           }
           ;
           return answerIfMe(unit);
@@ -43675,23 +43653,23 @@
         var v3 = function(v42) {
           return Nil.value;
         };
-        var $2558 = matchExprImpl2(v1)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-        if ($2558 instanceof Just && $2558.value0.length === 2) {
-          var $2559 = matchExprImpl2(derivTermSort2(v2))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-          if ($2559 instanceof Just && $2559.value0.length === 2) {
-            var $2560 = unify2($2558["value0"][0])($2559["value0"][0]);
-            if ($2560 instanceof Just) {
+        var $2620 = matchExprImpl2(v1)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+        if ($2620 instanceof Just && $2620.value0.length === 2) {
+          var $2621 = matchExprImpl2(derivTermSort2(v2))(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+          if ($2621 instanceof Just && $2621.value0.length === 2) {
+            var $2622 = unify2($2620["value0"][0])($2621["value0"][0]);
+            if ($2622 instanceof Just) {
               var meta2 = fromMetaVar(freshMetaVar("any"));
-              var v4 = maximallyApplied($2558["value0"][0])(meta2)($2559["value0"][1])(v2);
+              var v4 = maximallyApplied($2620["value0"][0])(meta2)($2621["value0"][1])(v2);
               if (v4 instanceof Just) {
-                return makeWrapEdits2(isValidCursorSort)(isValidSelectionSorts)(forgetSorts)(splitChange)(v)(v1)(subDerivTerm2(composeSub2($2560.value0.value1)(v4.value0.value1))(v4.value0.value0));
+                return makeWrapEdits2(isValidCursorSort)(isValidSelectionSorts)(forgetSorts)(splitChange)(v)(v1)(subDerivTerm2(composeSub2($2622.value0.value1)(v4.value0.value1))(v4.value0.value0));
               }
               ;
               if (v4 instanceof Nothing) {
                 return Nil.value;
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 815, column 5 - line 819, column 23): " + [v4.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 857, column 5 - line 861, column 23): " + [v4.constructor.name]);
             }
             ;
             return v3(true);
@@ -43719,7 +43697,7 @@
                       var ty$prime = subMetaExprPartially2(v2.value1)(v1[1]);
                       var dterm$prime = subDerivTerm2(v2.value1)(dterm);
                       return bind29(maximallyApplied(cursorCtx$prime)(cursorTy$prime)(ty$prime)(dterm$prime))(function(v3) {
-                        return pure29({
+                        return pure30({
                           label: name15,
                           action: defer3(function(v4) {
                             return new FillAction({
@@ -43732,12 +43710,12 @@
                     });
                   }
                   ;
-                  throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 777, column 84 - line 791, column 14): " + [v1.constructor.name]);
+                  throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 819, column 84 - line 833, column 14): " + [v1.constructor.name]);
                 };
               });
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 776, column 59 - line 791, column 14): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 818, column 59 - line 833, column 14): " + [v.constructor.name]);
           };
         })(slot2)(function() {
           return function(v) {
@@ -43745,7 +43723,7 @@
               return Nothing.value;
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 793, column 14 - line 793, column 29): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 835, column 14 - line 835, column 29): " + [v.constructor.name]);
           };
         });
       };
@@ -43759,18 +43737,18 @@
             if (v1.length === 1) {
               return function(v2) {
                 if (v2.length === 1) {
-                  return pure29(termToSSTerm(sortToType(rEndpoint2(v1[0]))));
+                  return pure30(termToSSTerm(sortToType(rEndpoint2(v1[0]))));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 980, column 6 - line 980, column 78): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1023, column 6 - line 1023, column 78): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 980, column 6 - line 980, column 78): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1023, column 6 - line 1023, column 78): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 980, column 6 - line 980, column 78): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1023, column 6 - line 1023, column 78): " + [v.constructor.name]);
       };
     });
   }();
@@ -43783,24 +43761,24 @@
               return function(v2) {
                 if (v2.length === 2) {
                   return function(inside) {
-                    var $2604 = !isNeutralFormWithoutCursor(inside);
-                    if ($2604) {
+                    var $2666 = !isNeutralFormWithoutCursor(inside);
+                    if ($2666) {
                       return Nothing.value;
                     }
                     ;
-                    return pure29(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v2[0], v2[1]]))(dTERM2(App2.value)([new Tuple("gamma", rEndpoint2(v2[0])), new Tuple("a", v1[0]), new Tuple("b", rEndpoint2(v2[1]))])([inside, termToSSTerm(fromJust$prime("wrapApp")(defaultDerivTerm2(new Expr(sor(TermSort.value), [rEndpoint2(v2[0]), v1[0]]))))])));
+                    return pure30(wrapBoundary2(Up.value)(new Expr(csor(TermSort.value), [v2[0], v2[1]]))(dTERM2(App2.value)([new Tuple("gamma", rEndpoint2(v2[0])), new Tuple("a", v1[0]), new Tuple("b", rEndpoint2(v2[1]))])([inside, termToSSTerm(fromJust$prime("wrapApp")(defaultDerivTerm2(new Expr(sor(TermSort.value), [rEndpoint2(v2[0]), v1[0]]))))])));
                   };
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1043, column 20 - line 1048, column 143): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1086, column 20 - line 1091, column 143): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1043, column 20 - line 1048, column 143): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1086, column 20 - line 1091, column 143): " + [v1.constructor.name]);
           });
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1043, column 6 - line 1048, column 144): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1086, column 6 - line 1091, column 144): " + [v.constructor.name]);
       };
     });
   }();
@@ -43811,7 +43789,7 @@
           return new Tuple(new Expr(makeLabel2(Var.value)([new Tuple("gamma", v[0]), new Tuple("x", v[1]), new Tuple("type", v[2]), new Tuple("locality", v[3])]), [index4]), v[2]);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 731, column 88 - line 733, column 20): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 773, column 88 - line 775, column 20): " + [v.constructor.name]);
       };
     });
   };
@@ -43824,7 +43802,7 @@
               return new Expr(makeLabel2(Suc.value)([new Tuple("gamma", v[0]), new Tuple("x", v[1]), new Tuple("typeX", v[2]), new Tuple("y", name15), new Tuple("typeY", ty), new Tuple("locality", v[3])]), [t]);
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 702, column 88 - line 704, column 15): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 744, column 88 - line 746, column 15): " + [v.constructor.name]);
           };
         });
       };
@@ -43839,7 +43817,7 @@
               return wrapInSuc(v[0])(v[1])(getFreeVar(v[2])(fvName)(fvType));
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 709, column 46 - line 710, column 58): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 751, column 46 - line 752, column 58): " + [v.constructor.name]);
           };
         })(injectMatchExpr(sor(CtxNilSort.value))([]))(function() {
           return function(v) {
@@ -43847,7 +43825,7 @@
               return new Expr(makeLabel2(FreeVar.value)([new Tuple("name", fvName), new Tuple("type", fvType)]), []);
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 712, column 29 - line 713, column 76): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 754, column 29 - line 755, column 76): " + [v.constructor.name]);
           };
         });
       };
@@ -43861,23 +43839,23 @@
             if (v1.length === 3) {
               return function(v2) {
                 if (v2.length === 0) {
-                  var $2627 = !(eq42(inject(v[0]))(v1[1]) && eq42(inject(v[1]))(v1[2]));
-                  if ($2627) {
+                  var $2704 = !(eq52(inject(v[0]))(v1[1]) && eq52(inject(v[1]))(v1[2]));
+                  if ($2704) {
                     return Nothing.value;
                   }
                   ;
-                  return pure29(wrapBoundary2(Up.value)(new Expr(csor(VarSort.value), [inject(rEndpoint2(v1[0])), v1[1], v1[2], new Expr(new Replace(new Expr(sor(Local.value), []), new Expr(sor(NonLocal.value), [])), [])]))(termToSSTerm(getFreeVar(rEndpoint2(v1[0]))(v[0])(v[1]))));
+                  return pure30(wrapBoundary2(Up.value)(new Expr(csor(VarSort.value), [inject(rEndpoint2(v1[0])), v1[1], v1[2], new Expr(new Replace(new Expr(sor(Local.value), []), new Expr(sor(NonLocal.value), [])), [])]))(termToSSTerm(getFreeVar(rEndpoint2(v1[0]))(v[0])(v[1]))));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 932, column 6 - line 935, column 71): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 975, column 6 - line 978, column 71): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 932, column 6 - line 935, column 71): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 975, column 6 - line 978, column 71): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 932, column 6 - line 935, column 71): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 975, column 6 - line 978, column 71): " + [v.constructor.name]);
       };
     });
   }();
@@ -43888,7 +43866,7 @@
           return new Cons(new Expr(makeLabel2(Zero.value)([new Tuple("gamma", v[2]), new Tuple("x", v[0]), new Tuple("type", v[1])]), []), map60(wrapInSuc(v[0])(v[1]))(getIndices(v[2])));
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 719, column 46 - line 723, column 52): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 761, column 46 - line 765, column 52): " + [v.constructor.name]);
       };
     })(injectMatchExpr(sor(CtxNilSort.value))([]))(function() {
       return function(v) {
@@ -43896,7 +43874,7 @@
           return Nil.value;
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 725, column 29 - line 726, column 12): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 767, column 29 - line 768, column 12): " + [v.constructor.name]);
       };
     });
   };
@@ -43911,7 +43889,7 @@
                 if (v1.length === 4) {
                   var v2 = wrapInRef(index4);
                   return bind29(maximallyApplied(v[0])(v[1])(v2.value1)(v2.value0))(function(v3) {
-                    return pure29({
+                    return pure30({
                       label: matchStringLabel(v1[1]),
                       action: defer3(function(v4) {
                         return new FillAction({
@@ -43923,14 +43901,14 @@
                   });
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 755, column 103 - line 764, column 26): " + [v1.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 797, column 103 - line 806, column 26): " + [v1.constructor.name]);
               };
             });
           };
           return mapMaybe(makeEdit)(indices);
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 752, column 53 - line 766, column 43): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 794, column 53 - line 808, column 43): " + [v.constructor.name]);
       };
     })(slot2)(function() {
       return function(v) {
@@ -43938,12 +43916,12 @@
           return Nil.value;
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 769, column 14 - line 769, column 25): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 811, column 14 - line 811, column 25): " + [v.constructor.name]);
       };
     });
   };
   var editsAtHoleInterior = function(cursorSort) {
-    return append18(fromFoldable20(getVarEdits(cursorSort)))(mapMaybe2(identity23)(append18([makeSubEditFromTerm2(newTermFromRule2(If.value))("If")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(Lam.value))("lambda")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(Let.value))("let")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(App2.value))("(")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(NilRule.value))("nil")(cursorSort), getWrapInAppEdit("cons")(cursorSort)(newTermFromRule2(ConsRule.value)), getWrapInAppEdit("head")(cursorSort)(newTermFromRule2(HeadRule.value)), getWrapInAppEdit("tail")(cursorSort)(newTermFromRule2(TailRule.value)), getWrapInAppEdit("index")(cursorSort)(newTermFromRule2(IndexRule.value)), getWrapInAppEdit("length")(cursorSort)(newTermFromRule2(LengthRule.value)), makeSubEditFromTerm2(newTermFromRule2(ListMatchRule.value))("match")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(EqualsRule.value))("==")(cursorSort)])(append18(mapFlipped9(allPossible1)(function(constant) {
+    return append18(fromFoldable20(getVarEdits(cursorSort)))(mapMaybe2(identity23)(append18([makeSubEditFromTerm2(newTermFromRule2(If.value))("if")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(Lam.value))("lambda")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(Let.value))("let")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(App2.value))("(")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(NilRule.value))("nil")(cursorSort), getWrapInAppEdit("cons")(cursorSort)(newTermFromRule2(ConsRule.value)), getWrapInAppEdit("head")(cursorSort)(newTermFromRule2(HeadRule.value)), getWrapInAppEdit("tail")(cursorSort)(newTermFromRule2(TailRule.value)), getWrapInAppEdit("index")(cursorSort)(newTermFromRule2(IndexRule.value)), getWrapInAppEdit("length")(cursorSort)(newTermFromRule2(LengthRule.value)), makeSubEditFromTerm2(newTermFromRule2(ListMatchRule.value))("match")(cursorSort), makeSubEditFromTerm2(newTermFromRule2(EqualsRule.value))("==")(cursorSort)])(append18(mapFlipped9(allPossible1)(function(constant) {
       return getWrapInAppEdit(constantName(constant))(cursorSort)(newTermFromRule2(new ConstantRule(constant)));
     }))(mapFlipped9(allPossible2)(function(op) {
       return makeSubEditFromTerm2(newTermFromRule2(new InfixRule(op)))(infixName(op))(cursorSort);
@@ -43953,20 +43931,20 @@
     var v1 = function(v2) {
       return Nil.value;
     };
-    var $2655 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-    if ($2655 instanceof Just && $2655.value0.length === 2) {
+    var $2732 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+    if ($2732 instanceof Just && $2732.value0.length === 2) {
       var meta2 = fromMetaVar(freshMetaVar("any"));
-      var indices = getIndices($2655["value0"][0]);
+      var indices = getIndices($2732["value0"][0]);
       var edits = mapFlipped13(indices)(function(index4) {
         var v2 = wrapInRef(index4);
-        return bind29(maximallyApplied($2655["value0"][0])(meta2)(v2.value1)(v2.value0))(function(v3) {
-          return pure29(matchExpr3(derivTermSort2(index4))(injectMatchExpr(sor(VarSort.value))([slot2, slot2, slot2, slot2]))(function() {
+        return bind29(maximallyApplied($2732["value0"][0])(meta2)(v2.value1)(v2.value0))(function(v3) {
+          return pure30(matchExpr3(derivTermSort2(index4))(injectMatchExpr(sor(VarSort.value))([slot2, slot2, slot2, slot2]))(function() {
             return function(v4) {
               if (v4.length === 4) {
                 return makeWrapEdits2(isValidCursorSort)(isValidSelectionSorts)(forgetSorts)(splitChange)(matchStringLabel(v4[1]))(v)(v3.value0);
               }
               ;
-              throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 804, column 102 - line 805, column 162): " + [v4.constructor.name]);
+              throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 846, column 102 - line 847, column 162): " + [v4.constructor.name]);
             };
           }));
         });
@@ -43994,32 +43972,28 @@
               return function(v2) {
                 if (v2.length === 1) {
                   var varName = new Expr(new MInj(new DataLabel(new DataString(""))), []);
-                  return pure29(dTERM2(Lam.value)([new Tuple("x", varName), new Tuple("a", v[0]), new Tuple("b", rEndpoint2(v1[1])), new Tuple("gamma", rEndpoint2(v1[0]))])([termToSSTerm(fromJust$prime("wrapLambda")(defaultDerivTerm2(pureMetaExpr(new TypeOfLabel(SortString.value))([varName])))), termToSSTerm(sortToType(v[0])), wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [plusChange(sor(CtxConsSort.value))([varName, v[0]])(v1[0])([]), v1[1]]))(v2[0])]));
+                  return pure30(dTERM2(Lam.value)([new Tuple("x", varName), new Tuple("a", v[0]), new Tuple("b", rEndpoint2(v1[1])), new Tuple("gamma", rEndpoint2(v1[0]))])([termToSSTerm(fromJust$prime("wrapLambda")(defaultDerivTerm2(pureMetaExpr(new TypeOfLabel(SortString.value))([varName])))), termToSSTerm(sortToType(v[0])), wrapBoundary2(Down.value)(new Expr(csor(TermSort.value), [plusChange(sor(CtxConsSort.value))([varName, v[0]])(v1[0])([]), v1[1]]))(v2[0])]));
                 }
                 ;
-                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 992, column 6 - line 1000, column 18): " + [v2.constructor.name]);
+                throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1035, column 6 - line 1043, column 18): " + [v2.constructor.name]);
               };
             }
             ;
-            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 992, column 6 - line 1000, column 18): " + [v1.constructor.name]);
+            throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1035, column 6 - line 1043, column 18): " + [v1.constructor.name]);
           };
         }
         ;
-        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 992, column 6 - line 1000, column 18): " + [v.constructor.name]);
+        throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 1035, column 6 - line 1043, column 18): " + [v.constructor.name]);
       };
     });
-  }();
-  var stepRules = /* @__PURE__ */ function() {
-    var chLang = langToChLang(isRuleLabelPreSortLabelRu)(language3);
-    return fromFoldable(foldableArray)(append18([mergeErrorsDown, mergeErrorsUp, localBecomesNonlocal, nonlocalBecomesLocal, insertSucRule, removeSucRule, passThroughArrow, typeBecomeRhsOfChange, introDownErrorNeutral, introUpErrorNeutral, wrapLambda, unWrapLambda, mergeAppGreyApp, mergeAppGreyApp2, wrapApp, makeAppGreyed, removeGreyedApp, removeError])(append18([defaultDown(isExprLabelPreSortLabel)(isRuleLabelPreSortLabelRu)(chLang), defaultUp(isExprLabelPreSortLabel)(isRuleLabelPreSortLabelRu)(chLang)])([fallbackDownError, fallbackUpError])));
   }();
   var colonElem2 = /* @__PURE__ */ makePuncElem("colon")(":");
   var clipboardSort = function(v) {
     var v1 = function(v2) {
       return fromMetaVar(freshMetaVar("anySort"));
     };
-    var $2679 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
-    if ($2679 instanceof Just && $2679.value0.length === 2) {
+    var $2756 = matchExprImpl2(v)(injectMatchExpr(sor(TermSort.value))([slot2, slot2]));
+    if ($2756 instanceof Just && $2756.value0.length === 2) {
       return new Expr(sor(TermSort.value), [startCtx, fromMetaVar(freshMetaVar("anyType"))]);
     }
     ;
@@ -44048,7 +44022,7 @@
             return Nothing.value;
           }
           ;
-          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 568, column 20 - line 570, column 27): " + [v1.mb_parent.constructor.name]);
+          throw new Error("Failed pattern match at Language.Pantograph.Specific.Currying (line 577, column 20 - line 579, column 27): " + [v1.mb_parent.constructor.name]);
         };
         var dotOrNot = function() {
           if (v1.mb_parent instanceof Just && (v1.mb_parent.value0.value0 instanceof DerivLabel && length8(v1.mb_parent.value0.value1.left) === 0)) {
@@ -44061,8 +44035,8 @@
           var v2 = new Tuple(v1.rule, v1.sort);
           if (v2.value1.value0 instanceof MInj && (v2.value1.value0.value0 instanceof SInj && (v2.value1.value0.value0.value0 instanceof VarSort && (v2.value1.value1.length === 4 && (v2["value1"]["value1"][1].value0 instanceof MInj && (v2["value1"]["value1"][1].value0.value0 instanceof DataLabel && (v2["value1"]["value1"][1].value0.value0.value0 instanceof DataString && v2["value1"]["value1"][1].value1.length === 0))))))) {
             var classes2 = function() {
-              var $2700 = eq33(v2["value1"]["value1"][3])(new Expr(sor(Local.value), []));
-              if ($2700) {
+              var $2777 = eq42(v2["value1"]["value1"][3])(new Expr(sor(Local.value), []));
+              if ($2777) {
                 return [];
               }
               ;
@@ -44084,8 +44058,8 @@
               return [mapstoElem];
             }();
             var renCtx$prime = function() {
-              var $2731 = eq7(parentRule())(new Just(Lam.value));
-              if ($2731) {
+              var $2808 = eq8(parentRule())(new Just(Lam.value));
+              if ($2808) {
                 return renCtx;
               }
               ;
@@ -44126,10 +44100,10 @@
                 return new Tuple([lparenElem], [rparenElem]);
               };
               if (v1.mb_parent instanceof Just && v1.mb_parent.value0.value0 instanceof DerivLabel) {
-                var $2739 = length8(v1.mb_parent.value0.value1.left) === 0;
-                if ($2739) {
-                  var $2740 = isAppOrGreyApp(v1.mb_parent.value0.value0.value0);
-                  if ($2740) {
+                var $2816 = length8(v1.mb_parent.value0.value1.left) === 0;
+                if ($2816) {
+                  var $2817 = isAppOrGreyApp(v1.mb_parent.value0.value0.value0);
+                  if ($2817) {
                     return new Tuple([], []);
                   }
                   ;
@@ -44186,6 +44160,16 @@
             }(), [new Left(new Tuple(renCtx, 0))]]);
           }
           ;
+          if (v2.value0 instanceof Comment) {
+            return concat2([[pure113([span3([classNames(["Comment_anchor"])])([])]), new Left(new Tuple(renCtx, 0))], function() {
+              if (renCtx.isInlined) {
+                return [];
+              }
+              ;
+              return [pure113(newlineIndentElem(renCtx.indentationLevel))];
+            }(), [new Left(new Tuple(renCtx, 1))]]);
+          }
+          ;
           if (v2.value0 instanceof TermHole && (v2.value1.value0 instanceof MInj && (v2.value1.value0.value0 instanceof SInj && (v2.value1.value0.value0.value0 instanceof TermSort && v2.value1.value1.length === 2)))) {
             return [pure113([lbraceElem]), new Left(new Tuple(renCtx, 0)), pure113([colonElem2]), new Left(new Tuple({
               cssClasses: singleton9("typesubscript"),
@@ -44209,7 +44193,29 @@
             }
             ;
             if (v2.value0 instanceof ErrorBoundary) {
-              return [pure113([errorLeftSide]), new Left(new Tuple(renCtx, 0)), pure113([errorRightSide])];
+              var v5 = lookup15(v1.rule)(language3);
+              var matchRuleMetaVarName = function(v6) {
+                return function(v7) {
+                  if (v7 instanceof RuleMetaVar) {
+                    return v7.value0 === v6;
+                  }
+                  ;
+                  return false;
+                };
+              };
+              var outsideType = lookup$prime3(function() {
+                var $2918 = flip(index$prime)(0);
+                return function($2919) {
+                  return $2918(toUnfoldable7($2919));
+                };
+              }()(filter6(matchRuleMetaVarName("outsideType"))(v5.value0)))(v1.sigma);
+              var insideType = lookup$prime3(function() {
+                var $2920 = flip(index$prime)(0);
+                return function($2921) {
+                  return $2920(toUnfoldable7($2921));
+                };
+              }()(filter6(matchRuleMetaVarName("insideType"))(v5.value0)))(v1.sigma);
+              return [pure113([div2([classes(["error-info ErrorBoundary-info"])])([div_([text5("[type error]")]), div_([text5("inside  type: "), v1.renderTerm(new Zipper(Nil.value, sortToType(insideType)))(renCtx)]), div_([text5("outside type: "), v1.renderTerm(new Zipper(Nil.value, sortToType(outsideType)))(renCtx)])])]), pure113([errorLeftSide]), new Left(new Tuple(renCtx, 0)), pure113([errorRightSide])];
             }
             ;
             if (v2.value0 instanceof ConstantRule) {
@@ -44264,9 +44270,9 @@
             return bug("[STLC.Grammar.arrangeDerivTermSubs] no match" + ("\n" + ("  - rule = " + (pretty12(v1.rule) + ("\n" + ("  - sort = " + show42(v1.sort)))))));
           };
           if (v2.value0 instanceof TypeHole) {
-            var $2815 = lookup14(new RuleMetaVar("type"))(v1.sigma);
-            if ($2815 instanceof Just && ($2815.value0.value0 instanceof MV && $2815.value0.value1.length === 0)) {
-              return [pure113([text5("?"), text5(show16(getMetavarNumber(renCtx)($2815.value0.value0.value0)))])];
+            var $2902 = lookup14(new RuleMetaVar("type"))(v1.sigma);
+            if ($2902 instanceof Just && ($2902.value0.value0 instanceof MV && $2902.value0.value1.length === 0)) {
+              return [pure113([span3([classes(["TypeHoleMV"])])([text5("?"), text5(show16(getMetavarNumber(renCtx)($2902.value0.value0.value0)))])])];
             }
             ;
             return v3(true);
@@ -44284,6 +44290,17 @@
       };
     };
   };
+  var alternateDesign = false;
+  var stepRules = /* @__PURE__ */ function() {
+    var chLang = langToChLang(isRuleLabelPreSortLabelRu)(language3);
+    return fromFoldable(foldableArray)(append18([mergeErrorsDown, mergeErrorsUp, localBecomesNonlocal, nonlocalBecomesLocal, insertSucRule, removeSucRule, passThroughArrow, typeBecomeRhsOfChange, introDownErrorNeutral, introUpErrorNeutral, removeError])(append18(function() {
+      if (alternateDesign) {
+        return [];
+      }
+      ;
+      return [wrapLambda, unWrapLambda, mergeAppGreyApp, mergeAppGreyApp2, wrapApp, makeAppGreyed, removeGreyedApp];
+    }())(append18([defaultDown(isExprLabelPreSortLabel)(isRuleLabelPreSortLabelRu)(chLang), defaultUp(isExprLabelPreSortLabel)(isRuleLabelPreSortLabelRu)(chLang)])([fallbackDownError, fallbackUpError]))));
+  }();
   var editorSpec = /* @__PURE__ */ function() {
     return {
       dterm: assertI(just("SULC dterm")(defaultDerivTerm2(injectSortLabelDerivLabel(TermSort.value)([startCtx, fromMetaVar(freshMetaVar("tyhole"))])))),
@@ -44323,7 +44340,7 @@
   var show17 = /* @__PURE__ */ show(showInt);
   var foldr9 = /* @__PURE__ */ foldr(foldableList);
   var all4 = /* @__PURE__ */ all(foldableList)(heytingAlgebraBoolean);
-  var pure30 = /* @__PURE__ */ pure(applicativeEither);
+  var pure31 = /* @__PURE__ */ pure(applicativeEither);
   var div4 = /* @__PURE__ */ div(euclideanRingInt);
   var mod4 = /* @__PURE__ */ mod(euclideanRingInt);
   var pure114 = /* @__PURE__ */ pure(applicativeLazy);
@@ -44411,7 +44428,7 @@
       return "<function>";
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 121, column 18 - line 125, column 29): " + [val.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 122, column 18 - line 126, column 29): " + [val.constructor.name]);
   };
   var eqValue = function(v1) {
     return function(v2) {
@@ -44472,11 +44489,11 @@
     ;
     if (v instanceof ConstNot) {
       return new FunVal(function(b2) {
-        return pure30(new BoolVal(!assertValBool(b2)));
+        return pure31(new BoolVal(!assertValBool(b2)));
       });
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 100, column 13 - line 103, column 70): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 101, column 13 - line 104, column 70): " + [v.constructor.name]);
   };
   var evalInfix = function(v) {
     if (v instanceof OpPlus) {
@@ -44575,7 +44592,7 @@
       };
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 106, column 13 - line 118, column 65): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 107, column 13 - line 119, column 65): " + [v.constructor.name]);
   };
   var $$eval = function(v) {
     return function(v1) {
@@ -44590,7 +44607,7 @@
         }
         ;
         if (v2.value0 instanceof Lam && v2.value1.length === 3) {
-          return pure30(new FunVal(function(x) {
+          return pure31(new FunVal(function(x) {
             return $$eval(new Cons(pure114(new Right(x)), v))(v2["value1"][2]);
           }));
         }
@@ -44649,13 +44666,13 @@
         }
         ;
         if (v2.value0 instanceof ConstantRule && v2.value1.length === 0) {
-          return pure30(evalConst(v2.value0.value0));
+          return pure31(evalConst(v2.value0.value0));
         }
         ;
         if (v2.value0 instanceof InfixRule && v2.value1.length === 2) {
           return bind30($$eval(v)(v2["value1"][0]))(function(v11) {
             return bind30($$eval(v)(v2["value1"][1]))(function(v21) {
-              return pure30(evalInfix(v2.value0.value0)(v11)(v21));
+              return pure31(evalInfix(v2.value0.value0)(v11)(v21));
             });
           });
         }
@@ -44663,45 +44680,45 @@
         if (v2.value0 instanceof EqualsRule && v2.value1.length === 2) {
           return bind30($$eval(v)(v2["value1"][0]))(function(v11) {
             return bind30($$eval(v)(v2["value1"][1]))(function(v21) {
-              return pure30(new BoolVal(eqValue(v11)(v21)));
+              return pure31(new BoolVal(eqValue(v11)(v21)));
             });
           });
         }
         ;
         if (v2.value0 instanceof NilRule && v2.value1.length === 0) {
-          return pure30(new ListVal(Nil.value));
+          return pure31(new ListVal(Nil.value));
         }
         ;
         if (v2.value0 instanceof ConsRule && v2.value1.length === 0) {
-          return pure30(new FunVal(function(x) {
-            return pure30(new FunVal(function(xs) {
-              return pure30(new ListVal(new Cons(x, assertValList(xs))));
+          return pure31(new FunVal(function(x) {
+            return pure31(new FunVal(function(xs) {
+              return pure31(new ListVal(new Cons(x, assertValList(xs))));
             }));
           }));
         }
         ;
         if (v2.value0 instanceof LengthRule && v2.value1.length === 0) {
-          return pure30(new FunVal(function(xs) {
-            return pure30(new IntVal(length4(assertValList(xs))));
+          return pure31(new FunVal(function(xs) {
+            return pure31(new IntVal(length4(assertValList(xs))));
           }));
         }
         ;
         if (v2.value0 instanceof HeadRule && v2.value1.length === 0) {
-          return pure30(new FunVal(function(xs) {
-            return pure30(fromJust6(head(assertValList(xs))));
+          return pure31(new FunVal(function(xs) {
+            return pure31(fromJust6(head(assertValList(xs))));
           }));
         }
         ;
         if (v2.value0 instanceof TailRule && v2.value1.length === 0) {
-          return pure30(new FunVal(function(xs) {
-            return pure30(new ListVal(fromJust6(tail(assertValList(xs)))));
+          return pure31(new FunVal(function(xs) {
+            return pure31(new ListVal(fromJust6(tail(assertValList(xs)))));
           }));
         }
         ;
         if (v2.value0 instanceof IndexRule && v2.value1.length === 0) {
-          return pure30(new FunVal(function(xs) {
-            return pure30(new FunVal(function(n) {
-              return pure30(fromJust6(index2(assertValList(xs))(assertValInt(n))));
+          return pure31(new FunVal(function(xs) {
+            return pure31(new FunVal(function(n) {
+              return pure31(fromJust6(index2(assertValList(xs))(assertValInt(n))));
             }));
           }));
         }
@@ -44722,7 +44739,11 @@
         }
         ;
         if (v2.value0 instanceof IntegerLiteral && (v2.value1.length === 1 && (v2["value1"][0].value0 instanceof DerivLiteral && (v2["value1"][0].value0.value0 instanceof DataInt && v2["value1"][0].value1.length === 0)))) {
-          return pure30(new IntVal(v2["value1"][0].value0.value0.value0));
+          return pure31(new IntVal(v2["value1"][0].value0.value0.value0));
+        }
+        ;
+        if (v2.value0 instanceof Comment && v2.value1.length === 2) {
+          return $$eval(v)(v2["value1"][1]);
         }
         ;
         return bug("eval case fail: rule was " + show24(v1.value0.value0));
@@ -44746,20 +44767,23 @@
         return "Error: unbound variable";
       }
       ;
-      throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 129, column 19 - line 132, column 50): " + [v.value0.constructor.name]);
+      throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 130, column 19 - line 133, column 50): " + [v.value0.constructor.name]);
     }
     ;
     if (v instanceof Right) {
       return printValue(v.value0);
     }
     ;
-    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 128, column 22 - line 133, column 32): " + [v.constructor.name]);
+    throw new Error("Failed pattern match at Language.Pantograph.Specific.CurryingInterpereter (line 129, column 22 - line 134, column 32): " + [v.constructor.name]);
   };
 
   // output/Tutorial.CurriedTutorial/index.js
   var decodeSerializedZipper22 = /* @__PURE__ */ decodeSerializedZipper2(isRuleLabelPreSortLabelRu);
   var map61 = /* @__PURE__ */ map(functorArray);
   var deserializePath2 = /* @__PURE__ */ deserializePath(isRuleLabelPreSortLabelRu);
+  var renderDummyButton = function(s) {
+    return button([classNames(["TutorialControlButton TutorialControlButtonDummy"])])([text5(s)]);
+  };
   var prog = function(str) {
     return decodeSerializedZipper22(editorSpec.clipboardSort)(str);
   };
@@ -44777,18 +44801,18 @@
       };
     };
   };
-  var lessons = [/* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[2],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            Pantograph is a structure editor.\n            Although the code may appear as text, it is not.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Take a few seconds to try mousing over the program, and clicking on things.\n            Instead of a typical text cursor which goes in between characters, in Pantograph\n            the cursor goes onto entire expressions.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5('\n            Then, click "Next Lesson"\n            ')])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            Here is the same program, but with a couple of the terms removed.\n            Two of the numbers from the program have been deleted, and instead we have holes in their place.\n            Each hole is displayed as surrounded by {} brackets.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Place your cursor inside the hole by clicking on the square inside the hole.\n            From there, you will be able to fill values into the hole.\n            Initiate a query by typing what you want to input, and then press enter to submit.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Fill the numbers 1 and 2 into the holes to recover the full program.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[2],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            Suppose that we want to generalize our fibonacci function so that it starts with something other than 1.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Delete the base case of the function by clicking on the "1" and pressing Backspace\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Rename the function to "genFib" by placing your cursor on the function name, typing a new name, and pressing enter.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Next, add a second argument to the function. To do this, place your cursor on the body of\n                the function by clicking on the lambda. Then, insert a new lambda expression by typing "lambda" and pressing Enter.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Notice that a few things have happened automatically.\n                An argument has been added to the function signature, and\n                a new hole has been added at each of the call sites of the function.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finish up the new version of the function by giving the newly added variable a name,\n                and filling that variable into the holes in the base case and recursive calls.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, try filling in a value in the call at the end and running the program.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            You have learned two kinds of edits so far: filling forms into a hole, and wrapping forms around the term at the cursor.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Before you learn the other features of Pantograph, it may be useful to practice these two kinds of edits more.\n            Starting with just a hole, write a function which takes the sum of its two inputs.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            It may be useful to try the following things:\n            "), /* @__PURE__ */ ul_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "let"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "lambda"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "+"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Backspace to delete the term at the cursor")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Enter on a term to insert a newline")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Escape to exit any menus that you didn't want open")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            In Pantograph, the cursor goes on an expression. This is analgous the the cursor of a text editor which\n            goes between characters. But text editors would be far less useful without the ability to make a selction,\n            which goes between two cursor positions.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            In Pantograph, you can make a selection between two expressions by clicking and dragging the mouse from\n            one to the other. This selects the area inside one expression, but outside the other.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n--            Spend a moment on this example program making some selections.\n--            But don't worry if the concept still seems confusing.\n            Spend a few seconds making selections on this example program. In the next few lessons,\n            we will go over specific examples using selections.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            One thing that you can do with selections is to rearrange definitions.\n            We will swap the order of the square and triple definitions.\n            "), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Click and drag your mouse from the first "let" in the program to the second "let".\n                The selection should contain the area inside of the first let expression, but outside of the second one.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Ctrl-x to cut the square definition.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Place your cursor on the squareOrTriple definition by clicking on the "let"\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Ctrl-v to paste. This should paste the square definition at this new location in the program.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5('\n            Another thing that you can do with selections it to rearrange function calls.\n            We will rearrange the order of the function calls at the bottom of the program\n            so that "square" is moved to the inside of the expression.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Familiarize yourself with where to click to select each function application.\n                Click on the "("s in the bottom line of the program to select different function calls.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Click and drag from the "square" application to the "squareOrTriple" application,\n                by dragging from one "(" to the other "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Cut with Ctrl-x, and paste on the term "10"\n                ')])]), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5(`
+  var lessons = [/* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[2],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Introduction")]), /* @__PURE__ */ text5("\n            Pantograph is a structure editor.\n            Although the code appears like text, it isn't.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Just like a text editor, you can navigate in Pantograph using a cursor.\n            Try clicking on different parts of the program.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("Unlike a text editor, the Pantograph cursor goes around entire expressions."), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("Then, click the "), /* @__PURE__ */ renderDummyButton("Next Lesson"), /* @__PURE__ */ text5(" button above.")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Filling in Holes")]), /* @__PURE__ */ text5("\n            Here is the same program, but with a couple of the terms removed.\n            Two of the numbers from the program have been deleted, and instead we have holes in their place.\n            Each hole is displayed as surrounded by "), /* @__PURE__ */ span3([/* @__PURE__ */ classNames(["subnode", "punctuation", "lbrace"])])([/* @__PURE__ */ text5("{")]), /* @__PURE__ */ span_([/* @__PURE__ */ text5(" ")]), /* @__PURE__ */ span3([/* @__PURE__ */ classNames(["subnode", "punctuation", "lbrace"])])([/* @__PURE__ */ text5("}")]), /* @__PURE__ */ text5(" brackets."), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Place your cursor inside the hole by clicking on the square inside the hole.\n            From there, you will be able to fill values into the hole.\n            Initiate a query by typing what you want to input, and then press enter to submit.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Fill the numbers 1 and 2 into the holes to recover the full program.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["fibonacci"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpLessEq"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpPlus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[1],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpMinus"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[2],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Inserting new Structure")]), /* @__PURE__ */ text5("\n            Suppose that we want to generalize our fibonacci function so that it starts with something other than 1.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Delete the base case of the function by clicking on the "1" and pressing Backspace\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Rename the function to "genFib" by placing your cursor on the function name, typing a new name, and pressing enter.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Next, add a second argument to the function. To do this, place your cursor on the body of\n                the function by clicking on the lambda. Then, insert a new lambda expression by typing "lambda" and pressing Enter.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Notice that a few things have happened automatically.\n                An argument has been added to the function signature, and\n                a new hole has been added at each of the call sites of the function.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finish up the new version of the function by giving the newly added variable a name,\n                and filling that variable into the holes in the base case and recursive calls.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, try filling in a value in the call at the end and running the program.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Practice")]), /* @__PURE__ */ text5("\n            You have learned two kinds of edits so far: filling forms into a hole, and wrapping forms around the term at the cursor.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Before you learn the other features of Pantograph, it may be useful to practice these two kinds of edits more.\n            Starting with just a hole, write a function which takes the sum of its two inputs.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            It may be useful to try the following things:\n            "), /* @__PURE__ */ ul_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "let"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "lambda"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('Query "+"')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Backspace to delete the term at the cursor")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Enter on a term to insert a newline")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("Press Escape to exit any menus that you didn't want open")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Introducing Selections")]), /* @__PURE__ */ text5("\n            In Pantograph, the cursor goes on an expression. This is analgous the the cursor of a text editor which\n            goes between characters. But text editors would be far less useful without the ability to make a selction,\n            which goes between two cursor positions.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            In Pantograph, you can make a selection between two expressions by clicking and dragging the mouse from\n            one to the other. This selects the area inside one expression, but outside the other.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Spend a few seconds making selections on this example program. In the next few lessons,\n            we will go over specific examples using selections.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Selections: Rearrange Definitions")]), /* @__PURE__ */ text5("\n            One thing that you can do with selections is to rearrange definitions.\n            We will swap the order of the square and triple definitions.\n            "), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Click and drag your mouse from the first "let" in the program to the second "let".\n                The selection should contain the area inside of the first let expression, but outside of the second one.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Ctrl-x to cut the square definition.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Place your cursor on the squareOrTriple definition by clicking on the "let"\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Ctrl-v to paste. This should paste the square definition at this new location in the program.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["triple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[3],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["square"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["squareOrTriple"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["n"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["b"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"If"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"ConstFalse"}],"tag":"ConstantRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Selections: Rearrange Applications")]), /* @__PURE__ */ text5('\n            Another thing that you can do with selections it to rearrange function calls.\n            We will rearrange the order of the function calls at the bottom of the program\n            so that "square" is moved to the inside of the expression.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Familiarize yourself with where to click to select each function application.\n                Click on the "("s in the bottom line of the program to select different function calls.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Click and drag from the "square" application to the "squareOrTriple" application,\n                by dragging from one "(" to the other "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Cut with Ctrl-x, and paste on the term "10"\n                ')])]), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5(`
             Bonus: try moving the "squareOrTriple" call. Notice that you can make a selection that wouldn't be possible
             in a text editor!
-            `)])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["area"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["w"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["h"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["result"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            In Pantograph, function applications are curried. Each partial application is shown as a dot, and\n            the full application is surrounded by parenthesis.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5('\n            The "result" definition in the program has two applications. The first can be selected by\n            clicking the second dot symbol, and the second by clicking the parenthesis.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select from the second dot to the whole application, and press Backspace. Now, the "area"\n                function is partially applied, and the type of "result" has been updated.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select from the remaining dot to delete the second argument as well, so you are just left with "area".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Add one of the applications back in by placing your cursor on "area", and querying "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Add the second application back by placing your cursor on the whole application "(area {\u2610 : Int})"\n                and querying "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Put "5" and "10" back into the holes, and click Run.\n                ')])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["area"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["w"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["h"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["result"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5('\n            As our final example of using selections, we will swap the argument order of\n            the arguments in the "area" function.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                To begin, select the first lambda by clicking and dragging between the two lambdas, and cut it.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Paste the lambda onto the body "(h * w)", so that now the order of the two lambdas has been swapped.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5(`
+            `)])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["area"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["w"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["h"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["result"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Selections: Partial Applications")]), /* @__PURE__ */ text5("\n            In Pantograph, function applications are curried. Each partial application is shown as a dot, and\n            the full application is surrounded by parenthesis.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5('\n            The "result" definition in the program has two applications. The first can be selected by\n            clicking the second dot symbol, and the second by clicking the parenthesis.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select from the second dot to the whole application, and press Backspace. Now, the "area"\n                function is partially applied, and the type of "result" has been updated.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select from the remaining dot to delete the second argument as well, so you are just left with "area".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Add one of the applications back in by placing your cursor on "area", and querying "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Add the second application back by placing your cursor on the whole application "(area {\u2610 : Int})"\n                and querying "(".\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Put "5" and "10" back into the holes, and click Run.\n                ')])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["area"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["w"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["h"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"OpTimes"}],"tag":"InfixRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["result"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Newline"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Selections: Rearrange Arguments")]), /* @__PURE__ */ text5('\n            As our final example of using selections, we will swap the argument order of\n            the arguments in the "area" function.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                To begin, select the first lambda by clicking and dragging between the two lambdas, and cut it.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Paste the lambda onto the body "(h * w)", so that now the order of the two lambdas has been swapped.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5(`
                 Notice that at the call site, the old argument has been underlined in red since it doesn't fit anymore.
                 Meanwhile, a new hole has appeared on the right.
                 Cut and paste the "5" from the old position into the new hole.
-                `)]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, use a selection to delete the old out of place argument\n                (Click and drag from one dot to the other).\n                Now the argument order at the call site has been swapped to match the new definition.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["f"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["g"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            As you have seen, when you edit your program, Pantograph will try to keep it well-typed.\n            However, this isn't always possible. When types don't match up, Pantograph will insert\n            a type boundary.\n            "), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5(`
+                `)]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, use a selection to delete the old out of place argument\n                (Click and drag from one dot to the other).\n                Now the argument order at the call site has been swapped to match the new definition.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["f"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["g"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Introducing Type Boundaries")]), /* @__PURE__ */ text5("\n            As you have seen, when you edit your program, Pantograph will try to keep it well-typed.\n            However, this isn't always possible. When types don't match up, Pantograph will insert\n            a "), /* @__PURE__ */ b_([/* @__PURE__ */ text5("type boundary")]), /* @__PURE__ */ text5("."), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5(`
                 Delete the Int in the input type of f. Fill the new type "Bool" into the hole,
                 Notice that a boundary "\u2983...\u2984" has been placed around g
                 at the call site. A boundary represents a location in your program where the types don't match up.
-                `)]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                To fix that, replace the "Int" in the type of g with Bool as well.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Now the boundary at the call site has disappeared. However, there is a new boundary around\n                the definition of g, since 10 is not a boolean.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Boundaries are themselves terms. Click on the "\u2983" to place your cursor on the boundary, and click inside to\n                place your cursor on the term inside.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, delete the boundary in the body of g and fill something of the right type in the hole.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["f"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["g"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ErrorBoundary"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ErrorBoundary"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5('\n            In this program, the type of g is "Bool", but the body is 10. Therefore, there is a type boundary around 10.\n            Suppose that we actually do want to keep 10 in body, and to fix the type of g correspond.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select the boundary by clicking and dragging from 10 to the "\u2983" brackets.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Backspace.\n                ")])]), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Deleting a boundary tells Pantograph to fix the error by altering the program around the boundary\n            to have the type of the term inside.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            You have now learned how Pantograph works. To summarize, Pantograph allows you to build programs by\n            1) filling typed holes and 2) wrapping/unwrapping forms around expressions.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Take a moment to experiment with writing a program in Pantograph before moving on to some exercises.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["sumOfList"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ListRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ListRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[4],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[6],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"NilRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5("\n            Exercize: Write the implementation of a function that finds the sum of a list in the hole.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Hints:\n            "), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Query a lambda inside the hole\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Query "match" to pattern match on a list\n                ')])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ text5('\n            Exercize: Write "map", a function that maps a function over lists\n            '), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            map : (Int -> Int) -> List Int -> List Int\n            ")]))];
+                `)]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                To fix that, replace the "Int" in the type of g with Bool as well.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Now the boundary at the call site has disappeared. However, there is a new boundary around\n                the definition of g, since 10 is not a boolean.\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Boundaries are themselves terms. Click on the "\u2983" to place your cursor on the boundary, and click inside to\n                place your cursor on the term inside.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Finally, delete the boundary in the body of g and fill something of the right type in the hole.\n                ")])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["f"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Lam"}},[{"values":[{"tag":"Right","value":{"values":["x"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["g"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Bool"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ErrorBoundary"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[10],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Suc"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ErrorBoundary"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Deleting Type Boundaries")]), /* @__PURE__ */ text5('\n            In this program, the type of g is "Bool", but the body is "10". Therefore, there is a type boundary around "10".\n            Suppose that we actually do want to keep "10" in body, and to fix the type of g correspond.\n            '), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Select the boundary by clicking and dragging from "10" to the "\u2983" brackets.\n                ')]), /* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Press Backspace to delete the boundary.\n                ")])]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Deleting a boundary tells Pantograph to fix the error by altering the program around the boundary\n            to have the type of the term inside.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Practice")]), /* @__PURE__ */ text5("\n            You have now learned how Pantograph works. To summarize, Pantograph allows you to build programs by\n            1) filling typed holes and 2) wrapping/unwrapping forms around expressions.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Take a moment to experiment with writing a program in Pantograph before moving on to some exercises.\n            ")])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"Let"}},[{"values":[{"tag":"Right","value":{"values":["sumOfList"],"tag":"DataString"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ListRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ArrowRule"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ListRule"}},[{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[{"values":[],"tag":"Int"}],"tag":"DataTypeRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Var"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"Zero"}},[]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[4],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[5],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"App"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"ConsRule"}},[]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"IntegerLiteral"}},[{"values":[{"tag":"Right","value":{"values":[6],"tag":"DataInt"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"},{"values":[{"tag":"Left","value":{"values":[],"tag":"NilRule"}},[]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Exercise: sum of a list")]), /* @__PURE__ */ text5("\n            Exercize: Write the implementation of a function that finds the sum of a list in the hole.\n            "), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            Hints:\n            "), /* @__PURE__ */ ol_([/* @__PURE__ */ li_([/* @__PURE__ */ text5("\n                Query a lambda inside the hole\n                ")]), /* @__PURE__ */ li_([/* @__PURE__ */ text5('\n                Query "match" to pattern match on a list\n                ')])])])), /* @__PURE__ */ makeLesson('{"values":[{"tag":"Left","value":{"values":[],"tag":"TermHole"}},[{"values":[{"tag":"Left","value":{"values":[],"tag":"TypeHole"}},[]],"tag":"Expr"}]],"tag":"Expr"}')([])(/* @__PURE__ */ div_([/* @__PURE__ */ h1_([/* @__PURE__ */ text5("Exercise: map over a list")]), /* @__PURE__ */ text5('\n            Exercize: Write "map", a function that maps a function over lists\n            '), /* @__PURE__ */ br([]), /* @__PURE__ */ br([]), /* @__PURE__ */ text5("\n            map : (Int -> Int) -> List Int -> List Int\n            ")]))];
 
   // output/Tutorial.EditorTutorial2/index.js
   var show11 = /* @__PURE__ */ show(showInt);
@@ -44806,7 +44830,7 @@
   var discard18 = /* @__PURE__ */ discard17(bindHalogenM);
   var modify_5 = /* @__PURE__ */ modify_2(monadStateHalogenM);
   var request3 = /* @__PURE__ */ request()(editorIsSymbol)(ordUnit);
-  var pure31 = /* @__PURE__ */ pure(applicativeHalogenM);
+  var pure33 = /* @__PURE__ */ pure(applicativeHalogenM);
   var discard23 = /* @__PURE__ */ discard17(bindAff);
   var log6 = /* @__PURE__ */ log2(monadEffectAff);
   var bind111 = /* @__PURE__ */ bind(bindAff);
@@ -44873,15 +44897,15 @@
           var editorComponent1 = editorComponent2(unit);
           var render = function(state3) {
             var lesson = force(index$prime(lessons2)(state3.activeLesson));
-            return div2([classNames(["vertical-container"])])([div2([classNames(["horizontal-container", "padded"]), style("height: 1.4em; justify-content: space-between")])([div2([])([b([style("margin-right: 20px")])([text5("Pantograph")]), text5("Lesson " + show11(state3.activeLesson + 1 | 0))]), div2([])([button([onClick(function(v) {
+            return div2([classNames(["vertical-container"])])([div2([classNames(["PantographHeader", "horizontal-container", "padded"]), style("height: 1.4em; justify-content: space-between")])([div2([classNames(["PantographTitle"])])([div_([text5("Pantograph")]), div_([text5("/")]), div_([text5("Lesson " + show11(state3.activeLesson + 1 | 0))])]), div2([classNames(["PantographControls"])])([button([classNames(["TutorialControlButton"]), onClick(function(v) {
               return ResetLesson.value;
-            })])([text5("Reset")]), button([disabled10(state3.activeLesson === 0), onClick(function(v) {
+            })])([text5("Reset")]), button([classNames(["TutorialControlButton"]), disabled10(state3.activeLesson === 0), onClick(function(v) {
               return PreviousLesson.value;
-            })])([text5("Previous lesson")]), button([disabled10(state3.activeLesson === (length5(lessons2) - 1 | 0)), onClick(function(v) {
+            })])([text5("Previous lesson")]), button([classNames(["TutorialControlButton"]), disabled10(state3.activeLesson === (length5(lessons2) - 1 | 0)), onClick(function(v) {
               return NextLesson.value;
-            })])([text5("Next lesson")])])]), div2([classNames(["horizontal-bar"]), style("height: 2px;")])([]), div2([classNames(["horizontal-container", "fill-space"]), style("height: calc(100vh - 3em - 2px);")])([main([classNames(["fill-space", "padded"]), style("overflow: auto")])([div_([slot4(_editorSlot)(unit)(editorComponent1)(spec)(EditorOutput.create)])]), div2([classNames(["vertical-bar", "resize-handle--x"]), attr2("data-target")("aside")])([]), aside([classNames([]), style("width: 25em; overflow: auto;")])([div2([classNames(["vertical-contaioner"])])([div2([style("height: 3em")])([button([onClick(function(v) {
+            })])([text5("Next lesson")])])]), div2([classNames(["horizontal-bar"]), style("height: 2px;")])([]), div2([classNames(["horizontal-container", "fill-space"]), style("height: calc(100vh - 3em - 2px);")])([main([classNames(["fill-space", "padded"]), style("overflow: auto")])([div_([slot4(_editorSlot)(unit)(editorComponent1)(spec)(EditorOutput.create)])]), div2([classNames(["vertical-bar", "resize-handle--x"]), attr2("data-target")("aside")])([]), aside([classNames([]), style("width: 25em; overflow: auto;")])([div2([classNames(["vertical-container"])])([div2([style("height: 3em")])([button([classNames(["TutorialControlButton"]), onClick(function(v) {
               return RunProgram.value;
-            }), style("margin: 10px")])([text5("Run")]), span3([style("font-family: monospace; font-size: 12pt")])([text5(state3.output)])]), div2([classNames(["horizontal-bar"]), style("height: 2px;")])([]), div2([style("float:right"), classNames(["padded"])])([lesson.instructions])])])])]);
+            }), style("margin: 10px")])([text5("Run")]), span3([style("font-family: monospace; font-size: 12pt")])([text5(state3.output)])]), div2([style("float:right"), classNames(["padded", "lessonInstructions"])])([lesson.instructions])])])])]);
           };
           var convertPaths = function(markedPaths) {
             return mapFlipped10(markedPaths)(function(path) {
@@ -44958,15 +44982,15 @@
                   }
                   ;
                   if (mprog instanceof Nothing) {
-                    return pure31(unit);
+                    return pure33(unit);
                   }
                   ;
-                  throw new Error("Failed pattern match at Tutorial.EditorTutorial2 (line 136, column 13 - line 140, column 37): " + [mprog.constructor.name]);
+                  throw new Error("Failed pattern match at Tutorial.EditorTutorial2 (line 137, column 13 - line 141, column 37): " + [mprog.constructor.name]);
                 });
               });
             }
             ;
-            throw new Error("Failed pattern match at Tutorial.EditorTutorial2 (line 120, column 22 - line 140, column 37): " + [v.constructor.name]);
+            throw new Error("Failed pattern match at Tutorial.EditorTutorial2 (line 121, column 22 - line 141, column 37): " + [v.constructor.name]);
           };
           return mkComponent({
             initialState,

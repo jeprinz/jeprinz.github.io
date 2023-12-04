@@ -1,16 +1,52 @@
+:root {
+  --hole-color: #8425b8;
+  --error-color: red;
+  --name-color: green;
+  --type-metavar: #8425b8;
+  /* --code-font-family: 'Nova Mono'; */
+  --code-font-family: monospace;
+  --comment-color: lightgray;
+}
+
 /* 
   fonts
 */
 
-/* @font-face {
-  font-family: 'Iosevka Curly';
-  src: url(./assets/fonts/iosevka-curly.ttc) format('truetype');
-} */
+@font-face {
+  font-family: 'Neuton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Neuton Regular'), local('Neuton-Regular'), url(http://themes.googleusercontent.com/static/fonts/neuton/v5/2yfL00UA7vu40fNHPnbJgw.ttf) format('truetype');
+}
 
-/* @font-face {
-  font-family: 'FiraCode';
-  src: url(./assets/fonts/FiraCode-Regular.ttf) format('truetype');
-} */
+@font-face {
+  font-family: 'Cutive Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cutive Mono'), local('CutiveMono-Regular'), url(http://themes.googleusercontent.com/static/fonts/cutivemono/v1/N5odNRruTwjvCM8y77PhQZ0EAVxt0G0biEntp43Qt6E.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monoton'), local('Monoton-Regular'), url(http://themes.googleusercontent.com/static/fonts/monoton/v3/ceRJlaOl8VqdbfWAlFaxNQ.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nova Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NovaMono'), url(http://themes.googleusercontent.com/static/fonts/novamono/v4/pN6VVBY03b9QLz-7i6Kl0aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Corben';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Corben Regular'), local('Corben-Regular'), url(http://themes.googleusercontent.com/static/fonts/corben/v5/aAJbkLknKhfXxsbVwcGZiA.ttf) format('truetype');
+}
 
 /* 
   html
@@ -30,6 +66,8 @@ body {
 .editor {
   padding: 1em;
   font-size: 12pt;
+
+  font-family: var(--code-font-family);
 }
 
 /* 
@@ -79,8 +117,7 @@ body {
   user-select: none;
   /* Standard syntax */
 
-  /* font-family: 'Iosevka Curly'; */
-  font-family: monospace;
+  font-family: var(--code-font-family);
 
   margin-bottom: 1em;
   padding: 0.5em 0;
@@ -139,6 +176,10 @@ body {
   /* box-shadow: inset 0 0 0 2px rgb(255, 139, 50); */
 }
 
+.node.holeInterior+.subnode.punctuation.colon {
+  color: var(--hole-color);
+}
+
 /* OLD version, which put an orange cursor around inner hole */
 /* .node.holeInterior.cursor {
   box-shadow: -3px 0 orange, 3px 0 orange;
@@ -155,7 +196,7 @@ body {
 .node.holeInterior.highlight>.subnode.holeInterior-inner>.subnode,
 .node.empty-string.cursor>.subnode.empty-string>.subnode,
 .node.empty-string.highlight>.subnode.empty-string>.subnode {
-/*  display: none; */
+  /*  display: none; */
   visibility: hidden
 }
 
@@ -164,6 +205,7 @@ body {
 .node.empty-string.cursor>.subnode.empty-string::before,
 .node.empty-string.highlight>.subnode.empty-string::before {
   display: inline-block;
+  color: black;
   width: 0px;
   content: '|';
 }
@@ -189,12 +231,13 @@ body {
 
 .subnode.string-inner {
   white-space: pre;
-  color: green;
+  color: var(--name-color);
   /* background-color: rgb(227, 227, 227); */
 }
 
 .subnode.string-inner.empty-string {
-  color: gray;
+  /*color: gray;*/
+  color: var(--hole-color);
   /*
   font-style: italic;
   padding: 0 0.4em;
@@ -254,6 +297,20 @@ body {
 
 .subnode.punctuation.arrow {
   margin: 0 0.4em;
+}
+
+.app-circle {
+  display: inline;
+  cursor: pointer;
+  border-radius: 0.5em 0.5em / 0.2em;
+  color: lightgrey;
+  font-size: 10px;
+}
+
+.subnode.punctuation.circle {
+  display: inline-block;
+  position: relative;
+  top: -2px;
 }
 
 /* 
@@ -489,27 +546,41 @@ console
   border-radius: 0.5em 0.5em / 0.2em;
 }
 
-.app-circle {
-  display: inline;
-  cursor: pointer;
-  border-radius: 0.5em 0.5em / 0.2em;
-  color: lightgrey;
-  font-size: 10px;
-}
-
 .newline-symbol {
   display: inline;
   border-radius: 0.5em 0.5em / 0.2em;
   color: lightgrey;
 }
 
-.error {
-  border-bottom:1px solid red;
+.grey.error {
+  position: relative;
   display: inline-block;
+  border-radius: 0;
+
+  /* border-bottom: 1px solid var(--error-color); */
+
+  /* box-shadow: 0 1px 0 0 var(--error-color); */
+  /* background-color: rgba(0, 0, 0, 0.1); */
+
+  text-decoration: none;
 }
 
-.grey {
-  /* color: lightgrey !important; */ /*The problem with this was that int literals were green anyway, overriding this.*/
+.grey.error:after {
+  content: "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+  font-size: 0.6em;
+  font-weight: 700;
+  font-family: monospace;
+  color: red;
+  width: 100%;
+  position: absolute;
+  top: 12px;
+  left: -1px;
+  overflow: hidden;
+}
+
+.node.grey {
+  /* color: lightgrey !important; */
+  /*The problem with this was that int literals were green anyway, overriding this.*/
   opacity: 75%;
 }
 
@@ -517,10 +588,109 @@ console
   display: inline;
 }
 
-.marked { /*Used for the Tutorial marking terms*/
-    background-color: yellow;
+.marked {
+  /*Used for the Tutorial marking terms*/
+  background-color: yellow;
 }
 
-.square {
+.subnode.punctuation.square {
   line-height: 12px;
+  color: var(--hole-color);
+}
+
+.name {
+  color: var(--name-color);
+}
+
+.subnode.punctuation.lbrace,
+.subnode.punctuation.rbrace {
+  color: var(--hole-color);
+}
+
+.TypeHoleMV {
+  color: var(--type-metavar)
+}
+
+/* error-info */
+
+.error-info {
+  display: none;
+  position: absolute;
+  white-space: pre-wrap;
+
+  background-color: white;
+  border: 1px solid var(--error-color);
+  box-shadow: 2px 2px 8px 0 black;
+}
+
+.node.highlight>.error-info {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.2em;
+}
+
+.error-info.ErrorBoundary-info {}
+
+
+.PantographHeader {
+  background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.PantographTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.PantographControls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.TutorialControlButton {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  outline: none;
+  border: 4px inset black;
+}
+
+.TutorialControlButton:hover {
+  border: 4px inset blue;
+  cursor: pointer;
+}
+
+.TutorialControlButtonDummy:hover {
+  border: 4px inset black;
+  cursor: default;
+}
+
+.TutorialControlButton:disabled {
+  background-color: gray;
+  outline: none;
+}
+
+.TutorialControlButton:disabled:hover {
+  border: 4px inset black;
+  cursor: default;
+}
+
+
+.Comment_anchor+.node,
+.Comment_anchor+.node>.subnode.string-inner {
+  display: inline-block;
+  font-family: 'Corben';
+  padding: 0 0.2em;
+  margin: 0.4em 0;
+  color: black;
+  background-color: var(--comment-color);
+  font-style: italic;
 }
