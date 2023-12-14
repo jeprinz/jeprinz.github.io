@@ -1,10 +1,11 @@
 :root {
-  --hole-color: #8425b8;
+  --hole-color: #ff660e;
   --error-color: red;
   --name-color: green;
   --type-metavar: #8425b8;
   /* --code-font-family: 'Nova Mono'; */
   --code-font-family: monospace;
+  --pantograph-font-family: 'Nova Mono', inherit;
   --comment-color: lightgray;
 }
 
@@ -68,6 +69,14 @@ body {
   font-size: 12pt;
 
   font-family: var(--code-font-family);
+}
+
+code {
+  font-family: var(--code-font-family);
+  background-color: rgb(216, 216, 216);
+  display: inline-block;
+  border-radius: 0.2em;
+  padding: 0 0.2em;
 }
 
 /* 
@@ -159,7 +168,7 @@ body {
 }
 
 .node.cursor {
-  box-shadow: -3px 0 blue, 3px 0 blue;
+  box-shadow: -3.5px 0 blue, 3.5px 0 blue;
 }
 
 .subnode.holeExterior-inner {
@@ -172,12 +181,16 @@ body {
 }
 
 .subnode.holeInterior-inner {
-  padding: 0 0.2em;
-  /* box-shadow: inset 0 0 0 2px rgb(255, 139, 50); */
+  padding: 0 0.4em;
+
+  box-shadow: inset 0 0 4px 1px gray;
+  /* border: 1px solid black; */
+  border-radius: 0.4em;
 }
 
 .node.holeInterior+.subnode.punctuation.colon {
   color: var(--hole-color);
+  font-weight: 900;
 }
 
 /* OLD version, which put an orange cursor around inner hole */
@@ -201,11 +214,22 @@ body {
 }
 
 .node.holeInterior.cursor>.subnode.holeInterior-inner::before,
+.node.empty-string.cursor>.subnode.empty-string::before {
+    display: inline-block;
+    color: blue;
+    width: 0px;
+    content: '|';
+    font-weight: bolder;
+/*    text-shadow:
+        0px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue,
+        -1px -1px blue, 1px 1px blue, -1px 1px blue, 1px -1px blue; */
+    text-shadow: 1.5px 0px 0px blue;
+}
+
 .node.holeInterior.highlight>.subnode.holeInterior-inner::before,
-.node.empty-string.cursor>.subnode.empty-string::before,
 .node.empty-string.highlight>.subnode.empty-string::before {
   display: inline-block;
-  color: black;
+  color: grey;
   width: 0px;
   content: '|';
 }
@@ -258,7 +282,8 @@ body {
 }
 
 .subnode.punctuation.lambda {
-  margin-right: 0.2em;
+  margin-right: 0.4em;
+  font-weight: bold;
 }
 
 .subnode.punctuation.mapsto {
@@ -281,6 +306,14 @@ body {
 
 .subnode.punctuation.let {
   margin-right: 0.4em;
+}
+
+.subnode.punctuation.let,
+.subnode.punctuation.if,
+.subnode.punctuation.then,
+.subnode.punctuation.else,
+.subnode.punctuation.inLet {
+  font-weight: bold;
 }
 
 .subnode.punctuation.equals {
@@ -348,6 +381,7 @@ body {
 
 .subnode.buffer>.buffer-inner>.buffer-input {
   outline: none;
+  border: none;
 }
 
 /* placeholder-cursor */
@@ -596,6 +630,7 @@ console
 .subnode.punctuation.square {
   line-height: 12px;
   color: var(--hole-color);
+  text-shadow: 1px 1px 2px gray;
 }
 
 .name {
@@ -605,6 +640,22 @@ console
 .subnode.punctuation.lbrace,
 .subnode.punctuation.rbrace {
   color: var(--hole-color);
+  font-weight: 900;
+}
+
+.subnode.punctuation.lparen::before {
+  content: "(";
+  margin-right: -0.5em;
+}
+
+.subnode.punctuation.rparen::before {
+  content: ")";
+  margin-right: -0.5em;
+}
+
+.subnode.punctuation.lparen,
+.subnode.punctuation.rparen {
+  font-weight: 900;
 }
 
 .TypeHoleMV {
@@ -639,6 +690,7 @@ console
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: var(--pantograph-font-family);
 }
 
 .PantographTitle {
@@ -655,12 +707,29 @@ console
   gap: 0.4em;
 }
 
+
+.Comment_anchor+.node,
+.Comment_anchor+.node>.subnode.string-inner {
+  display: inline-block;
+  font-family: 'Corben';
+  padding: 0 0.2em;
+  margin: 0.4em 0;
+  color: black;
+  background-color: var(--comment-color);
+  /* font-style: italic; */
+}
+
+
+/* tutorial */
+
+
 .TutorialControlButton {
   display: inline-block;
   background-color: white;
   color: black;
   outline: none;
   border: 4px inset black;
+  border-radius: 0.5em 0.5em / 0.2em;
 }
 
 .TutorialControlButton:hover {
@@ -683,14 +752,25 @@ console
   cursor: default;
 }
 
-
-.Comment_anchor+.node,
-.Comment_anchor+.node>.subnode.string-inner {
-  display: inline-block;
-  font-family: 'Corben';
-  padding: 0 0.2em;
-  margin: 0.4em 0;
+.TutorialTask {
+  border-radius: 0.5em 0.5em / 0.2em;
+  margin: 0.6em 0;
+  padding: 0.4em 0.4em;
   color: black;
   background-color: var(--comment-color);
-  font-style: italic;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.TutorialWord-Pantograph {
+  /* font-size: 1.2em; */
+  font-family: var(--pantograph-font-family);
+}
+
+.Tutorial-greyError>div::after {
+  font-size: 1em !important;
+  top: 1.3em !important;
 }
