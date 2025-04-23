@@ -33,6 +33,10 @@ correct software development.
 ---
 ### Publications
 
+[**Pantograph: A Fluid and Typed Structure Editor**](https://dl.acm.org/doi/10.1145/3704864)
+_Jacob Prinz_ and Henry Blanchette and Leonidas Lampropoulos. POPL 2025
+<a href="https://dl.acm.org/doi/10.1145/3704864">LINK</a>
+
 [**Merging Inductive Relations**](https://lemonidas.github.io/pdf/MergingInductiveRelations.pdf)
 _Jacob Prinz_ and Leonidas Lampropoulos.
 [PLDI 2023](https://pldi23.sigplan.org/) .<br>
