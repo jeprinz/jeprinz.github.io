@@ -1,0 +1,5 @@
+for future me when i forget how this website is made,
+it uses Jekyll
+https://jekyllrb.com/
+
+use the command there to try running it locally, and push to github to publish it
